@@ -3,8 +3,10 @@ window.YCG = {
   whatsapp: "+918220089690", // VERIFY BEFORE PUBLISHING
   phone: "+918220089690", // VERIFY
   phoneDisplay: "+91 82200 89690",
-  email: "hacclothingtiruppur@gmail.com", // VERIFY (conflict: yourchoicegarments@hacclothings.com)
-  address: "No. 17, Krishna Nagar, College Road, Tiruppur – 641603", // VERIFY (conflict: IndiaMART address)
+  email: "yourchoicegarments@hacclothings.com", // confirmed by owner
+  hacEmail: "hacclothingtiruppur@gmail.com", // HAC label enquiries
+  address: "2, 1st Street, Balamurugan Nagar, Valayankadu, Tiruppur – 641603, Tamil Nadu", // Your Choice Garments
+  hacAddress: "No. 17, Krishna Nagar, College Road, Tiruppur – 641603", // printed on the HAC visiting card
   trademarkAddress: "No. 13, Balamurugan Nagar 1st Street, Valayankadu, Gandhi Nagar Post, Tiruppur – 641 603", // from HAC trademark report, pending confirmation
   indiamart: "https://www.indiamart.com/yourchoicegarments/profile.html",
   trustseal: "https://www.indiamart.com/hacclothings/trustseal/",
