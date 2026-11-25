@@ -53,12 +53,15 @@ function headerHTML(){
  </div>`;
 }
 function footerHTML(){
+  const isHac = /hac\.html/i.test(location.pathname);
+  const email = isHac ? window.YCG.hacEmail : window.YCG.email;
+  const addr = isHac ? window.YCG.hacAddress : window.YCG.address;
  return `<footer><div class="container">
   <div class="footer-grid">
    <div class="brand">
      <img src="assets/brand/your-choice-garments-logo-transparent.png" alt="Your Choice Garments logo">
      <p>Tiruppur-based garment manufacturer and wholesale supplier. Blank, bulk, custom and private-label apparel for brands, retailers and businesses.</p>
-     <p style="margin-top:12px;font-size:11px;color:#E0A3A3">Contact details pending owner confirmation.</p>
+
    </div>
    <div><h4>Company</h4>
      <a href="about.html">About Us</a><br><a href="manufacturing.html">Manufacturing</a><br><a href="customisation.html">Customisation</a><br><a href="wholesale.html">Wholesale</a><br><a href="contact.html">Contact</a>
@@ -68,8 +71,8 @@ function footerHTML(){
    </div>
    <div><h4>Contact</h4>
      <a href="tel:${window.YCG.phone}">${window.YCG.phoneDisplay}</a><br>
-     <a href="mailto:${window.YCG.email}">${window.YCG.email}</a><br>
-     <span style="display:block;padding:4px 0">${window.YCG.address}</span>
+     <a href="mailto:${email}">${email}</a><br>
+     <span style="display:block;padding:4px 0">${addr}</span>
      <a href="${window.YCG.indiamart}" target="_blank" rel="noopener">IndiaMART Profile ↗</a><br>
      <a href="${window.YCG.trustseal}" target="_blank" rel="noopener">IndiaMART TrustSeal ↗</a><br>
      <a href="${window.YCG.instagram}" target="_blank" rel="noopener">HAC Instagram ↗</a>
