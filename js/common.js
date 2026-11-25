@@ -43,13 +43,16 @@ function headerHTML(){
    <div class="mobile-quick">
      <a href="tel:${window.YCG.phone}" class="mq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><small>Call</small></a>
      <a href="${waLink('Hello Your Choice Garments, I would like to enquire.')}" target="_blank" rel="noopener" class="mq mq-wa"><img src="assets/whatsapp.png" alt=""><small>WhatsApp</small></a>
-     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" class="mq"><span class="mq-txt">IM</span><small>IndiaMART</small></a>
-     <a href="${window.YCG.trustseal}" target="_blank" rel="noopener" class="mq"><span class="mq-txt">TS</span><small>TrustSeal</small></a>
+     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" class="mq"><img src="assets/brands/indiamart.svg" alt="IndiaMART" style="height:18px;width:auto"><small>IndiaMART</small></a>
+     <a href="${window.YCG.trustseal}" target="_blank" rel="noopener" class="mq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg><small>TrustSeal</small></a>
    </div>
-   <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a>
-   <a href="manufacturing.html">Manufacturing</a><a href="customisation.html">Customisation</a>
-   <a href="wholesale.html">Wholesale</a><a href="store.html">Store</a><a href="blog.html">Blog</a><a href="hac.html">HAC</a><a href="contact.html">Contact</a>
-   <a class="btn btn-primary" style="margin-top:18px" href="wholesale.html">Request a Quote</a>
+   <div class="mobile-links">
+     <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a>
+     <a href="manufacturing.html">Manufacturing</a><a href="customisation.html">Customisation</a>
+     <a href="wholesale.html">Wholesale</a><a href="store.html">Store</a><a href="blog.html">Blog</a><a href="hac.html">HAC</a><a href="contact.html">Contact</a>
+   </div>
+   <a class="btn btn-primary" href="wholesale.html">Request a Quote</a>
+   <div class="mobile-foot">Tiruppur, Tamil Nadu · +91 82200 89690</div>
  </div>`;
 }
 function footerHTML(){
@@ -73,7 +76,7 @@ function footerHTML(){
      <a href="tel:${window.YCG.phone}">${window.YCG.phoneDisplay}</a><br>
      <a href="mailto:${email}">${email}</a><br>
      <span style="display:block;padding:4px 0">${addr}</span>
-     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener">IndiaMART Profile ↗</a><br>
+     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px"><img src="assets/brands/indiamart.svg" alt="IndiaMART" style="height:14px;width:auto"> Profile ↗</a><br>
      <a href="${window.YCG.trustseal}" target="_blank" rel="noopener">IndiaMART TrustSeal ↗</a><br>
      <a href="${window.YCG.instagram}" target="_blank" rel="noopener">HAC Instagram ↗</a>
    </div>

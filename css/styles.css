@@ -89,7 +89,10 @@ header.site .container{max-width:1360px}
 .mobile-menu .mq img{width:22px;height:22px}
 .mobile-menu .mq-txt{font-family:'Manrope';font-weight:800;font-size:15px}
 .mobile-menu .mq-wa{background:#eaf7ef;border-color:#bfe3cc;color:#177A42}
-.mobile-menu .btn{color:#fff !important}
+.mobile-menu .btn{color:#fff !important;display:block;width:100%;text-align:center;padding:14px 18px;font-size:15px;font-weight:700;border-radius:12px;margin-top:18px}
+.mobile-menu .mobile-links{display:flex;flex-direction:column}
+.mobile-menu .mobile-links a{padding:16px 4px;font-size:16px;font-weight:500}
+.mobile-menu .mobile-foot{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);text-align:center}
 }
 
 /* ---------- hero slideshow ---------- */
