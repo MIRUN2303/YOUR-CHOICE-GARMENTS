@@ -8,6 +8,6 @@ window.YCG = {
   indiamart: "https://www.indiamart.com/yourchoicegarments/profile.html",
   trustseal: "https://www.indiamart.com/hacclothings/trustseal/",
   instagram: "https://www.instagram.com/hac_clothings/",
-  maps: "https://maps.google.com/?q=Tiruppur"
+  maps: "https://www.google.com/maps/dir/?api=1&destination=11.1187068,77.3221267"
 };
 function waLink(msg){ return "https://wa.me/"+window.YCG.whatsapp.replace(/\D/g,'')+"?text="+encodeURIComponent(msg); }
