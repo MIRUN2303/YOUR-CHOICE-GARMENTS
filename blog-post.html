@@ -1,17 +1,19 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Blog — Your Choice Garments</title>
+<meta name="description" content="Article from Your Choice Garments blog on Tiruppur garment manufacturing and wholesale sourcing.">
+<meta name="keywords" content="Tiruppur garment manufacturer, wholesale T-shirts Tiruppur, bulk apparel supplier, custom T-shirts, polo T-shirts, oversized T-shirts, hoodies, sweatshirts, private label garments, garment factory Tiruppur">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://your-choice-garments.vercel.app/blog-post.html">
 <link rel="stylesheet" href="css/styles.css">
 <script defer src="js/config.js"></script><script defer src="js/blog.js"></script><script defer src="js/common.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
-<meta name="keywords" content="Tiruppur garment manufacturer, wholesale T-shirts Tiruppur, bulk apparel supplier, custom T-shirts, polo T-shirts, oversized T-shirts, hoodies, sweatshirts, private label garments, garment factory Tiruppur">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://your-choice-garments.vercel.app/blog-post.html">
 </head><body>
 <div id="site-header"></div>
-<section class="section"><div class="container" style="max-width:760px" id="post"></div></section>
+<article class="section"><div class="container" style="max-width:780px" id="post"></div></article>
+<section class="section section-grey" id="relatedSection" hidden><div class="container"><div class="section-head"><div><p class="eyebrow">Continue reading</p><h2>More articles</h2></div><a href="blog.html">All articles →</a></div><div class="product-grid" id="relatedGrid"></div></div></section>
 <div id="site-footer"></div>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
@@ -19,13 +21,23 @@ document.addEventListener('DOMContentLoaded',()=>{
  const b=window.BLOGS.find(x=>x.id===id);
  if(!b){document.getElementById('post').innerHTML='<p>Article not found. <a href="blog.html">Back to blog</a></p>';return;}
  document.title=b.title+' — Your Choice Garments';
+ const desc=document.querySelector('meta[name="description"]'); if(desc) desc.content=b.excerpt+' Your Choice Garments, Tiruppur garment manufacturer.';
+ const canon=document.querySelector('link[rel="canonical"]'); if(canon) canon.href='https://your-choice-garments.vercel.app/blog-post.html?id='+b.id;
  document.getElementById('post').innerHTML=`
   <p class="breadcrumb"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / ${b.title}</p>
-  <img src="${b.img}" alt="${b.title} — Tiruppur garment manufacturing blog" style="width:100%;border-radius:var(--radius);margin:18px 0;aspect-ratio:16/9;object-fit:cover">
-  <p class="eyebrow">${b.date}</p>
+  <img src="${b.img}" alt="${b.title} — Tiruppur garment manufacturing blog image" style="width:100%;border-radius:var(--radius);margin:18px 0;aspect-ratio:16/9;object-fit:cover">
+  <p class="eyebrow">${b.date} · Your Choice Garments, Tiruppur</p>
   <h1 style="margin-top:10px">${b.title}</h1>
-  <div style="margin-top:24px;font-size:16px;line-height:1.8;color:#3A4356">${b.content.split('\\n\\n').map(p=>`<p style="margin-bottom:16px">${p}</p>`).join('')}</div>
-  <p style="margin-top:30px"><a class="btn btn-dark" href="blog.html">← All articles</a> <a class="btn btn-primary" href="wholesale.html" style="margin-left:8px">Request a Quote</a></p>`;
+  <p style="margin-top:16px;font-size:17px;color:var(--muted);line-height:1.7">${b.excerpt}</p>
+  <div style="margin-top:28px;font-size:16px;line-height:1.85;color:#3A4356">${b.content.split('\\n\\n').map(p=>`<p style="margin-bottom:18px">${p}</p>`).join('')}</div>
+  <div style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn btn-dark" href="blog.html">← All articles</a>
+    <a class="btn btn-primary" href="wholesale.html">Request a Quote</a>
+    <a class="btn btn-wa" href="https://wa.me/918220089690?text=Hello%20Your%20Choice%20Garments%2C%20I%20read%20your%20article%20${encodeURIComponent(b.title)}%20and%20would%20like%20to%20enquire." target="_blank" rel="noopener">WhatsApp Us</a>
+  </div>`;
+ const rel=window.BLOGS.filter(x=>x.id!==b.id).slice(0,3);
+ if(rel.length){document.getElementById('relatedSection').hidden=false;
+  document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="blog-post.html?id=${r.id}"><img src="${r.img}" alt="${r.title} — Tiruppur garment blog" loading="lazy"></a><div class="body"><h3>${r.title}</h3><p style="font-size:12px;color:var(--muted)">${r.date}</p><p>${r.excerpt}</p><div class="actions"><a class="btn btn-ghost" href="blog-post.html?id=${r.id}">Read article</a></div></div></article>`).join('');}
 });
 </script>
 </body></html>
