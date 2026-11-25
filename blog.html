@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog — Your Choice Garments</title>
+<meta name="description" content="Articles on Tiruppur garment manufacturing, bulk T-shirt sourcing, fabrics, custom printing, private label and quality.">
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/config.js"></script><script defer src="js/blog.js"></script><script defer src="js/common.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+</head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="container">
+ <p class="eyebrow">Blog</p>
+ <h1>Notes from a Tiruppur garment manufacturer.</h1>
+ <p>Practical reading on sourcing, fabrics, customisation, private label and quality — written for brands, retailers and buyers.</p>
+</div></section>
+<section class="section">
+ <div class="container">
+  <div class="product-grid" id="blogGrid"></div>
+ </div>
+</section>
+<div id="site-footer"></div>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ document.getElementById('blogGrid').innerHTML=window.BLOGS.map(b=>`<article class="pcard">
+  <div class="thumb" style="background:var(--grey);display:flex;align-items:center;justify-content:center"><span style="font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--blue)">${b.title.charAt(0)}</span></div>
+  <div class="body">
+    <div><h3>${b.title}</h3><p style="font-size:12px;color:var(--muted)">${b.date}</p></div>
+    <p>${b.excerpt}</p>
+    <div class="actions"><a class="btn btn-ghost" href="blog-post.html?id=${b.id}">Read article</a></div>
+  </div>
+ </article>`).join('');
+});
+</script>
+</body></html>

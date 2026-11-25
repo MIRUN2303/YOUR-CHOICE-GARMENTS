@@ -31,6 +31,7 @@ function headerHTML(){
     ${navLink('customisation.html','Customisation')}
     ${navLink('wholesale.html','Wholesale')}
     ${navLink('store.html','Store')}
+    ${navLink('blog.html','Blog')}
     ${navLink('hac.html','HAC')}
     ${navLink('contact.html','Contact')}
     <a class="btn btn-primary btn-sm" href="wholesale.html">Request a Quote</a>
@@ -47,7 +48,7 @@ function headerHTML(){
    </div>
    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a>
    <a href="manufacturing.html">Manufacturing</a><a href="customisation.html">Customisation</a>
-   <a href="wholesale.html">Wholesale</a><a href="store.html">Store</a><a href="hac.html">HAC</a><a href="contact.html">Contact</a>
+   <a href="wholesale.html">Wholesale</a><a href="store.html">Store</a><a href="blog.html">Blog</a><a href="hac.html">HAC</a><a href="contact.html">Contact</a>
    <a class="btn btn-primary" style="margin-top:18px" href="wholesale.html">Request a Quote</a>
  </div>`;
 }

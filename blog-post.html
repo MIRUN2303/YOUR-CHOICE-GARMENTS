@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog — Your Choice Garments</title>
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/config.js"></script><script defer src="js/blog.js"></script><script defer src="js/common.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+</head><body>
+<div id="site-header"></div>
+<section class="section"><div class="container" style="max-width:760px" id="post"></div></section>
+<div id="site-footer"></div>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const id=new URLSearchParams(location.search).get('id');
+ const b=window.BLOGS.find(x=>x.id===id);
+ if(!b){document.getElementById('post').innerHTML='<p>Article not found. <a href="blog.html">Back to blog</a></p>';return;}
+ document.title=b.title+' — Your Choice Garments';
+ document.getElementById('post').innerHTML=`
+  <p class="breadcrumb"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / ${b.title}</p>
+  <p class="eyebrow">${b.date}</p>
+  <h1 style="margin-top:10px">${b.title}</h1>
+  <div style="margin-top:24px;font-size:16px;line-height:1.8;color:#3A4356">${b.content.split('\\n\\n').map(p=>`<p style="margin-bottom:16px">${p}</p>`).join('')}</div>
+  <p style="margin-top:30px"><a class="btn btn-dark" href="blog.html">← All articles</a> <a class="btn btn-primary" href="wholesale.html" style="margin-left:8px">Request a Quote</a></p>`;
+});
+</script>
+</body></html>
