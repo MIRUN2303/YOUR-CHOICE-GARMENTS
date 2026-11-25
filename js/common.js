@@ -39,6 +39,12 @@ function headerHTML(){
  </div></header>
  <div class="mobile-menu" id="mobileMenu">
    <button class="close" id="closeMenu" aria-label="Close menu">✕</button>
+   <div class="mobile-quick">
+     <a href="tel:${window.YCG.phone}" class="mq">☎<small>Call</small></a>
+     <a href="${waLink('Hello Your Choice Garments, I would like to enquire.')}" target="_blank" rel="noopener" class="mq">W<small>WhatsApp</small></a>
+     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" class="mq">IM<small>IndiaMART</small></a>
+     <a href="${window.YCG.trustseal}" target="_blank" rel="noopener" class="mq">TS<small>TrustSeal</small></a>
+   </div>
    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a>
    <a href="manufacturing.html">Manufacturing</a><a href="customisation.html">Customisation</a>
    <a href="wholesale.html">Wholesale</a><a href="store.html">Store</a><a href="hac.html">HAC</a><a href="contact.html">Contact</a>
