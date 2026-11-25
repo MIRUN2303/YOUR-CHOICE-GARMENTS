@@ -1,117 +1,331 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HAC — Unleash Your Fashion</title>
-<meta name="description" content="HAC — Hot And Cold. Designed apparel and fashion-led garments. Explore the collection and enquire.">
-<meta name="keywords" content="Tiruppur garment manufacturer, wholesale T-shirts Tiruppur, bulk apparel supplier, custom T-shirts, polo T-shirts, oversized T-shirts, hoodies, sweatshirts, private label garments, garment factory Tiruppur">
+<title>HAC — Hot And Cold | Designed Apparel, Tiruppur</title>
+<meta name="description" content="HAC — Hot And Cold. A Tiruppur fashion label by HAC Store. Explore designed tees, oversized fits, washes and hoodies, then enquire on WhatsApp or Instagram.">
+<meta name="keywords" content="HAC clothing, Hot And Cold apparel, Tiruppur fashion label, designed T-shirts Tiruppur, oversized tees, acid wash T-shirts, HAC Store, streetwear Tiruppur">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://your-choice-garments.vercel.app/hac.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HAC — Hot And Cold | Designed Apparel, Tiruppur">
+<meta property="og:description" content="A Tiruppur fashion label. Designed tees, oversized fits, washes and hoodies. Enquire on WhatsApp or Instagram.">
+<meta property="og:image" content="https://your-choice-garments.vercel.app/assets/brand/hac-logo-themed.jpg">
 <link rel="stylesheet" href="css/styles.css">
 <script defer src="js/config.js"></script><script defer src="js/common.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
 <style>
-  .hac-page{background:linear-gradient(135deg,#3a0013 0%,#4B001B 50%,#6b0026 100%);color:var(--ivory);min-height:62vh;display:flex;align-items:center;position:relative;overflow:hidden}
-  .hac-page::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(232,190,107,.18),transparent 45%),radial-gradient(circle at 10% 90%,rgba(255,248,233,.06),transparent 50%)}
-  .hac-page::after{content:"HAC";position:absolute;right:-60px;bottom:-160px;font-family:'Cormorant Garamond',serif;font-size:460px;line-height:.8;color:rgba(255,248,233,.04);font-weight:700;pointer-events:none}
-  .hac-page .container{position:relative;z-index:2;padding-top:90px;padding-bottom:90px}
-  .hac-wordmark{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(56px,9vw,120px);line-height:.9;letter-spacing:.02em;color:var(--ivory);font-weight:600}
-  .hac-wordmark span{color:#E3B96B}
-  .hac-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,30px);color:#E3B96B;margin:18px 0 26px}
-  .hac-page p{color:#E8D6C6;max-width:560px}
-  .hac-page .eyebrow{color:#E3B96B}
-  .hac-page .eyebrow::before{background:#E3B96B}
-  .hac-gallery{background:var(--burgundy)}
-  .hac-gallery .grid{grid-template-columns:repeat(4,1fr)}
-  .hac-gallery figure{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:3/4;background:#3a0015}
-  .hac-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
-  .hac-gallery figure:hover img{transform:scale(1.04)}
-  .hac-gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:30px 14px 12px;background:linear-gradient(transparent,rgba(40,0,16,.85));font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--ivory)}
-  @media(max-width:900px){.hac-gallery .grid{grid-template-columns:repeat(2,1fr)}}
-  .hac-note{background:#3a0015;color:#D8C2B3;font-size:12.5px;text-align:center;padding:14px 20px;letter-spacing:.02em}
-  .insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .insta-tile{position:relative;aspect-ratio:1;overflow:hidden;border-radius:4px;background:#3a0015;display:block}
-  .insta-tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s ease}
-  .insta-tile:hover img{transform:scale(1.06);filter:brightness(.85)}
-  .insta-tile::after{content:"↗";position:absolute;top:10px;right:12px;color:#fff;font-size:18px;opacity:0;transition:opacity .3s}
-  .insta-tile:hover::after{opacity:1}
-  @media(max-width:768px){.insta-grid{grid-template-columns:1fr}}
+  .hac-page-wrap{--wine:#4B001B;--wine-deep:#2A0011;--wine-soft:#5E0A28;--gold:#D8B26A;--gold-soft:#E8CE9B;--hac-ivory:#FFF8E9;--hac-ink:#2B1520;--hac-line:#E4D5C3;background:var(--hac-ivory)}
+  .hac-serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:0}
+  .hac-kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:12px}
+  .hac-kicker::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+  .hac-kicker.dark{color:var(--wine)}
+  .hac-disclaimer{font-size:12.5px;line-height:1.7;color:#8A6E64;margin-top:18px}
+
+  /* hero */
+  .hac-hero{position:relative;overflow:hidden;background:
+    radial-gradient(circle at 78% 18%,rgba(216,178,106,.16),transparent 42%),
+    radial-gradient(circle at 8% 96%,rgba(255,248,233,.05),transparent 46%),
+    linear-gradient(140deg,#310014 0%,var(--wine) 52%,#6B0126 100%);
+    color:var(--hac-ivory)}
+  .hac-hero::before{content:"HAC";position:absolute;left:-30px;bottom:-150px;font-family:'Cormorant Garamond',serif;font-size:clamp(260px,32vw,460px);line-height:.8;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(255,248,233,.09);pointer-events:none}
+  .hac-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,5vw,72px);align-items:center;padding-top:clamp(52px,7vw,94px);padding-bottom:clamp(52px,7vw,96px)}
+  .hac-display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(52px,7.4vw,96px);line-height:.92;letter-spacing:-.01em;color:var(--hac-ivory);margin:20px 0 0}
+  .hac-display em{font-style:italic;color:var(--gold-soft)}
+  .hac-lede{color:#EAD8CA;max-width:490px;margin-top:22px;font-size:15.5px;line-height:1.75}
+  .hac-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .hac-btn-gold{background:var(--gold);color:#2A0011;border-color:var(--gold)}
+  .hac-btn-gold:hover{background:var(--gold-soft);color:#2A0011;transform:translateY(-2px)}
+  .hac-btn-line{background:transparent;border:1px solid rgba(255,248,233,.42);color:var(--hac-ivory)}
+  .hac-btn-line:hover{border-color:var(--hac-ivory);background:rgba(255,248,233,.06);transform:translateY(-2px)}
+  .hac-hero-meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:38px;padding-top:20px;border-top:1px solid rgba(255,248,233,.16);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#C9AFA3}
+  .hac-hero-meta span::before{content:"·";margin-right:10px;color:var(--gold)}
+  .hac-hero-meta span:first-child::before{content:"";margin:0}
+  .hac-hero-art{position:relative;justify-self:end;width:100%;max-width:470px}
+  .hac-look{position:relative;overflow:hidden;background:#3a0015;border:1px solid rgba(216,178,106,.28)}
+  .hac-look img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/5}
+  .hac-look::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 52%,rgba(35,0,17,.82))}
+  .hac-look figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;justify-content:space-between;align-items:end;gap:14px;padding:18px 20px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#F2E3D3}
+  .hac-look figcaption b{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:19px;letter-spacing:.02em;text-transform:none;color:var(--gold-soft)}
+  .hac-mark{position:absolute;left:-38px;bottom:-34px;width:clamp(110px,13vw,156px);padding:10px;background:linear-gradient(150deg,#3B0018,#5A0824);border:1px solid rgba(216,178,106,.45);box-shadow:0 24px 50px rgba(0,0,0,.35)}
+  .hac-mark img{display:block;width:100%;height:auto}
+  @keyframes hac-rise{from{opacity:0;transform:translateY(16px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+  .hac-hero-copy>*{animation:hac-rise .85s cubic-bezier(.22,.61,.36,1) both}
+  .hac-hero-copy>*:nth-child(2){animation-delay:.06s}
+  .hac-hero-copy>*:nth-child(3){animation-delay:.12s}
+  .hac-hero-copy>*:nth-child(4){animation-delay:.18s}
+  .hac-hero-copy>*:nth-child(5){animation-delay:.24s}
+  .hac-hero-art{animation:hac-rise 1s .18s cubic-bezier(.22,.61,.36,1) both}
+  @media(prefers-reduced-motion:reduce){.hac-hero-copy>*,.hac-hero-art{animation:none}}
+
+  /* marquee */
+  .hac-marquee{background:#23000D;border-top:1px solid rgba(216,178,106,.28);border-bottom:1px solid rgba(216,178,106,.28);overflow:hidden;padding:13px 0}
+  .hac-track{display:flex;width:max-content;animation:hac-scroll 30s linear infinite}
+  .hac-track span{display:inline-flex;align-items:center;gap:26px;padding-right:26px;font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:#E4C89A;white-space:nowrap}
+  .hac-track span::after{content:"✦";font-size:9px;color:#8E5F45}
+  @keyframes hac-scroll{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.hac-track{animation:none}}
+
+  /* section header */
+  .hac-sec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,44px)}
+  .hac-sec-head h2{color:var(--hac-ink);font-size:clamp(36px,4.6vw,58px);line-height:1.02;margin-top:14px}
+  .hac-sec-note{max-width:330px;font-size:13.5px;line-height:1.7;color:#7A6158}
+
+  /* edit / lookbook */
+  .hac-edit-section{background:var(--hac-ivory)}
+  .hac-edit{display:grid;grid-template-columns:1.12fr .88fr;gap:16px}
+  .hac-edit-side{display:grid;grid-template-rows:1fr 1fr;gap:16px;min-height:0}
+  .hac-piece{position:relative;overflow:hidden;background:#E9DCCB;display:block;margin:0}
+  .hac-piece img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+  .hac-piece-lg img{aspect-ratio:4/5}
+  .hac-piece:hover img{transform:scale(1.035)}
+  .hac-piece::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(30,4,16,.72));opacity:.9}
+  .hac-piece figcaption{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:end;gap:14px;color:#FBF2E6}
+  .hac-piece figcaption b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(20px,2.1vw,27px);line-height:1.05}
+  .hac-piece figcaption small{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#D9BFAF;white-space:nowrap}
+  .hac-piece-num{position:absolute;z-index:2;top:16px;left:18px;font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.18em;color:#FFF8E9;background:rgba(35,0,17,.42);border:1px solid rgba(255,248,233,.24);padding:4px 9px;backdrop-filter:blur(4px)}
+  .hac-edit-note{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--hac-line)}
+
+  /* code / values */
+  .hac-code{background:#F4E9D8;border-top:1px solid var(--hac-line);border-bottom:1px solid var(--hac-line)}
+  .hac-code-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,46px);margin-top:clamp(26px,4vw,44px)}
+  .hac-code article{border-top:1px solid rgba(75,0,27,.22);padding-top:20px}
+  .hac-num{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.16em;color:#A3776B}
+  .hac-code h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,2.4vw,31px);line-height:1.1;color:var(--wine);margin:12px 0 10px}
+  .hac-code p{font-size:13.5px;line-height:1.75;color:#6E564D;max-width:300px}
+  .hac-code-head{max-width:640px}
+  .hac-code-head h2{color:var(--wine);font-size:clamp(34px,4.4vw,54px);line-height:1.04;margin-top:14px}
+
+  /* instagram feed */
+  .hac-feed{background:#FFFDF8}
+  .hac-feed .hac-sec-head{align-items:center}
+  .hac-handle{display:inline-flex;align-items:center;gap:10px;border:1px solid #E3D3C3;background:#fff;border-radius:999px;padding:10px 18px;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--wine);transition:border-color .25s,transform .25s}
+  .hac-handle:hover{border-color:var(--wine);transform:translateY(-2px)}
+  .hac-handle svg{width:16px;height:16px}
+  .insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+  .instagram-media{margin:0 auto !important;min-width:0 !important;width:100% !important;border-radius:2px !important}
+  .hac-feed .hac-disclaimer{text-align:center}
+  @media(max-width:1000px){.insta-grid{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}}
+
+  /* cta */
+  .hac-cta{position:relative;overflow:hidden;background:radial-gradient(circle at 84% 10%,rgba(216,178,106,.18),transparent 42%),linear-gradient(140deg,#310014,var(--wine) 60%,#640023);color:var(--hac-ivory)}
+  .hac-cta::after{content:"HAC";position:absolute;right:-20px;bottom:-120px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:300px;line-height:.8;color:rgba(255,248,233,.05);pointer-events:none}
+  .hac-cta-inner{position:relative;z-index:2;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(22px,4vw,48px);align-items:center;padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(44px,6vw,72px)}
+  .hac-cta-mark{width:clamp(78px,9vw,116px);height:auto;opacity:.95}
+  .hac-cta h2{color:var(--hac-ivory);font-size:clamp(32px,4.2vw,52px);line-height:1.02;margin-top:12px}
+  .hac-cta p{color:#E3CDBE;font-size:14px;line-height:1.7;max-width:520px;margin-top:12px}
+  .hac-cta .hac-actions{margin-top:0}
+
+  /* legal */
+  .hac-legal-section{background:var(--hac-ivory);padding-top:clamp(36px,5vw,58px);padding-bottom:clamp(36px,5vw,58px)}
+  .hac-legal{border:1px solid var(--hac-line);background:#FFFCF4}
+  .hac-legal summary{display:flex;justify-content:space-between;align-items:center;gap:18px;cursor:pointer;list-style:none;padding:20px 24px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--wine)}
+  .hac-legal summary::-webkit-details-marker{display:none}
+  .hac-legal summary::after{content:"+";font-size:20px;line-height:1;color:#A3776B}
+  .hac-legal[open] summary::after{content:"–"}
+  .hac-legal-body{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(22px,4vw,48px);padding:0 24px 26px;border-top:1px solid var(--hac-line);padding-top:24px;align-items:start}
+  .hac-legal-body p{font-size:13px;line-height:1.8;color:#6E564D;margin-bottom:12px}
+  .hac-legal-body img{width:100%;border:1px solid var(--hac-line);display:block}
+  .hac-legal-body figcaption{font-size:11.5px;color:#8A6E64;margin-top:8px}
+
+  .hac-note{background:#23000D;color:#C9AFA3;font-size:12px;line-height:1.7;text-align:center;padding:16px 20px;letter-spacing:.02em}
+  .hac-note a{color:var(--gold);text-decoration:underline}
+  .hac-page-wrap section[id]{scroll-margin-top:96px}
+
+  @media(max-width:980px){
+    .hac-hero-inner{grid-template-columns:1fr;gap:40px}
+    .hac-hero-art{justify-self:start;max-width:440px}
+    .hac-lede{max-width:560px}
+    .hac-mark{left:auto;right:-16px;bottom:-26px}
+    .hac-cta-inner{grid-template-columns:1fr}
+    .hac-cta-mark{display:none}
+    .hac-cta .hac-actions{margin-top:22px}
+    .hac-legal-body{grid-template-columns:1fr}
+  }
+  @media(max-width:820px){
+    .hac-edit{grid-template-columns:1fr}
+    .hac-edit-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+    .hac-code-grid{grid-template-columns:1fr;gap:8px}
+    .hac-code article{padding-top:16px}
+    .hac-code p{max-width:none}
+  }
+  @media(max-width:560px){
+    .hac-display{font-size:clamp(46px,13vw,64px)}
+    .hac-hero-meta{gap:8px 16px;font-size:9.5px;letter-spacing:.14em}
+    .hac-look figcaption{padding:14px}
+    .hac-look figcaption b{font-size:16px}
+    .hac-mark{width:104px;right:-10px;bottom:-20px;padding:8px}
+    .hac-edit-side{grid-template-columns:1fr}
+    .hac-piece-lg img{aspect-ratio:4/5}
+    .hac-piece figcaption{left:16px;right:16px;bottom:14px}
+    .hac-sec-note{max-width:none}
+    .hac-actions .btn{flex:1 1 auto}
+    .hac-legal summary{padding:16px 18px;font-size:10.5px}
+    .hac-legal-body{padding:18px}
+  }
 </style>
 </head><body>
 <div id="site-header"></div>
+<div class="hac-page-wrap">
 
-<section class="hac-page"><div class="container">
-  <p class="eyebrow">A separate fashion label</p>
-  <img src="assets/brand/hac-logo.png" alt="HAC — Hot And Cold logo" style="height:clamp(70px,10vw,130px);width:auto;margin-bottom:18px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))">
-  <p class="hac-sub">“Unleash Your Fashion”</p>
-  <p>Designed apparel with its own burgundy-and-ivory identity — fashion-led tees, oversized fits and statement pieces, kept visually separate from Your Choice Garments' manufacturing business.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
-    <a class="btn btn-ivory" href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener">Follow @hac_clothings ↗</a>
-    <a class="btn" style="background:transparent;border:1px solid rgba(255,248,233,.45);color:var(--ivory)" href="#collection">View Collection</a>
-  </div>
-</div></section>
-
-<section class="hac-gallery section" id="collection">
- <div class="container">
-   <div class="section-head" style="margin-bottom:34px">
-     <div><p class="eyebrow" style="color:#E3B96B">The edit</p><h2 style="color:var(--ivory);font-family:'Cormorant Garamond',serif;font-weight:600">Designed pieces.</h2></div>
-   </div>
-   <div class="grid">
-     <figure><img src="assets/products/oversized/oversized-tee-model.png" alt="HAC oversized designed tee" loading="lazy"><figcaption>Oversized graphic tee</figcaption></figure>
-     <figure><img src="assets/products/custom-apparel/acid-wash-tee.png" alt="HAC acid wash piece" loading="lazy"><figcaption>Acid wash</figcaption></figure>
-     <figure><img src="assets/products/hoodies/plain-hoodie-brown.jpg" alt="HAC hoodie" loading="lazy"><figcaption>Hooded silhouette</figcaption></figure>
-     <figure><img src="assets/products/custom-apparel/printed-tee.jpg" alt="HAC printed tee" loading="lazy"><figcaption>Printed statement</figcaption></figure>
-   </div>
-   <p style="color:#C9AFA3;font-size:13px;margin-top:22px">Collection imagery is from the Your Choice Garments catalogue and represents the finished-apparel style. HAC-specific product photography is pending from the owner.</p>
- </div>
-</section>
-
-<section class="section" style="background:var(--ivory)">
- <div class="container">
-   <div class="section-head" style="margin-bottom:30px">
-     <div><p class="eyebrow" style="color:var(--burgundy)">From Instagram</p><h2 style="color:var(--burgundy);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,4vw,46px)">Latest posts.</h2><p style="color:#5A3A44;margin-top:8px">Tap a tile to open the HAC Instagram profile. Replace these with real post screenshots when available.</p></div>
-     <a class="btn btn-ghost btn-sm" style="border-color:#D8C6BC;color:var(--burgundy)" href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener">Open Instagram ↗</a>
-   </div>
-   <div class="insta-grid">
-     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Ddb5HXCTTmL/" data-instgrm-version="14" style="background:#fff;border:0;border-radius:4px;box-shadow:0 0 1px rgba(0,0,0,.5),0 1px 10px rgba(0,0,0,.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px)"></blockquote>
-     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZms8JkE_xU/" data-instgrm-version="14" style="background:#fff;border:0;border-radius:4px;box-shadow:0 0 1px rgba(0,0,0,.5),0 1px 10px rgba(0,0,0,.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px)"></blockquote>
-     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DU7hO3-Ezl2/" data-instgrm-version="14" style="background:#fff;border:0;border-radius:4px;box-shadow:0 0 1px rgba(0,0,0,.5),0 1px 10px rgba(0,0,0,.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px)"></blockquote>
-   </div>
-   <script async src="//www.instagram.com/embed.js"></script>
-   <p style="color:#C9AFA3;font-size:13px;margin-top:22px;text-align:center">Showing the latest embedded post. <a href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener" style="color:#E3B96B">View all posts on Instagram ↗</a></p>
- </div>
-</section>
-
-<section class="section" style="background:var(--ivory)">
- <div class="container split">
-  <div>
-    <p class="eyebrow" style="color:var(--burgundy)">Enquiries</p>
-    <h2 style="color:var(--burgundy);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,4vw,46px)">Interested in a piece?</h2>
-    <p style="color:#5A3A44;margin-top:12px">For single-piece or collection enquiries, message us on WhatsApp or reach out on Instagram. Relationship and ownership details between HAC and Your Choice Garments are pending owner confirmation and are not stated here as fact.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-      <a class="btn" style="background:var(--burgundy);color:var(--ivory)" href="https://wa.me/918220089690?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20HAC%20designed%20apparel." target="_blank" rel="noopener">WhatsApp Enquiry</a>
-      <a class="btn btn-ghost" style="border-color:#D8C6BC;color:var(--burgundy)" href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener">Instagram ↗</a>
+<!-- HERO -->
+<section class="hac-hero">
+ <div class="container hac-hero-inner">
+  <div class="hac-hero-copy">
+    <p class="hac-kicker">HAC · Hot And Cold</p>
+    <h1 class="hac-display">Unleash<br>your <em>fashion.</em></h1>
+    <p class="hac-lede">Designed apparel with its own burgundy-and-ivory identity — fashion-led tees, oversized fits, washes and statement pieces, presented from Tiruppur.</p>
+    <div class="hac-actions">
+      <a class="btn hac-btn-gold" href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener">Follow @hac_clothings ↗</a>
+      <a class="btn hac-btn-line" href="#collection">View the edit</a>
+    </div>
+    <div class="hac-hero-meta">
+      <span>Fashion label</span><span>Tiruppur, India</span><span>Enquiries on WhatsApp</span>
     </div>
   </div>
-  <div class="split-media"><img src="assets/products/t-shirts/regular-fit-tee.jpg" alt="HAC designed apparel" loading="lazy"></div>
- </div>
-</section>
-
-<section class="section" style="background:var(--ivory)">
- <div class="container split" style="align-items:start">
-  <div>
-    <p class="eyebrow" style="color:var(--burgundy)">Legal status</p>
-    <h2 style="color:var(--burgundy);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,3.4vw,40px)">Trademark status — pending confirmation.</h2>
-    <p style="color:#5A3A44;margin-top:12px">A trademark search report screenshot for "HAC HOT AND COLD" (Class 25) is on file with the owner. Application number 7482414, application date 27/01/2026, search date 28-Jan-2026, status "Send To Vienna Codification". Proprietor: Pranesh.S, Proprietor of M/S. HAC Store, No. 13, Balamurugan Nagar 1st Street, Valayankadu, Gandhi Nagar Post, Tiruppur – 641 603, Tiruppur Dist., Tamil Nadu. Goods include denim clothing, T-shirts, shirts, shorts, jeans, pants, sportswear, caps and more. This is not proof of registration or final approval. HAC is not presented as a registered trademark and no ® symbol is used.</p>
-  </div>
-  <div class="split-media">
-    <img src="assets/brand/hac-trademark-search-report.webp" alt="HAC trademark search report screenshot - pending confirmation" loading="lazy" style="width:100%;border-radius:var(--radius)">
-    <p class="form-note" style="margin-top:8px">Trademark search report provided by the owner. Status pending confirmation.</p>
+  <div class="hac-hero-art">
+    <figure class="hac-look">
+      <img src="assets/products/oversized/oversized-tee-model.png" alt="HAC oversized graphic T-shirt look, back view, designed apparel from Tiruppur" width="810" height="1024" fetchpriority="high">
+      <figcaption><span>Look 01</span><b>Oversized graphic tee</b></figcaption>
+    </figure>
+    <figure class="hac-mark">
+      <img src="assets/brand/hac-logo.png" alt="HAC Hot And Cold logo — fashion label by HAC Store, Tiruppur" width="6250" height="6250">
+    </figure>
   </div>
  </div>
 </section>
 
-<div class="hac-note">HAC is presented as a separate fashion label. Legal and operational relationship with Your Choice Garments is pending owner confirmation. No trademark registration claim is made.</div>
+<!-- MARQUEE -->
+<div class="hac-marquee" aria-hidden="true">
+ <div class="hac-track">
+   <span>Hot And Cold</span><span>Unleash Your Fashion</span><span>Designed in Tiruppur</span><span>HAC Clothings</span>
+   <span>Hot And Cold</span><span>Unleash Your Fashion</span><span>Designed in Tiruppur</span><span>HAC Clothings</span>
+ </div>
+</div>
 
+<!-- THE EDIT -->
+<section class="section hac-edit-section" id="collection">
+ <div class="container">
+   <div class="hac-sec-head">
+     <div>
+       <p class="hac-kicker dark">01 — The edit</p>
+       <h2 class="hac-serif">Designed pieces.</h2>
+     </div>
+     <p class="hac-sec-note">A first look at the HAC silhouette — prints, washes and relaxed fits. Pieces are shown as style references; HAC-specific photography is being added.</p>
+   </div>
+   <div class="hac-edit">
+     <figure class="hac-piece hac-piece-lg">
+       <span class="hac-piece-num">01</span>
+       <img src="assets/products/oversized/oversized-tee-model.png" alt="HAC oversized graphic T-shirt look from Tiruppur fashion label" loading="lazy">
+       <figcaption><b>Oversized graphic tee</b><small>Relaxed fit</small></figcaption>
+     </figure>
+     <div class="hac-edit-side">
+       <figure class="hac-piece">
+         <span class="hac-piece-num">02</span>
+         <img src="assets/products/t-shirts/regular-fit-tee.jpg" alt="HAC printed regular-fit black T-shirt for designed apparel" loading="lazy">
+         <figcaption><b>Printed statement</b><small>Everyday fit</small></figcaption>
+       </figure>
+       <figure class="hac-piece">
+         <span class="hac-piece-num">03</span>
+         <img src="assets/products/hoodies/plain-hoodie-brown.jpg" alt="HAC brown hooded sweatshirt, relaxed streetwear silhouette" loading="lazy">
+         <figcaption><b>Hooded silhouette</b><small>Layer piece</small></figcaption>
+       </figure>
+     </div>
+   </div>
+   <div class="hac-edit-note">
+     <p class="hac-disclaimer" style="margin-top:0">Imagery is from the Your Choice Garments catalogue and represents the finished-apparel style. HAC-specific product photography is pending from the owner.</p>
+     <a class="btn hac-btn-line" style="border-color:#C9B5A4;color:var(--wine)" href="https://wa.me/918220089690?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20HAC%20designed%20apparel." target="_blank" rel="noopener">Enquire about a piece</a>
+   </div>
+ </div>
+</section>
+
+<!-- THE LABEL -->
+<section class="section hac-code">
+ <div class="container">
+  <div class="hac-code-head">
+    <p class="hac-kicker dark">02 — The label</p>
+    <h2 class="hac-serif">Worn on your terms.</h2>
+  </div>
+  <div class="hac-code-grid">
+    <article>
+      <span class="hac-num">01</span>
+      <h3>Design-led</h3>
+      <p>Prints, washes and silhouettes developed for a fashion-first audience — not just basics.</p>
+    </article>
+    <article>
+      <span class="hac-num">02</span>
+      <h3>Rooted in Tiruppur</h3>
+      <p>Presented from India's knitwear capital, where fabric, dyeing and stitching sit close together.</p>
+    </article>
+    <article>
+      <span class="hac-num">03</span>
+      <h3>Direct enquiries</h3>
+      <p>No online checkout. Every piece is discussed directly on WhatsApp or Instagram before an order.</p>
+    </article>
+  </div>
+ </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="section hac-feed" id="instagram">
+ <div class="container">
+   <div class="hac-sec-head">
+     <div>
+       <p class="hac-kicker dark">03 — From the feed</p>
+       <h2 class="hac-serif">Latest from @hac_clothings</h2>
+     </div>
+     <a class="hac-handle" href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+       Instagram profile ↗
+     </a>
+   </div>
+   <div class="insta-grid">
+     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Ddb5HXCTTmL/" data-instgrm-version="14" style="background:#fff;border:0;box-shadow:0 0 1px rgba(0,0,0,.25),0 1px 6px rgba(0,0,0,.08);padding:0;width:100%"></blockquote>
+     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZms8JkE_xU/" data-instgrm-version="14" style="background:#fff;border:0;box-shadow:0 0 1px rgba(0,0,0,.25),0 1px 6px rgba(0,0,0,.08);padding:0;width:100%"></blockquote>
+     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DU7hO3-Ezl2/" data-instgrm-version="14" style="background:#fff;border:0;box-shadow:0 0 1px rgba(0,0,0,.25),0 1px 6px rgba(0,0,0,.08);padding:0;width:100%"></blockquote>
+   </div>
+   <script async src="//www.instagram.com/embed.js"></script>
+   <p class="hac-disclaimer">Posts load directly from Instagram. If a post is unavailable, open the full profile at <a href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener" style="color:var(--wine);text-decoration:underline">@hac_clothings</a>.</p>
+ </div>
+</section>
+
+<!-- ENQUIRY CTA -->
+<section class="hac-cta" id="enquire">
+ <div class="container hac-cta-inner">
+   <img class="hac-cta-mark" src="assets/brand/hac-logo.png" alt="" aria-hidden="true" loading="lazy">
+   <div>
+     <p class="hac-kicker">04 — Enquiries</p>
+     <h2 class="hac-serif">Interested in a piece?</h2>
+     <p>For single-piece or collection enquiries, message us on WhatsApp or reach out on Instagram. Relationship and ownership details between HAC and Your Choice Garments are pending owner confirmation and are not stated as fact.</p>
+   </div>
+   <div class="hac-actions">
+     <a class="btn hac-btn-gold" href="https://wa.me/918220089690?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20HAC%20designed%20apparel." target="_blank" rel="noopener">WhatsApp enquiry</a>
+     <a class="btn hac-btn-line" href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener">Instagram ↗</a>
+   </div>
+ </div>
+</section>
+
+<!-- LEGAL -->
+<section class="hac-legal-section">
+ <div class="container">
+  <details class="hac-legal">
+    <summary>Trademark status &amp; disclosure — pending confirmation</summary>
+    <div class="hac-legal-body">
+      <div>
+        <p>A trademark search report screenshot for “HAC HOT AND COLD” (Class 25) is on file with the owner. Application number 7482414, application date 27/01/2026, search date 28-Jan-2026, status “Send To Vienna Codification”.</p>
+        <p>Proprietor: Pranesh.S, Proprietor of M/S. HAC Store, No. 13, Balamurugan Nagar 1st Street, Valayankadu, Gandhi Nagar Post, Tiruppur – 641 603, Tiruppur Dist., Tamil Nadu.</p>
+        <p>Goods include denim clothing, T-shirts, shirts, shorts, jeans, pants, sportswear, caps and more. This is not proof of registration or final approval. HAC is not presented as a registered trademark and no ® symbol is used.</p>
+      </div>
+      <figure>
+        <img src="assets/brand/hac-trademark-search-report.webp" alt="HAC Hot And Cold trademark search report, application 7482414 — pending confirmation" loading="lazy">
+        <figcaption>Trademark search report provided by the owner. Status pending confirmation.</figcaption>
+      </figure>
+    </div>
+  </details>
+ </div>
+</section>
+
+<div class="hac-note">HAC is presented as a separate fashion label. Legal and operational relationship with Your Choice Garments is pending owner confirmation. No trademark registration claim is made. <a href="wholesale.html">Wholesale enquiries</a></div>
+</div>
 <div id="site-footer"></div>
 </body></html>

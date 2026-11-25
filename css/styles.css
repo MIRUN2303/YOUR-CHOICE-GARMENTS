@@ -134,6 +134,9 @@ header.site .container{max-width:1360px}
 .section-grey{background:var(--grey)}
 .section-warm{background:var(--warm)}
 .section-navy,.cta-band,.page-hero,.hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 40 L40 0' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3Cpath d='M40 80 L80 40' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");background-repeat:repeat}
+.section-navy{background-color:var(--navy);color:#fff}
+.section-navy h2,.section-navy h3{color:#fff}
+.section-navy p{color:#CBD5EC}
 .hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 40 L40 0' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Cpath d='M40 80 L80 40' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");background-repeat:repeat}
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:44px;flex-wrap:wrap}
 .section-head p{max-width:520px;margin-top:12px}
@@ -253,6 +256,23 @@ header.site .container{max-width:1360px}
 .hac-section .hac-tag{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;color:#E3B96B;margin:10px 0 22px}
 .btn-ivory{background:var(--ivory);color:var(--burgundy)}
 .btn-ivory:hover{background:#fff}
+
+/* ---------- trusted supply logos ---------- */
+.supply-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.supply-logo{display:flex;align-items:center;justify-content:center;min-height:118px;padding:24px 30px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);transition:border-color .25s,box-shadow .25s,transform .25s}
+.supply-logo:hover{border-color:#C9D2E6;box-shadow:0 10px 30px rgba(11,23,64,.07);transform:translateY(-2px)}
+.supply-logo img{display:block;width:auto;height:auto;max-width:100%;max-height:42px;object-fit:contain}
+.supply-logo img.logo-tall{max-height:66px}
+.supply-logo img.logo-wide{max-height:48px}
+.supply-wordmark{font-family:'Manrope',sans-serif;font-weight:800;font-size:23px;letter-spacing:.3em;color:var(--navy);line-height:1;text-align:center}
+.supply-wordmark small{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.supply-wordmark.serif{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:29px;letter-spacing:.06em;text-transform:none}
+.supply-wordmark.serif small{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:.08em;text-transform:none;color:#7A6158}
+.supply-logo--other{border-style:dashed;background:transparent;color:var(--muted);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.supply-logo--other::before{content:"+";margin-right:8px;color:#A9B2C7;font-size:16px}
+@media(max-width:900px){.supply-logos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.supply-logos{grid-template-columns:1fr}.supply-logo{min-height:96px;padding:18px 22px}}
+@media(prefers-reduced-motion:reduce){.supply-logo:hover{transform:none}}
 
 /* ---------- CTA band ---------- */
 .cta-band{background:linear-gradient(115deg,var(--navy) 0%,#16296b 55%,var(--blue) 130%);color:#fff;border-radius:0;position:relative;overflow:hidden}
