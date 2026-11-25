@@ -93,6 +93,7 @@ header.site .container{max-width:1360px}
 .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease;transform:scale(1.06)}
 .hero-slide.active{opacity:1;animation:kenburns 9s linear forwards}
 @keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.hero::before{content:"";position:absolute;right:6%;top:12%;width:260px;height:320px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 260' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1.5'%3E%3Cpath d='M60 30 L40 50 L20 45 L25 90 L45 95 L45 230 L155 230 L155 95 L175 90 L180 45 L160 50 L140 30 Q100 55 60 30 Z'/%3E%3Cpath d='M75 30 Q100 10 125 30'/%3E%3C/svg%3E") center/contain no-repeat;z-index:0;pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(8,16,40,.92) 0%,rgba(10,20,54,.78) 42%,rgba(10,20,54,.18) 100%);z-index:1}
 .hero .container{position:relative;z-index:2;padding-top:64px;padding-bottom:64px;width:100%}
 .hero-inner{max-width:720px}
@@ -127,9 +128,8 @@ header.site .container{max-width:1360px}
 .section-sm{padding:clamp(44px,6vw,72px) 0}
 .section-grey{background:var(--grey)}
 .section-warm{background:var(--warm)}
-.section-navy{background:var(--navy);color:#fff}
-.section-navy h2,.section-navy h3{color:#fff}
-.section-navy p{color:#B9C4E0}
+.section-navy,.cta-band,.page-hero,.hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 40 L40 0' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3Cpath d='M40 80 L80 40' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");background-repeat:repeat}
+.hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 40 L40 0' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Cpath d='M40 80 L80 40' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");background-repeat:repeat}
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:44px;flex-wrap:wrap}
 .section-head p{max-width:520px;margin-top:12px}
 .section-head a{font-weight:600;color:var(--blue);white-space:nowrap;font-size:14px}
