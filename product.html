@@ -5,7 +5,10 @@
 <script defer src="js/config.js"></script><script defer src="js/products.js"></script><script defer src="js/common.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png"></head><body>
+<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png"><meta name="keywords" content="Tiruppur garment manufacturer, wholesale T-shirts Tiruppur, bulk apparel supplier, custom T-shirts, polo T-shirts, oversized T-shirts, hoodies, sweatshirts, private label garments, garment factory Tiruppur">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://your-choice-garments.vercel.app/product.html">
+</head><body>
 <div id="site-header"></div>
 <section class="section"><div class="container" id="detail"></div></section>
 <section class="section section-grey" id="relatedSection" hidden><div class="container"><div class="section-head"><div><p class="eyebrow">More from the range</p><h2>Related products</h2></div><a href="products.html">All products →</a></div><div class="product-grid" id="relatedGrid"></div></div></section>
@@ -22,7 +25,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
   <div class="split" style="align-items:start">
    <div>
-     <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/men-round-neck-tee.jpg'}" alt="${p.name}">
+     <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/men-round-neck-tee.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
      ${p.gallery&&p.gallery.length>1?`<div class="gallery-thumbs">${p.gallery.map((g,idx)=>`<img src="${g}" alt="${p.name} view ${idx+1}" class="${idx===0?'active':''}" onclick="swapImg(this,'${g}')">`).join('')}</div>`:''}
      <p class="form-note">Photographs show the product style. More views available on request.</p>
    </div>

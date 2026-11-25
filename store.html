@@ -6,7 +6,10 @@
 <script defer src="js/config.js"></script><script defer src="js/products.js"></script><script defer src="js/common.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png"></head><body>
+<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png"><meta name="keywords" content="Tiruppur garment manufacturer, wholesale T-shirts Tiruppur, bulk apparel supplier, custom T-shirts, polo T-shirts, oversized T-shirts, hoodies, sweatshirts, private label garments, garment factory Tiruppur">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://your-choice-garments.vercel.app/store.html">
+</head><body>
 <div id="site-header"></div>
 <section class="page-hero"><div class="container">
  <p class="eyebrow">Store</p>
@@ -41,7 +44,7 @@
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
  document.getElementById('storeGrid').innerHTML=window.PRODUCTS.filter(p=>p.featured).map(p=>`<article class="pcard">
-  <a class="thumb" href="product.html?id=${p.id}"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="chip">${p.category}</span></a>
+  <a class="thumb" href="product.html?id=${p.id}"><img src="${p.img}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur" loading="lazy"><span class="chip">${p.category}</span></a>
   <div class="body"><div><h3>${p.name}</h3><p style="font-size:12px;color:var(--muted)">${p.code}</p></div><p>${p.desc}</p><div class="meta">Price: Enquire · Availability: Confirm</div>
   <div class="actions"><a class="btn btn-ghost" href="product.html?id=${p.id}">Details</a><a class="btn btn-wa" href="${waLink('Hello Your Choice Garments, I would like to buy: '+p.name+' ('+p.code+').')}" target="_blank" rel="noopener">WhatsApp</a></div></div>
  </article>`).join('');
