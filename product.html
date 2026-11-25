@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Detail — Your Choice Garments</title>
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/config.js"></script><script defer src="js/products.js"></script><script defer src="js/common.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png"></head><body>
+<div id="site-header"></div>
+<section class="section"><div class="container" id="detail"></div></section>
+<section class="section section-grey" id="relatedSection" hidden><div class="container"><div class="section-head"><div><p class="eyebrow">More from the range</p><h2>Related products</h2></div><a href="products.html">All products →</a></div><div class="product-grid" id="relatedGrid"></div></div></section>
+<div id="site-footer"></div>
+<script>
+function swapImg(el,src){document.getElementById('mainImg').src=src;document.querySelectorAll('.gallery-thumbs img').forEach(i=>i.classList.remove('active'));el.classList.add('active');}
+document.addEventListener('DOMContentLoaded',()=>{
+ const id=new URLSearchParams(location.search).get('id');
+ const p=window.PRODUCTS.find(x=>x.id===id);
+ if(!p){document.getElementById('detail').innerHTML='<p>Product not found. <a href="products.html">Back to catalogue</a></p>';return;}
+ document.title=p.name+' — Your Choice Garments';
+ const msg=`Hello Your Choice Garments,\n\nI am interested in the following product:\n\nProduct: ${p.name}\nProduct Code: ${p.code}\nQuantity required:\nFabric / GSM preference:\nSizes:\nColours:\nCustomisation:\nDelivery location:\n\nPlease share the available options, MOQ and quotation.\n\nName:\nBusiness:`;
+ document.getElementById('detail').innerHTML=`
+  <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
+  <div class="split" style="align-items:start">
+   <div>
+     <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/men-round-neck-tee.jpg'}" alt="${p.name}">
+     ${p.gallery&&p.gallery.length>1?`<div class="gallery-thumbs">${p.gallery.map((g,idx)=>`<img src="${g}" alt="${p.name} view ${idx+1}" class="${idx===0?'active':''}" onclick="swapImg(this,'${g}')">`).join('')}</div>`:''}
+     <p class="form-note">Photographs show the product style. More views available on request.</p>
+   </div>
+   <div>
+     <p class="eyebrow">${p.category}</p>
+     <h1 style="font-size:clamp(28px,3.5vw,44px);margin-top:8px">${p.name}</h1>
+     <p class="badge" style="margin-top:6px">Product code ${p.code}</p>
+     <p style="margin:18px 0">${p.desc} Available specifications are confirmed against your requirement — share the details below and we will respond with options and a quotation.</p>
+     <a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+     <a class="btn btn-ghost" href="wholesale.html" style="margin-left:8px">Request a Quote</a>
+     <dl class="specs">
+       <div><dt>Fabric / composition</dt><dd>Enquire for details</dd></div>
+       <div><dt>GSM</dt><dd>Enquire for details</dd></div>
+       <div><dt>Fit</dt><dd>${p.category}</dd></div>
+       <div><dt>Size range</dt><dd>Enquire for details</dd></div>
+       <div><dt>Colour options</dt><dd>Enquire for details</dd></div>
+       <div><dt>Customisation</dt><dd>Enquire for details</dd></div>
+       <div><dt>MOQ</dt><dd>Enquire for details</dd></div>
+       <div><dt>Price</dt><dd>Request a quote</dd></div>
+     </dl>
+     <div class="notice">Specifications shown as "Enquire" are not yet confirmed for this product. We do not publish unverified GSM, material, size or MOQ figures.</div>
+   </div>
+  </div>`;
+ const rel=window.PRODUCTS.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,3);
+ if(rel.length){document.getElementById('relatedSection').hidden=false;
+  document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="product.html?id=${r.id}"><img src="${r.img}" alt="${r.name}" loading="lazy"><span class="chip">${r.category}</span></a><div class="body"><h3>${r.name}</h3><p>${r.desc}</p><div class="actions"><a class="btn btn-ghost" href="product.html?id=${r.id}">View Details</a></div></div></article>`).join('');}
+});
+</script>
+</body></html>

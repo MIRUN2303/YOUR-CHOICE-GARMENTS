@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Your Choice Garments</title>
+<meta name="description" content="Contact Your Choice Garments, Tiruppur — phone, email, WhatsApp and wholesale enquiry form.">
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/config.js"></script><script defer src="js/common.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+</head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="container">
+ <p class="eyebrow">Contact</p>
+ <h1>Let's talk garments.</h1>
+ <p>Wholesale enquiry, bulk order, custom apparel or a factory visit — reach us directly or send the form. Address and contact details are pending final owner confirmation.</p>
+</div></section>
+
+<section class="section">
+ <div class="container split" style="align-items:start">
+  <div>
+    <img src="assets/brand/your-choice-garments-logo-transparent.png" alt="Your Choice Garments logo" style="height:46px;margin-bottom:18px">
+    <p class="eyebrow">Direct lines</p>
+    <h2>Reach the team.</h2>
+    <ul class="contact-list" style="margin-top:24px">
+      <li><span class="ico">☎</span><div><b>Phone</b><a href="tel:+918220089690">+91 82200 89690</a><br><a href="tel:+919842230613">+91 98422 30613</a></div></li>
+      <li><span class="ico">✉</span><div><b>Email</b><a href="mailto:hacclothingtiruppur@gmail.com">hacclothingtiruppur@gmail.com</a><br><small style="color:var(--red)">Conflicts with yourchoicegarments@hacclothings.com — pending confirmation</small></div></li>
+      <li><span class="ico">◎</span><div><b>Unit address</b>2, 1st Street, Balamurugan Nagar, Valayankadu, Tiruppur – 641603, Tamil Nadu<br><small style="color:var(--red)">Conflicts with card address No. 17, Krishna Nagar — pending confirmation</small></div></li>
+      <li><span class="ico">↗</span><div><b>Map</b><a href="https://www.google.com/maps/dir/?api=1&destination=11.1187068,77.3221267" target="_blank" rel="noopener">Get directions (approximate) ↗</a></div></li>
+      <li><span class="ico">✓</span><div><b>IndiaMART</b><a href="https://www.indiamart.com/yourchoicegarments/profile.html" target="_blank" rel="noopener">Business profile ↗</a><br><a href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener">TrustSeal verification ↗</a></div></li>
+      <li><span class="ico">◎</span><div><b>Instagram</b><a href="https://www.instagram.com/hac_clothings/" target="_blank" rel="noopener">@hac_clothings ↗</a></div></li>
+    </ul>
+    <div class="trust-band" style="margin-top:30px;padding:18px 20px">
+      <img src="assets/brand/indiamart-trustseal.jpg" alt="IndiaMART TrustSeal" style="height:64px">
+      <div class="t-body"><h3 style="font-size:15px">IndiaMART TrustSeal</h3><p style="font-size:12px">Certificate ID 248288 · Valid till January 2027</p></div>
+    </div>
+  </div>
+  <div class="form-card">
+    <h3>Send an enquiry</h3>
+    <p style="font-size:13px;color:var(--muted)">Opens WhatsApp with your message prefilled. Nothing is stored.</p>
+    <form id="cform">
+      <div class="row"><div><label for="cname">Name *</label><input id="cname" required name="name"></div><div><label for="cphone">Phone *</label><input id="cphone" required name="phone"></div></div>
+      <label for="cemail">Email</label><input id="cemail" type="email" name="email">
+      <label for="csubject">Enquiry type</label><select id="csubject" name="subject"><option>Wholesale / bulk</option><option>Custom apparel</option><option>Private label</option><option>Store / single piece</option><option>Other</option></select>
+      <label for="cmsg">Message *</label><textarea id="cmsg" required name="msg" rows="4" placeholder="Garment, quantity, sizes, colours, delivery location…"></textarea>
+      <label class="consent"><input type="checkbox" required> I consent to being contacted about this enquiry.</label>
+      <button class="btn btn-wa" type="submit" style="width:100%;margin-top:16px">Send on WhatsApp</button>
+      <p class="form-note">Prefer to call? <a href="tel:+918220089690" style="color:var(--blue);font-weight:600">+91 82200 89690</a></p>
+    </form>
+  </div>
+ </div>
+</section>
+
+<section class="cta-band"><div class="container">
+ <div><h2>Prefer a structured quote?</h2><p>Use the wholesale enquiry form with your product, quantity and specification.</p></div>
+ <div class="ctas"><a class="btn btn-primary" href="wholesale.html">Request a Quote</a></div>
+</div></section>
+<div id="site-footer"></div>
+<script>
+document.getElementById('cform').addEventListener('submit',e=>{
+ e.preventDefault(); const f=new FormData(e.target);
+ window.open(waLink(`Hello Your Choice Garments,\n\nContact Enquiry\nName: ${f.get('name')}\nPhone: ${f.get('phone')}\nEmail: ${f.get('email')}\nType: ${f.get('subject')}\nMessage: ${f.get('msg')}`),'_blank');
+});
+</script>
+</body></html>

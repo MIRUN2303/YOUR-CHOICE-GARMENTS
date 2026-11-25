@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Catalogue — Your Choice Garments</title>
+<meta name="description" content="Browse round neck, oversized, polo, polyester, boys and hoodie knitwear from Your Choice Garments, Tiruppur. Enquire on WhatsApp.">
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/config.js"></script><script defer src="js/products.js"></script><script defer src="js/common.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png"></head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="container">
+ <p class="eyebrow">Catalogue</p>
+ <h1>Garments built for wholesale.</h1>
+ <p>Explore our knitwear range. Every product links to a structured WhatsApp enquiry — share your quantity, sizes, colours and branding requirement for a quotation.</p>
+</div></section>
+<section class="section">
+ <div class="container">
+  <div class="filterbar">
+    <input id="search" type="search" placeholder="Search by product name or code…" aria-label="Search products">
+    <select id="catFilter" aria-label="Filter by category"><option value="">All categories</option></select>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+  <p class="form-note" style="margin-top:26px">Prices, MOQ, GSM, fabric composition and size/colour availability are confirmed against each order. Nothing shown here is a final specification.</p>
+ </div>
+</section>
+<section class="cta-band"><div class="container">
+ <div><h2>Can't find what you need?</h2><p>Tell us the garment, quantity and specification — we'll review feasibility and come back with options.</p></div>
+ <div class="ctas"><a class="btn btn-primary" href="wholesale.html">Request a Quote</a></div>
+</div></section>
+<div id="site-footer"></div>
+<script>
+function card(p){
+ const msg=`Hello Your Choice Garments,\n\nI am interested in the following product:\n\nProduct: ${p.name}\nProduct Code: ${p.code}\nQuantity required:\nFabric / GSM preference:\nSizes:\nColours:\nCustomisation:\nDelivery location:\n\nPlease share the available options, MOQ and quotation.\n\nName:\nBusiness:`;
+ return `<article class="pcard">
+  <a class="thumb" href="product.html?id=${p.id}" aria-label="View ${p.name}">
+    <img src="${p.img||'assets/products/t-shirts/men-round-neck-tee.jpg'}" alt="${p.name}" loading="lazy">
+    <span class="chip">${p.category}</span>
+  </a>
+  <div class="body">
+    <div><h3>${p.name}</h3><p style="font-size:12px;color:var(--muted);font-family:Monospace">${p.code}</p></div>
+    <p>${p.desc}</p>
+    <div class="meta">MOQ: Enquire · Price: Request a quote</div>
+    <div class="actions">
+      <a class="btn btn-ghost" href="product.html?id=${p.id}">View Details</a>
+      <a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+ </article>`;
+}
+function render(){
+ const q=document.getElementById('search').value.toLowerCase();
+ const c=document.getElementById('catFilter').value;
+ const list=window.PRODUCTS.filter(p=>(!c||p.category===c)&&(p.name.toLowerCase().includes(q)||p.code.toLowerCase().includes(q)||p.category.toLowerCase().includes(q)));
+ document.getElementById('productGrid').innerHTML=list.map(card).join('')||'<p>No products found. Try a different search or category.</p>';
+ document.getElementById('count').textContent=list.length+' product'+(list.length===1?'':'s');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+ const sel=document.getElementById('catFilter');
+ window.CATEGORIES.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
+ const params=new URLSearchParams(location.search); if(params.get('cat')) sel.value=params.get('cat');
+ document.getElementById('search').addEventListener('input',render);
+ sel.addEventListener('change',render);
+ render();
+});
+</script>
+</body></html>

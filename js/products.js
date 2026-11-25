@@ -1,0 +1,27 @@
+window.PRODUCTS = [
+ {id:"round-neck-tee",name:"Men Round Neck T-Shirt",code:"YCG-RN-001",category:"Round Neck",desc:"Classic plain round neck knit tee, supplied in bulk for retail and brand programmes.",featured:true,
+  img:"assets/products/t-shirts/men-round-neck-tee.jpg",gallery:["assets/products/t-shirts/men-round-neck-tee.jpg","assets/products/t-shirts/regular-fit-tee.jpg"]},
+ {id:"regular-fit-tee",name:"Regular Fit T-Shirt",code:"YCG-RF-001",category:"Regular Fit",desc:"Everyday regular fit tee for wholesale and corporate supply.",featured:true,
+  img:"assets/products/t-shirts/regular-fit-tee.jpg",gallery:["assets/products/t-shirts/regular-fit-tee.jpg","assets/products/t-shirts/men-round-neck-tee.jpg"]},
+ {id:"oversized-tee",name:"Men Oversized T-Shirt",code:"YCG-OV-001",category:"Oversized",desc:"Relaxed oversized silhouette for streetwear and fashion labels.",featured:true,
+  img:"assets/products/oversized/men-oversized-tee.png",gallery:["assets/products/oversized/men-oversized-tee.png","assets/products/oversized/oversized-tee-model.png"]},
+ {id:"polo-tee",name:"Cotton Polo T-Shirt",code:"YCG-PL-001",category:"Polo",desc:"Collared cotton polo for corporate, uniform and retail requirements.",featured:true,
+  img:"assets/products/polo/cotton-polo-tee.jpeg",gallery:["assets/products/polo/cotton-polo-tee.jpeg","assets/products/polo/polo-tee-model.png"]},
+ {id:"full-sleeve-tee",name:"Full Sleeve T-Shirt",code:"YCG-FS-001",category:"Full Sleeve",desc:"Full sleeve knit tee, suitable for winter and layered ranges.",featured:true,
+  img:"assets/products/t-shirts/full-sleeve-tee.jpg",gallery:["assets/products/t-shirts/full-sleeve-tee.jpg"]},
+ {id:"sweatshirt",name:"Men Sweatshirt",code:"YCG-SW-001",category:"Sweatshirt",desc:"Crew neck sweatshirt for branded and plain winter ranges.",featured:true,
+  img:"assets/products/sweatshirts/crew-sweatshirt.png",gallery:["assets/products/sweatshirts/crew-sweatshirt.png"]},
+ {id:"hoodie",name:"Men Hoodie",code:"YCG-HD-001",category:"Hoodie",desc:"Pullover hoodie in plain and branded finishes.",featured:true,
+  img:"assets/products/hoodies/plain-hoodie.jpg",gallery:["assets/products/hoodies/plain-hoodie.jpg","assets/products/hoodies/plain-hoodie-brown.jpg","assets/products/hoodies/plain-hoodie-side.jpg"]},
+ {id:"acid-wash",name:"Acid Wash T-Shirt",code:"YCG-AW-001",category:"Acid Wash",desc:"Acid wash finish garment for fashion-led ranges.",featured:false,
+  img:"assets/products/custom-apparel/acid-wash-tee.png",gallery:["assets/products/custom-apparel/acid-wash-tee.png"]},
+ {id:"poly-performance",name:"Polyester T-Shirt",code:"YCG-PP-001",category:"Performance",desc:"Polyester performance tee for sport, corporate and event use.",featured:true,
+  img:"assets/products/polyester/polyester-tee.png",gallery:["assets/products/polyester/polyester-tee.png"]},
+ {id:"kids-tee",name:"Boys Cotton T-Shirt",code:"YCG-KD-001",category:"Kids",desc:"Boys cotton tee for retail and school-wear ranges.",featured:true,
+  img:"assets/products/boys-wear/boys-cotton-tee.jpg",gallery:["assets/products/boys-wear/boys-cotton-tee.jpg"]},
+ {id:"custom-printed",name:"Custom Printed T-Shirt",code:"YCG-CP-001",category:"Custom Printed",desc:"Printed or branded tee produced to your artwork and specification.",featured:true,
+  img:"assets/products/custom-apparel/printed-tee.jpg",gallery:["assets/products/custom-apparel/printed-tee.jpg","assets/products/custom-apparel/printed-polo.png"]},
+ {id:"custom-polo",name:"Custom Branded Polo",code:"YCG-CP-002",category:"Custom Printed",desc:"Branded polo for corporate uniforms, events and promotional programmes.",featured:false,
+  img:"assets/products/custom-apparel/printed-polo.png",gallery:["assets/products/custom-apparel/printed-polo.png"]}
+];
+window.CATEGORIES = [...new Set(window.PRODUCTS.map(p=>p.category))];
