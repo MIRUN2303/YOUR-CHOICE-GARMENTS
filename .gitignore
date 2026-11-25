@@ -1,1 +1,6 @@
 .vercel
+_*.py
+_*.png
+_*.jpg
+_*.webp
+
