@@ -257,6 +257,29 @@ header.site .container{max-width:1360px}
 .btn-ivory{background:var(--ivory);color:var(--burgundy)}
 .btn-ivory:hover{background:#fff}
 
+/* ---------- about photo gallery ---------- */
+.about-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.about-gallery figure{position:relative;margin:0;overflow:hidden;border-radius:var(--radius);background:#081130}
+.about-gallery figure:nth-child(1){grid-column:span 7}
+.about-gallery figure:nth-child(2){grid-column:span 5}
+.about-gallery figure:nth-child(n+3){grid-column:span 3}
+.about-gallery img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;transition:transform .8s var(--ease)}
+.about-gallery figure:nth-child(n+3) img{aspect-ratio:4/3}
+.about-gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(5,10,30,.82))}
+.about-gallery figcaption{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;color:#fff;font-size:12.5px;letter-spacing:.04em;line-height:1.45}
+.about-gallery figcaption span{display:block;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#AEBBD8;margin-bottom:3px}
+.about-gallery figure:hover img{transform:scale(1.04)}
+@media(max-width:980px){
+  .about-gallery figure:nth-child(1),.about-gallery figure:nth-child(2){grid-column:span 6}
+  .about-gallery figure:nth-child(n+3){grid-column:span 6}
+  .about-gallery img,.about-gallery figure:nth-child(n+3) img{aspect-ratio:16/10}
+}
+@media(max-width:560px){
+  .about-gallery{grid-template-columns:1fr}
+  .about-gallery figure:nth-child(n){grid-column:span 1}
+  .about-gallery img,.about-gallery figure:nth-child(n+3) img{aspect-ratio:4/3}
+}
+
 /* ---------- trusted supply logos ---------- */
 .supply-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .supply-logo{display:flex;align-items:center;justify-content:center;min-height:118px;padding:24px 30px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);transition:border-color .25s,box-shadow .25s,transform .25s}
