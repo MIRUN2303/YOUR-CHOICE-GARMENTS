@@ -41,10 +41,10 @@ function headerHTML(){
  <div class="mobile-menu" id="mobileMenu">
    <button class="close" id="closeMenu" aria-label="Close menu">✕</button>
    <div class="mobile-quick">
-     <a href="tel:${window.YCG.phone}" class="mq">☎<small>Call</small></a>
-     <a href="${waLink('Hello Your Choice Garments, I would like to enquire.')}" target="_blank" rel="noopener" class="mq">W<small>WhatsApp</small></a>
-     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" class="mq">IM<small>IndiaMART</small></a>
-     <a href="${window.YCG.trustseal}" target="_blank" rel="noopener" class="mq">TS<small>TrustSeal</small></a>
+     <a href="tel:${window.YCG.phone}" class="mq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><small>Call</small></a>
+     <a href="${waLink('Hello Your Choice Garments, I would like to enquire.')}" target="_blank" rel="noopener" class="mq mq-wa"><img src="assets/whatsapp.png" alt=""><small>WhatsApp</small></a>
+     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" class="mq"><span class="mq-txt">IM</span><small>IndiaMART</small></a>
+     <a href="${window.YCG.trustseal}" target="_blank" rel="noopener" class="mq"><span class="mq-txt">TS</span><small>TrustSeal</small></a>
    </div>
    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a>
    <a href="manufacturing.html">Manufacturing</a><a href="customisation.html">Customisation</a>

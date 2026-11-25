@@ -85,6 +85,11 @@ header.site .container{max-width:1360px}
   .mobile-menu .mobile-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
 .mobile-menu .mq{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:10px 4px;border:1px solid var(--border);border-radius:10px;font-size:12px;font-weight:600;color:var(--navy);background:var(--grey)}
 .mobile-menu .mq small{font-size:10px;color:var(--muted);font-weight:400}
+.mobile-menu .mq svg{width:22px;height:22px}
+.mobile-menu .mq img{width:22px;height:22px}
+.mobile-menu .mq-txt{font-family:'Manrope';font-weight:800;font-size:15px}
+.mobile-menu .mq-wa{background:#eaf7ef;border-color:#bfe3cc;color:#177A42}
+.mobile-menu .btn{color:#fff !important}
 }
 
 /* ---------- hero slideshow ---------- */
