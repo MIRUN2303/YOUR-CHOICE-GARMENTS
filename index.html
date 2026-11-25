@@ -93,12 +93,12 @@
  <div class="container">
   <div class="section-head"><div><p class="eyebrow">What we offer</p><h2>Built around your requirement.</h2></div><a href="wholesale.html">Start a wholesale enquiry →</a></div>
   <div class="grid grid-3">
-    <div class="card icon-card"><div class="ico">01</div><h3>Custom Orders</h3><p>Made to your specs — fabrics, fits, colours, prints, trims and branding. Share your artwork and requirement.</p></div>
-    <div class="card icon-card"><div class="ico">02</div><h3>Bulk Orders</h3><p>Higher-quantity runs with consistency across every piece, checked in batches before dispatch.</p></div>
-    <div class="card icon-card"><div class="ico">03</div><h3>Wholesale Supply</h3><p>Reliable supply for retailers, stockists, marketplaces and growing apparel brands.</p></div>
-    <div class="card icon-card"><div class="ico">04</div><h3>Private Label</h3><p>Woven labels, tags and packaging options to help build your own brand identity — confirm details with us.</p></div>
-    <div class="card icon-card"><div class="ico">05</div><h3>Size & Variants</h3><p>Size breaks, colourways and style variants discussed against your order requirement.</p></div>
-    <div class="card icon-card"><div class="ico">06</div><h3>Dispatch Planning</h3><p>Timelines confirmed with your quotation. Every batch checked, folded and packed for dispatch.</p></div>
+    <div class="card icon-card offer-card"><div class="ico">01</div><h3>Custom Orders</h3><p>Made to your specs — fabrics, fits, colours, prints, trims and branding. Share your artwork and requirement.</p></div>
+    <div class="card icon-card offer-card"><div class="ico">02</div><h3>Bulk Orders</h3><p>Higher-quantity runs with consistency across every piece, checked in batches before dispatch.</p></div>
+    <div class="card icon-card offer-card"><div class="ico">03</div><h3>Wholesale Supply</h3><p>Reliable supply for retailers, stockists, marketplaces and growing apparel brands.</p></div>
+    <div class="card icon-card offer-card"><div class="ico">04</div><h3>Private Label</h3><p>Woven labels, tags and packaging options to help build your own brand identity — confirm details with us.</p></div>
+    <div class="card icon-card offer-card"><div class="ico">05</div><h3>Size & Variants</h3><p>Size breaks, colourways and style variants discussed against your order requirement.</p></div>
+    <div class="card icon-card offer-card"><div class="ico">06</div><h3>Dispatch Planning</h3><p>Timelines confirmed with your quotation. Every batch checked, folded and packed for dispatch.</p></div>
   </div>
  </div>
 </section>
@@ -126,10 +126,10 @@
  <div class="container">
   <div class="section-head"><div><p class="eyebrow">Supply experience</p><h2>Trusted Supply Experience</h2><p>Through our extended supply network, we have contributed to apparel supply requirements associated with businesses, institutions and established brands.</p><p style="font-size:13px;color:var(--muted);margin-top:6px">Apparel supply through extended business networks</p></div></div>
   <div class="supply-logos">
-    <a class="supply-logo" href="https://www.ashokleyland.com/" target="_blank" rel="noopener">
-      <span class="supply-logo-media"><img src="assets/brands/ashok-leyland.svg" alt="Ashok Leyland logo" loading="lazy"></span>
-      <span class="supply-note">Apparel requirements · extended network</span>
-    </a>
+    <div class="supply-logo">
+      <span class="supply-logo-media"><span class="supply-wordmark serif">Emphasis<small>Talk Tee</small></span></span>
+      <span class="supply-note">T-shirt supply · extended network</span>
+    </div>
     <a class="supply-logo" href="https://www.icat.ac.in/" target="_blank" rel="noopener">
       <span class="supply-logo-media"><img class="logo-wide" src="assets/brands/icat-college.svg" alt="ICAT College of Design and Media logo" loading="lazy"></span>
       <span class="supply-note">Institutional apparel · extended network</span>
@@ -138,13 +138,13 @@
       <span class="supply-logo-media"><img class="logo-tall" src="assets/brands/tata.svg" alt="Tata logo" loading="lazy"></span>
       <span class="supply-note">Apparel supply · business network</span>
     </a>
+    <a class="supply-logo" href="https://www.ashokleyland.com/" target="_blank" rel="noopener">
+      <span class="supply-logo-media"><img src="assets/brands/ashok-leyland.svg" alt="Ashok Leyland logo" loading="lazy"></span>
+      <span class="supply-note">Apparel requirements · extended network</span>
+    </a>
     <div class="supply-logo">
       <span class="supply-logo-media"><span class="supply-wordmark">BLANQ</span></span>
       <span class="supply-note">Fashion apparel · connected supply</span>
-    </div>
-    <div class="supply-logo">
-      <span class="supply-logo-media"><span class="supply-wordmark serif">Emphasis<small>Talk Tee</small></span></span>
-      <span class="supply-note">T-shirt supply · extended network</span>
     </div>
     <div class="supply-logo supply-logo--other">
       <span class="supply-logo-media">+ Others</span>
@@ -215,6 +215,16 @@ document.addEventListener('DOMContentLoaded',()=>{
       <div class="cat-body"><div><small>Product range</small><h3>${label}</h3></div><span class="arrow">↗</span></div>
     </a>`;
   }).join('');
+
+  // offer-card cursor spotlight
+  document.querySelectorAll('.offer-card').forEach(card=>{
+    card.addEventListener('pointermove',e=>{
+      if(e.pointerType!=='mouse') return;
+      const r=card.getBoundingClientRect();
+      card.style.setProperty('--mx',(e.clientX-r.left)+'px');
+      card.style.setProperty('--my',(e.clientY-r.top)+'px');
+    });
+  });
 
   // hero slideshow
   const slides=[...document.querySelectorAll('.hero-slide')];

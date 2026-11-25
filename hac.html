@@ -45,9 +45,9 @@
   .hac-look{position:relative;overflow:hidden;background:#3a0015;border:1px solid rgba(216,178,106,.28)}
   .hac-look img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/5}
   .hac-look::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 52%,rgba(35,0,17,.82))}
-  .hac-look figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;justify-content:space-between;align-items:end;gap:14px;padding:18px 20px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#F2E3D3}
+  .hac-look figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;justify-content:flex-start;align-items:end;gap:14px;padding:18px 20px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#F2E3D3}
   .hac-look figcaption b{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:19px;letter-spacing:.02em;text-transform:none;color:var(--gold-soft)}
-  .hac-mark{position:absolute;left:-38px;bottom:-34px;width:clamp(110px,13vw,156px);padding:10px;background:linear-gradient(150deg,#3B0018,#5A0824);border:1px solid rgba(216,178,106,.45);box-shadow:0 24px 50px rgba(0,0,0,.35)}
+  .hac-mark{position:absolute;right:-18px;top:30px;width:clamp(110px,13vw,156px);padding:10px;background:linear-gradient(150deg,#3B0018,#5A0824);border:1px solid rgba(216,178,106,.45);box-shadow:0 24px 50px rgba(0,0,0,.35)}
   .hac-mark img{display:block;width:100%;height:auto}
   @keyframes hac-rise{from{opacity:0;transform:translateY(16px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
   .hac-hero-copy>*{animation:hac-rise .85s cubic-bezier(.22,.61,.36,1) both}
@@ -136,7 +136,7 @@
     .hac-hero-inner{grid-template-columns:1fr;gap:40px}
     .hac-hero-art{justify-self:start;max-width:440px}
     .hac-lede{max-width:560px}
-    .hac-mark{left:auto;right:-16px;bottom:-26px}
+    .hac-mark{left:auto;right:-12px;top:18px;bottom:auto}
     .hac-cta-inner{grid-template-columns:1fr}
     .hac-cta-mark{display:none}
     .hac-cta .hac-actions{margin-top:22px}
@@ -154,7 +154,7 @@
     .hac-hero-meta{gap:8px 16px;font-size:9.5px;letter-spacing:.14em}
     .hac-look figcaption{padding:14px}
     .hac-look figcaption b{font-size:16px}
-    .hac-mark{width:104px;right:-10px;bottom:-20px;padding:8px}
+    .hac-mark{width:104px;right:-8px;top:10px;bottom:auto;padding:8px}
     .hac-edit-side{grid-template-columns:1fr}
     .hac-piece-lg img{aspect-ratio:4/5}
     .hac-piece figcaption{left:16px;right:16px;bottom:14px}
@@ -186,7 +186,7 @@
   <div class="hac-hero-art">
     <figure class="hac-look">
       <img src="assets/products/oversized/oversized-tee-model.png" alt="HAC oversized graphic T-shirt look, back view, designed apparel from Tiruppur" width="810" height="1024" fetchpriority="high">
-      <figcaption><span>Look 01</span><b>Oversized graphic tee</b></figcaption>
+      <figcaption><b>Oversized graphic tee</b></figcaption>
     </figure>
     <figure class="hac-mark">
       <img src="assets/brand/hac-logo.png" alt="HAC Hot And Cold logo — fashion label by HAC Store, Tiruppur" width="6250" height="6250">

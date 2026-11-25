@@ -87,8 +87,4 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(mb&&mm){ mb.addEventListener('click',()=>{mm.classList.add('open');mb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
     if(cm) cm.addEventListener('click',()=>{mm.classList.remove('open');mb.setAttribute('aria-expanded','false');document.body.style.overflow='';});
   }
-  // subtle reveal on scroll
-  document.querySelectorAll('.page-hero h1,.hero h1,.section-head h2,.split h2,.cta-band h2,.hac-page h2').forEach((el,i)=>{el.classList.add('reveal'); if(i%3===1) el.classList.add('reveal-d1'); if(i%3===2) el.classList.add('reveal-d2');});
-  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 });
