@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png"><meta name="keywords" content="Tiruppur garment manufacturer, wholesale T-shirts Tiruppur, bulk apparel supplier, custom T-shirts, polo T-shirts, oversized T-shirts, hoodies, sweatshirts, private label garments, garment factory Tiruppur">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://your-choice-garments.vercel.app/product.html">
-</head><body>
+</head><body class="product-detail">
 <div id="site-header"></div>
 <section class="section"><div class="container" id="detail"></div></section>
 <section class="section section-grey" id="relatedSection" hidden><div class="container"><div class="section-head"><div><p class="eyebrow">More from the range</p><h2>Related products</h2></div><a href="products.html">All products →</a></div><div class="product-grid" id="relatedGrid"></div></div></section>
@@ -22,33 +22,35 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.title=p.name+' — Your Choice Garments';
  const msg=`Hello Your Choice Garments,\n\nI am interested in the following product:\n\nProduct: ${p.name}\nProduct Code: ${p.code}\nQuantity required:\nFabric / GSM preference:\nSizes:\nColours:\nCustomisation:\nDelivery location:\n\nPlease share the available options, MOQ and quotation.\n\nName:\nBusiness:`;
  document.getElementById('detail').innerHTML=`
-  <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
-  <div class="split" style="align-items:start">
-   <div>
-     <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
-     ${p.gallery&&p.gallery.length>1?`<div class="gallery-thumbs">${p.gallery.map((g,idx)=>`<img src="${g}" alt="${p.name} view ${idx+1}" class="${idx===0?'active':''}" onclick="swapImg(this,'${g}')">`).join('')}</div>`:''}
-     <p class="form-note">Photographs show the product style. More views available on request.</p>
-   </div>
-   <div>
-     <p class="eyebrow">${p.category}</p>
-      <h1 class="p-title">${p.name}</h1>
-     <p class="badge" style="margin-top:6px">Product code ${p.code}</p>
-      <p class="p-desc">${p.desc} Available specifications are confirmed against your requirement — share the details below and we will respond with options and a quotation.</p>
-     <div class="p-ctas"><a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-     <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
-     <dl class="specs">
-       <div><dt>Fabric / composition</dt><dd>Enquire for details</dd></div>
-       <div><dt>GSM</dt><dd>Enquire for details</dd></div>
-       <div><dt>Fit</dt><dd>${p.category}</dd></div>
-       <div><dt>Size range</dt><dd>Enquire for details</dd></div>
-       <div><dt>Colour options</dt><dd>Enquire for details</dd></div>
-       <div><dt>Customisation</dt><dd>Enquire for details</dd></div>
-       <div><dt>MOQ</dt><dd>Enquire for details</dd></div>
-       <div><dt>Price</dt><dd>Request a quote</dd></div>
-     </dl>
-     <div class="notice">Specifications shown as "Enquire" are not yet confirmed for this product. We do not publish unverified GSM, material, size or MOQ figures.</div>
-   </div>
-  </div>`;
+   <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
+   <div class="split" style="align-items:start">
+    <div>
+      <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
+      ${p.gallery&&p.gallery.length>1?`<div class="gallery-thumbs">${p.gallery.map((g,idx)=>`<img src="${g}" alt="${p.name} view ${idx+1}" class="${idx===0?'active':''}" onclick="swapImg(this,'${g}')">`).join('')}</div>`:''}
+      <p class="form-note">Photographs show the product style. More views available on request.</p>
+      <div class="p-ctas p-ctas--mobile"><a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+      <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
+    </div>
+    <div>
+      <p class="eyebrow">${p.category}</p>
+       <h1 class="p-title">${p.name}</h1>
+      <p class="badge" style="margin-top:6px">Product code ${p.code}</p>
+       <p class="p-desc">${p.desc} Available specifications are confirmed against your requirement — share the details below and we will respond with options and a quotation.</p>
+      <div class="p-ctas p-ctas--desktop"><a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+      <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
+      <dl class="specs">
+        <div><dt>Fabric / composition</dt><dd>Enquire for details</dd></div>
+        <div><dt>GSM</dt><dd>Enquire for details</dd></div>
+        <div><dt>Fit</dt><dd>${p.category}</dd></div>
+        <div><dt>Size range</dt><dd>Enquire for details</dd></div>
+        <div><dt>Colour options</dt><dd>Enquire for details</dd></div>
+        <div><dt>Customisation</dt><dd>Enquire for details</dd></div>
+        <div><dt>MOQ</dt><dd>Enquire for details</dd></div>
+        <div><dt>Price</dt><dd>Request a quote</dd></div>
+      </dl>
+      <div class="notice">Specifications shown as "Enquire" are not yet confirmed for this product. We do not publish unverified GSM, material, size or MOQ figures.</div>
+    </div>
+   </div>`;
  const rel=window.PRODUCTS.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,3);
  if(rel.length){document.getElementById('relatedSection').hidden=false;
   document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="product.html?id=${r.id}"><img src="${r.img}" alt="${r.name}" loading="lazy"></a><div class="body"><h3>${r.name}</h3><p>${r.desc}</p><div class="actions"><a class="btn btn-ghost" href="product.html?id=${r.id}">View Details</a></div></div></article>`).join('');}
