@@ -95,4 +95,13 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(mb&&mm){ mb.addEventListener('click',()=>{mm.classList.add('open');mb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
     if(cm) cm.addEventListener('click',()=>{mm.classList.remove('open');mb.setAttribute('aria-expanded','false');document.body.style.overflow='';});
   }
+  // repeat marquee content until it comfortably overfills the viewport so the loop never shows a gap
+  const fillMarquees=()=>{
+    document.querySelectorAll('.marquee,.hac-track').forEach(t=>{
+      const base=t.innerHTML; let guard=0;
+      while(t.scrollWidth<innerWidth*2&&guard++<4) t.innerHTML+=base;
+    });
+  };
+  fillMarquees();
+  window.addEventListener('load',fillMarquees);
 });
