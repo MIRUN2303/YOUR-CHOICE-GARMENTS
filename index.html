@@ -43,8 +43,8 @@
 
 <!-- strip -->
 <div class="strip"><div class="marquee">
- <span>Round Neck T-Shirts</span><span>Oversized T-Shirts</span><span>Polo T-Shirts</span><span>Polyester T-Shirts</span><span>Boys Cotton T-Shirts</span><span>Hoodies & Sweatshirts</span><span>Custom Apparel</span><span>Private Label</span>
- <span>Round Neck T-Shirts</span><span>Oversized T-Shirts</span><span>Polo T-Shirts</span><span>Polyester T-Shirts</span><span>Boys Cotton T-Shirts</span><span>Hoodies & Sweatshirts</span><span>Custom Apparel</span><span>Private Label</span>
+ <span>Round Neck T-Shirts</span><span>Oversized T-Shirts</span><span>Polo T-Shirts</span><span>Performance Jerseys</span><span>Full Sleeve Pullovers</span><span>Hoodies & Sweatshirts</span><span>Custom Apparel</span><span>Private Label</span>
+ <span>Round Neck T-Shirts</span><span>Oversized T-Shirts</span><span>Polo T-Shirts</span><span>Performance Jerseys</span><span>Full Sleeve Pullovers</span><span>Hoodies & Sweatshirts</span><span>Custom Apparel</span><span>Private Label</span>
 </div></div>
 
 <!-- CATEGORIES -->
@@ -106,7 +106,7 @@
 <!-- CUSTOMISATION -->
 <section class="section section-navy" data-deco="navy-index">
  <div class="container split reverse">
-  <div class="split-media"><img src="assets/products/oversized/oversized-tee-model.png" alt="Garment customisation example" loading="lazy"></div>
+  <div class="split-media"><img src="assets/products/custom-printed/custom-printed-tee-black.jpg" alt="Garment customisation example" loading="lazy"></div>
   <div>
     <p class="eyebrow" style="color:#fff">Customisation</p>
     <h2>Make it yours.</h2>
@@ -186,7 +186,7 @@
     </div>
   </div>
   <div class="split-media">
-    <img src="assets/products/hoodies/plain-hoodie.jpg" alt="HAC designed apparel" loading="lazy">
+    <img src="assets/products/hoodies/hoodie-black.jpg" alt="HAC designed apparel" loading="lazy">
   </div>
  </div>
 </section>
@@ -206,12 +206,12 @@
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
   // categories (6 primary, real photos)
-  const order=["Round Neck","Oversized","Polo","Performance","Kids","Hoodie"];
+  const order=["Round Neck","Oversized","Polo","Performance","Full Sleeve","Hoodie"];
   document.getElementById('catGrid').innerHTML=order.map(c=>{
     const p=window.PRODUCTS.find(x=>x.category===c);
-    const label={ "Round Neck":"Men Round Neck T-Shirts","Oversized":"Men Oversized T-Shirts","Polo":"Cotton Polo T-Shirts","Performance":"Polyester T-Shirts","Kids":"Boys Cotton T-Shirts","Hoodie":"Hoodies & Sweatshirts" }[c];
+    const label={ "Round Neck":"Men Round Neck T-Shirts","Oversized":"Men Oversized T-Shirts","Polo":"Cotton Polo T-Shirts","Performance":"Performance Jerseys","Full Sleeve":"Full Sleeve Pullovers","Hoodie":"Hoodies & Sweatshirts" }[c];
     return `<a class="cat-tile" href="products.html?cat=${encodeURIComponent(c)}">
-      <img src="${p?p.img:'assets/products/t-shirts/men-round-neck-tee.jpg'}" alt="${label}" loading="lazy">
+      <img src="${p?p.img:'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${label}" loading="lazy">
       <div class="cat-body"><div><small>Product range</small><h3>${label}</h3></div><span class="arrow">↗</span></div>
     </a>`;
   }).join('');

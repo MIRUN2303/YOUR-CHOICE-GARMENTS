@@ -37,7 +37,7 @@ function card(p){
  const msg=`Hello Your Choice Garments,\n\nI am interested in the following product:\n\nProduct: ${p.name}\nProduct Code: ${p.code}\nQuantity required:\nFabric / GSM preference:\nSizes:\nColours:\nCustomisation:\nDelivery location:\n\nPlease share the available options, MOQ and quotation.\n\nName:\nBusiness:`;
  return `<article class="pcard">
   <a class="thumb" href="product.html?id=${p.id}" aria-label="View ${p.name}">
-    <img src="${p.img||'assets/products/t-shirts/men-round-neck-tee.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur" loading="lazy">
+    <img src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur" loading="lazy">
     <span class="chip">${p.category}</span>
   </a>
   <div class="body">

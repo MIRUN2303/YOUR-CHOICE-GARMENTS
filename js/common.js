@@ -21,8 +21,8 @@ function headerHTML(){
         <a href="products.html?cat=Round%20Neck">Round Neck T-Shirts</a>
         <a href="products.html?cat=Oversized">Oversized T-Shirts</a>
         <a href="products.html?cat=Polo">Cotton Polo T-Shirts</a>
-        <a href="products.html?cat=Performance">Polyester T-Shirts</a>
-        <a href="products.html?cat=Kids">Boys Cotton T-Shirts</a>
+        <a href="products.html?cat=Performance">Performance Jerseys</a>
+        <a href="products.html?cat=Full%20Sleeve">Full Sleeve Pullovers</a>
         <a href="products.html?cat=Hoodie">Hoodies</a>
         <a href="products.html?cat=Sweatshirt">Sweatshirts</a>
       </div>
@@ -30,6 +30,7 @@ function headerHTML(){
     ${navLink('manufacturing.html','Manufacturing')}
     ${navLink('customisation.html','Customisation')}
     ${navLink('wholesale.html','Wholesale')}
+    ${navLink('portfolio.html','Portfolio')}
     ${navLink('store.html','Store')}
     ${navLink('blog.html','Blog')}
     ${navLink('hac.html','HAC')}
@@ -49,7 +50,7 @@ function headerHTML(){
    <div class="mobile-links">
      <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a>
      <a href="manufacturing.html">Manufacturing</a><a href="customisation.html">Customisation</a>
-     <a href="wholesale.html">Wholesale</a><a href="store.html">Store</a><a href="blog.html">Blog</a><a href="hac.html">HAC</a><a href="contact.html">Contact</a>
+     <a href="wholesale.html">Wholesale</a><a href="portfolio.html">Portfolio</a><a href="store.html">Store</a><a href="blog.html">Blog</a><a href="hac.html">HAC</a><a href="contact.html">Contact</a>
    </div>
    <a class="btn btn-primary" href="wholesale.html">Request a Quote</a>
    <div class="mobile-foot">Tiruppur, Tamil Nadu · +91 82200 89690</div>
@@ -67,10 +68,10 @@ function footerHTML(){
 
    </div>
    <div><h4>Company</h4>
-     <a href="about.html">About Us</a><br><a href="manufacturing.html">Manufacturing</a><br><a href="customisation.html">Customisation</a><br><a href="wholesale.html">Wholesale</a><br><a href="contact.html">Contact</a>
+     <a href="about.html">About Us</a><br><a href="manufacturing.html">Manufacturing</a><br><a href="customisation.html">Customisation</a><br><a href="wholesale.html">Wholesale</a><br><a href="portfolio.html">Brand Portfolio</a><br><a href="contact.html">Contact</a>
    </div>
    <div><h4>Products</h4>
-     <a href="products.html?cat=Round%20Neck">Round Neck T-Shirts</a><br><a href="products.html?cat=Oversized">Oversized T-Shirts</a><br><a href="products.html?cat=Polo">Cotton Polo T-Shirts</a><br><a href="products.html?cat=Performance">Polyester T-Shirts</a><br><a href="products.html?cat=Kids">Boys Cotton T-Shirts</a><br><a href="products.html?cat=Hoodie">Hoodies</a>
+     <a href="products.html?cat=Round%20Neck">Round Neck T-Shirts</a><br><a href="products.html?cat=Oversized">Oversized T-Shirts</a><br><a href="products.html?cat=Polo">Cotton Polo T-Shirts</a><br><a href="products.html?cat=Performance">Performance Jerseys</a><br><a href="products.html?cat=Full%20Sleeve">Full Sleeve Pullovers</a><br><a href="products.html?cat=Hoodie">Hoodies</a>
    </div>
    <div><h4>Contact</h4>
      <a href="tel:${window.YCG.phone}">${window.YCG.phoneDisplay}</a><br>

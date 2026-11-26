@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brand Portfolio — Your Choice Garments</title>
+<meta name="description" content="Production portfolio and brand supply showcase layout for Your Choice Garments, Tiruppur.">
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/config.js"></script><script defer src="js/common.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://your-choice-garments.vercel.app/portfolio.html">
+<style>
+.brand-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:960px){.brand-slots{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.brand-slots{grid-template-columns:1fr}}
+.brand-slot{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
+.brand-slot:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.brand-slot-media{position:relative;aspect-ratio:4/3;background:var(--grey);overflow:hidden}
+.brand-slot-media img{width:100%;height:100%;object-fit:cover}
+.brand-slot-tag{position:absolute;top:12px;left:12px;background:rgba(11,23,64,.85);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+.brand-slot-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.brand-slot-logo{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 14px;border:1px dashed #C7D0E2;border-radius:8px;background:var(--warm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;align-self:flex-start;margin-bottom:4px}
+.brand-slot-body h3{font-size:18px;color:var(--navy)}
+.brand-slot-body p{font-size:13.5px;color:var(--muted)}
+.brand-slot-meta{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+
+.port-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.port-tab{padding:9px 18px;border-radius:999px;border:1px solid var(--border);background:#fff;color:var(--navy);font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.port-tab:hover{border-color:var(--navy)}
+.port-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+.port-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1024px){.port-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.port-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:440px){.port-grid{grid-template-columns:1fr}}
+.port-item{position:relative;border-radius:12px;overflow:hidden;background:var(--navy);aspect-ratio:1/1;border:1px solid var(--border);cursor:pointer}
+.port-item img,.port-item video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+.port-item:hover img{transform:scale(1.04)}
+.port-item .port-badge{position:absolute;top:10px;right:10px;background:rgba(11,23,64,.82);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+
+.lightbox{position:fixed;inset:0;background:rgba(8,16,40,.9);z-index:120;display:none;align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lightbox-inner{position:relative;max-width:920px;max-height:88vh;width:100%;display:flex;align-items:center;justify-content:center}
+.lightbox-inner img,.lightbox-inner video{max-width:100%;max-height:86vh;border-radius:12px;background:#000}
+.lightbox-close{position:fixed;top:18px;right:22px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(11,23,64,.75);color:#fff;font-size:20px;cursor:pointer}
+</style>
+</head><body>
+<div id="site-header"></div>
+
+<section class="page-hero" data-deco="hero-about"><div class="container">
+ <p class="eyebrow">Portfolio</p>
+ <h1>Brands We’ve Supplied.</h1>
+ <p>Layout showcase of custom-branded, private-label and bulk apparel programmes produced at our unit. Brand names and programme details will be updated once confirmed by the client.</p>
+</div></section>
+
+<!-- BRAND PARTNER LAYOUT SLOTS -->
+<section class="section">
+ <div class="container">
+  <div class="section-head">
+   <div>
+    <p class="eyebrow">Client programmes</p>
+    <h2>Brand showcase layout.</h2>
+    <p>Structured cards ready for client brand names, logos and garment programme summaries.</p>
+   </div>
+  </div>
+  <div class="brand-slots">
+   <article class="brand-slot">
+    <div class="brand-slot-media">
+     <img src="assets/portfolio/portfolio-01.jpg" alt="Brand supply sample 01" loading="lazy">
+     <span class="brand-slot-tag">Brand Slot 01</span>
+    </div>
+    <div class="brand-slot-body">
+     <span class="brand-slot-logo">Brand Logo Pending</span>
+     <h3>Brand Name — Pending</h3>
+     <p>Custom apparel / private-label programme layout. Garment specs and client details to be added.</p>
+     <div class="brand-slot-meta"><span>Category: Custom Apparel</span><span>Status: Layout</span></div>
+    </div>
+   </article>
+   <article class="brand-slot">
+    <div class="brand-slot-media">
+     <img src="assets/portfolio/portfolio-06.jpg" alt="Brand supply sample 02" loading="lazy">
+     <span class="brand-slot-tag">Brand Slot 02</span>
+    </div>
+    <div class="brand-slot-body">
+     <span class="brand-slot-logo">Brand Logo Pending</span>
+     <h3>Brand Name — Pending</h3>
+     <p>Polo and uniform supply programme layout. Garment specs and client details to be added.</p>
+     <div class="brand-slot-meta"><span>Category: Polo &amp; Uniform</span><span>Status: Layout</span></div>
+    </div>
+   </article>
+   <article class="brand-slot">
+    <div class="brand-slot-media">
+     <img src="assets/portfolio/portfolio-12.jpg" alt="Brand supply sample 03" loading="lazy">
+     <span class="brand-slot-tag">Brand Slot 03</span>
+    </div>
+    <div class="brand-slot-body">
+     <span class="brand-slot-logo">Brand Logo Pending</span>
+     <h3>Brand Name — Pending</h3>
+     <p>Printed streetwear / retail label programme layout. Garment specs and client details to be added.</p>
+     <div class="brand-slot-meta"><span>Category: Printed Knitwear</span><span>Status: Layout</span></div>
+    </div>
+   </article>
+   <article class="brand-slot">
+    <div class="brand-slot-media">
+     <img src="assets/portfolio/portfolio-18.jpg" alt="Brand supply sample 04" loading="lazy">
+     <span class="brand-slot-tag">Brand Slot 04</span>
+    </div>
+    <div class="brand-slot-body">
+     <span class="brand-slot-logo">Brand Logo Pending</span>
+     <h3>Brand Name — Pending</h3>
+     <p>Corporate &amp; institutional supply programme layout. Garment specs and client details to be added.</p>
+     <div class="brand-slot-meta"><span>Category: Corporate Supply</span><span>Status: Layout</span></div>
+    </div>
+   </article>
+   <article class="brand-slot">
+    <div class="brand-slot-media">
+     <img src="assets/portfolio/portfolio-24.jpg" alt="Brand supply sample 05" loading="lazy">
+     <span class="brand-slot-tag">Brand Slot 05</span>
+    </div>
+    <div class="brand-slot-body">
+     <span class="brand-slot-logo">Brand Logo Pending</span>
+     <h3>Brand Name — Pending</h3>
+     <p>Bulk cut-and-sew production programme layout. Garment specs and client details to be added.</p>
+     <div class="brand-slot-meta"><span>Category: Bulk Production</span><span>Status: Layout</span></div>
+    </div>
+   </article>
+   <article class="brand-slot">
+    <div class="brand-slot-media">
+     <img src="assets/portfolio/portfolio-30.jpg" alt="Brand supply sample 06" loading="lazy">
+     <span class="brand-slot-tag">Brand Slot 06</span>
+    </div>
+    <div class="brand-slot-body">
+     <span class="brand-slot-logo">Brand Logo Pending</span>
+     <h3>Brand Name — Pending</h3>
+     <p>Private-label finishing &amp; branding programme layout. Garment specs and client details to be added.</p>
+     <div class="brand-slot-meta"><span>Category: Private Label</span><span>Status: Layout</span></div>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- FULL PORTFOLIO MEDIA GRID -->
+<section class="section section-grey">
+ <div class="container">
+  <div class="section-head">
+   <div>
+    <p class="eyebrow">Production gallery</p>
+    <h2>Supplied work &amp; floor samples.</h2>
+    <p>Photos and production clips from supplied orders. Click any item to preview.</p>
+   </div>
+  </div>
+  <div class="port-tabs" role="tablist" aria-label="Filter portfolio media">
+   <button class="port-tab active" data-filter="all" type="button">All Media</button>
+   <button class="port-tab" data-filter="photo" type="button">Photos (48)</button>
+   <button class="port-tab" data-filter="video" type="button">Videos (5)</button>
+  </div>
+  <div class="port-grid" id="portGrid"></div>
+ </div>
+</section>
+
+<section class="cta-band" data-deco="cta-about"><div class="container">
+ <div><h2>Planning your brand’s next production run?</h2><p>Share your requirement, artwork and target quantity — we’ll respond with options and a quotation.</p></div>
+ <div class="ctas"><a class="btn btn-primary" href="wholesale.html">Request a Quote</a><a class="btn btn-outline" href="contact.html">Contact Us</a></div>
+</div></section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+ <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">✕</button>
+ <div class="lightbox-inner" id="lightboxInner"></div>
+</div>
+
+<div id="site-footer"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const media = [];
+  for(let i=1;i<=48;i++){
+    const num = String(i).padStart(2,'0');
+    media.push({type:'photo', src:`assets/portfolio/portfolio-${num}.jpg`, label:`Sample ${num}`});
+  }
+  for(let v=1;v<=5;v++){
+    const num = String(v).padStart(2,'0');
+    media.push({type:'video', src:`assets/portfolio/portfolio-video-${num}.mp4`, label:`Video ${num}`});
+  }
+
+  const grid = document.getElementById('portGrid');
+  const lb = document.getElementById('lightbox');
+  const lbInner = document.getElementById('lightboxInner');
+  const lbClose = document.getElementById('lightboxClose');
+
+  function openLightbox(item){
+    lbInner.innerHTML = item.type==='video'
+      ? `<video src="${item.src}" controls autoplay playsinline></video>`
+      : `<img src="${item.src}" alt="${item.label}">`;
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden','false');
+  }
+  function closeLightbox(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden','true');
+    lbInner.innerHTML = '';
+  }
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', e=>{ if(e.target===lb) closeLightbox(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
+
+  function render(filter){
+    const items = filter==='all' ? media : media.filter(m=>m.type===filter);
+    grid.innerHTML = items.map((m, idx)=>`
+      <div class="port-item" data-idx="${idx}" tabindex="0" role="button" aria-label="View ${m.label}">
+        ${m.type==='video'
+          ? `<video src="${m.src}" muted playsinline preload="metadata"></video><span class="port-badge">Video</span>`
+          : `<img src="${m.src}" alt="Supplied brand apparel ${m.label}" loading="lazy">`
+        }
+      </div>
+    `).join('');
+    grid.querySelectorAll('.port-item').forEach((el, idx)=>{
+      const open = ()=>openLightbox(items[idx]);
+      el.addEventListener('click', open);
+      el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' ') { e.preventDefault(); open(); }});
+    });
+  }
+
+  document.querySelectorAll('.port-tab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.port-tab').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.filter);
+    });
+  });
+
+  render('all');
+});
+</script>
+</body></html>

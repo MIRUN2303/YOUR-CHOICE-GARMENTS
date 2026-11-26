@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
   <div class="split" style="align-items:start">
    <div>
-     <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/men-round-neck-tee.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
+     <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
      ${p.gallery&&p.gallery.length>1?`<div class="gallery-thumbs">${p.gallery.map((g,idx)=>`<img src="${g}" alt="${p.name} view ${idx+1}" class="${idx===0?'active':''}" onclick="swapImg(this,'${g}')">`).join('')}</div>`:''}
      <p class="form-note">Photographs show the product style. More views available on request.</p>
    </div>
