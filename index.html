@@ -51,8 +51,8 @@
 <section class="section">
  <div class="container">
   <div class="section-head">
-    <div><p class="eyebrow">What we manufacture</p><h2>A complete knitwear range,<br>built for your business.</h2><p>Every image below is a product from our catalogue. Specifications, MOQ and pricing are confirmed against your requirement.</p></div>
-    <a href="products.html">View full catalogue →</a>
+    <div><p class="eyebrow">What we manufacture</p><h2>A complete knitwear range,<br> built for your business.</h2><p>Every image below is a product from our catalogue. Specifications, MOQ and pricing are confirmed against your requirement.</p></div>
+    <a href="products.html" class="btn btn-primary">View full catalogue →</a>
   </div>
   <div class="cat-grid" id="catGrid"></div>
  </div>
@@ -92,7 +92,7 @@
 <section class="section">
  <div class="container">
   <div class="section-head"><div><p class="eyebrow">What we offer</p><h2>Built around your requirement.</h2></div><a href="wholesale.html">Start a wholesale enquiry →</a></div>
-  <div class="grid grid-3">
+  <div class="grid grid-3 offer-grid">
     <div class="card icon-card offer-card"><div class="ico">01</div><h3>Custom Orders</h3><p>Made to your specs — fabrics, fits, colours, prints, trims and branding. Share your artwork and requirement.</p></div>
     <div class="card icon-card offer-card"><div class="ico">02</div><h3>Bulk Orders</h3><p>Higher-quantity runs with consistency across every piece, checked in batches before dispatch.</p></div>
     <div class="card icon-card offer-card"><div class="ico">03</div><h3>Wholesale Supply</h3><p>Reliable supply for retailers, stockists, marketplaces and growing apparel brands.</p></div>
@@ -205,11 +205,11 @@
 <div id="site-footer"></div>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-  // categories (6 primary, real photos)
-  const order=["Round Neck","Oversized","Polo","Performance","Full Sleeve","Hoodie"];
+  // categories (7 primary, real photos)
+  const order=["Round Neck","Oversized","Polo","Performance","Full Sleeve","Hoodie","Sweatshirt"];
   document.getElementById('catGrid').innerHTML=order.map(c=>{
     const p=window.PRODUCTS.find(x=>x.category===c);
-    const label={ "Round Neck":"Men Round Neck T-Shirts","Oversized":"Men Oversized T-Shirts","Polo":"Cotton Polo T-Shirts","Performance":"Performance Jerseys","Full Sleeve":"Full Sleeve Pullovers","Hoodie":"Hoodies & Sweatshirts" }[c];
+    const label={ "Round Neck":"Men Round Neck T-Shirts","Oversized":"Men Oversized T-Shirts","Polo":"Cotton Polo T-Shirts","Performance":"Performance Jerseys","Full Sleeve":"Full Sleeve Pullovers","Hoodie":"Hoodies & Sweatshirts","Sweatshirt":"Sweatshirts & Crewnecks" }[c];
     return `<a class="cat-tile" href="products.html?cat=${encodeURIComponent(c)}">
       <img src="${p?p.img:'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${label}" loading="lazy">
       <div class="cat-body"><div><small>Product range</small><h3>${label}</h3></div><span class="arrow">↗</span></div>

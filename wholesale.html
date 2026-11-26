@@ -110,6 +110,8 @@
 
 <div id="site-footer"></div>
 <script>
+const enq=document.getElementById('enquiry'),hero=document.querySelector('.page-hero'),afterEnq=enq&&enq.nextElementSibling;
+if(enq&&hero&&afterEnq){const mq=matchMedia('(max-width:900px)');const place=()=>{mq.matches?hero.after(enq):afterEnq.before(enq)};place();mq.addEventListener('change',place);}
 document.getElementById('wform').addEventListener('submit',e=>{
  e.preventDefault(); const f=new FormData(e.target);
  const msg=`Hello Your Choice Garments,\n\nWholesale Enquiry\nName: ${f.get('name')}\nBusiness: ${f.get('business')}\nPhone: ${f.get('phone')}\nEmail: ${f.get('email')}\nBuyer type: ${f.get('buyer')}\nRequirement: ${f.get('req')}\nProduct interest: ${f.get('product')}\nQuantity: ${f.get('qty')}\nNotes: ${f.get('notes')}`;

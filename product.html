@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded',()=>{
    </div>
    <div>
      <p class="eyebrow">${p.category}</p>
-     <h1 style="font-size:clamp(28px,3.5vw,44px);margin-top:8px">${p.name}</h1>
+      <h1 class="p-title">${p.name}</h1>
      <p class="badge" style="margin-top:6px">Product code ${p.code}</p>
-     <p style="margin:18px 0">${p.desc} Available specifications are confirmed against your requirement — share the details below and we will respond with options and a quotation.</p>
-     <a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-     <a class="btn btn-ghost" href="wholesale.html" style="margin-left:8px">Request a Quote</a>
+      <p class="p-desc">${p.desc} Available specifications are confirmed against your requirement — share the details below and we will respond with options and a quotation.</p>
+     <div class="p-ctas"><a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+     <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
      <dl class="specs">
        <div><dt>Fabric / composition</dt><dd>Enquire for details</dd></div>
        <div><dt>GSM</dt><dd>Enquire for details</dd></div>
