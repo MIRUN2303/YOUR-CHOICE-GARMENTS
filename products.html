@@ -38,7 +38,6 @@ function card(p){
  return `<article class="pcard">
   <a class="thumb" href="product.html?id=${p.id}" aria-label="View ${p.name}">
     <img src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur" loading="lazy">
-    <span class="chip">${p.category}</span>
   </a>
   <div class="body">
     <div><h3>${p.name}</h3><p style="font-size:12px;color:var(--muted);font-family:Monospace">${p.code}</p></div>

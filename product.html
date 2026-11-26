@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   </div>`;
  const rel=window.PRODUCTS.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,3);
  if(rel.length){document.getElementById('relatedSection').hidden=false;
-  document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="product.html?id=${r.id}"><img src="${r.img}" alt="${r.name}" loading="lazy"><span class="chip">${r.category}</span></a><div class="body"><h3>${r.name}</h3><p>${r.desc}</p><div class="actions"><a class="btn btn-ghost" href="product.html?id=${r.id}">View Details</a></div></div></article>`).join('');}
+  document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="product.html?id=${r.id}"><img src="${r.img}" alt="${r.name}" loading="lazy"></a><div class="body"><h3>${r.name}</h3><p>${r.desc}</p><div class="actions"><a class="btn btn-ghost" href="product.html?id=${r.id}">View Details</a></div></div></article>`).join('');}
 });
 </script>
 </body></html>
