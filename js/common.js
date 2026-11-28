@@ -89,6 +89,12 @@ function footerHTML(){
 }
 document.addEventListener('DOMContentLoaded',()=>{
   const h=document.getElementById('site-header'); if(h) h.innerHTML=headerHTML();
+  // Back link on every page except home; sits in flow so it never covers content
+  if(h && !/(^\/$|\/index\.html$)/.test(location.pathname)){
+    h.insertAdjacentHTML('afterend','<div class="back-bar"><div class="container"><button class="back-link" id="backBtn" type="button" aria-label="Go back to previous page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Back</button></div></div>');
+    const bb=document.getElementById('backBtn');
+    if(bb) bb.addEventListener('click',()=>{ if(history.length>1) history.back(); else location.href='index.html'; });
+  }
   const f=document.getElementById('site-footer'); if(f) f.innerHTML=footerHTML();
   const mb=document.getElementById('menuBtn'), mm=document.getElementById('mobileMenu'), cm=document.getElementById('closeMenu');
   if(mb&&mm){ mb.addEventListener('click',()=>{mm.classList.add('open');mb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
