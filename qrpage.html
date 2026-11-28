@@ -20,6 +20,10 @@ body.qr-page .sticky-bar{display:none!important}
 .qc::before{content:"";position:absolute;right:-180px;top:-140px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(11,23,64,.06);pointer-events:none}
 .qc-hero{padding:clamp(40px,6vw,72px) 0 clamp(40px,6vw,64px)}
 .qc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,410px);gap:clamp(30px,5vw,64px);align-items:center}
+@media(max-width:900px){
+  .qc-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .qc-panel{max-width:400px;width:100%;margin:0 auto;order:-1}
+}
 .qc h1{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-.03em;margin:12px 0 16px;color:var(--navy)}
 .qc h1 em{font-style:normal;color:var(--blue)}
 .qc-lead{font-size:clamp(14px,1.3vw,16px);color:var(--muted);max-width:48ch;line-height:1.6}
