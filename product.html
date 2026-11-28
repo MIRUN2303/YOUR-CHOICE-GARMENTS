@@ -2,6 +2,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Product Detail — Your Choice Garments</title>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/im-trust.css">
 <script defer src="js/config.js"></script><script defer src="js/products.js"></script><script defer src="js/common.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
@@ -76,6 +77,12 @@ document.addEventListener('DOMContentLoaded',()=>{
  const fallbackMsg=`Hello Your Choice Garments! I would like a quotation for ${p.name} (${p.code}). Please share the price, MOQ and lead time.`;
  document.getElementById('detail').innerHTML=`
    <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
+    <div class="trust-strip" style="margin-bottom:18px">
+      <span class="badge">IndiaMART Verified</span>
+      <h4>IndiaMART TrustSeal Verified</h4>
+      <p>Certificate ID 248288 · Valid till January 2027. Business verification credential.</p>
+      <a class="btn btn-ghost btn-sm" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener">Verify</a>
+    </div>
    <div class="split" style="align-items:start">
     <div>
       <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
