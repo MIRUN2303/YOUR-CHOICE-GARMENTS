@@ -345,8 +345,11 @@ header.site .container{max-width:1360px}
 @keyframes marquee-reverse{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 
 /* Products showcase marquee (home page) */
-.products-marquee{overflow:hidden;padding:clamp(16px,2vw,24px) 0}
-.products-marquee-track{display:flex;align-items:center;gap:clamp(24px,4vw,48px);animation:marquee-products 50s linear infinite;width:max-content}
+.products-marquee{position:relative;overflow:hidden;padding:clamp(16px,2vw,24px) 0}
+.products-marquee::before,.products-marquee::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.products-marquee::before{left:0;background:linear-gradient(to right,var(--white),transparent 60%)}
+.products-marquee::after{right:0;background:linear-gradient(to left,var(--white),transparent 60%)}
+.products-marquee-track{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(24px,4vw,48px);animation:marquee-products 50s linear infinite;width:max-content}
 .products-marquee-track:hover{animation-play-state:paused}
 .product-marquee-item{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;min-width:180px;max-width:200px;text-decoration:none;color:inherit}
 .product-marquee-img{width:100%;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--grey);box-shadow:0 12px 32px rgba(11,23,64,.12);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
