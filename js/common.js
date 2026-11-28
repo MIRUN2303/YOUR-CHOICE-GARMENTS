@@ -31,7 +31,6 @@ function headerHTML(){
     ${navLink('customisation.html','Customisation')}
     ${navLink('wholesale.html','Wholesale')}
     ${navLink('portfolio.html','Portfolio')}
-    ${navLink('store.html','Store')}
     ${navLink('blog.html','Blog')}
     ${navLink('hac.html','HAC')}
     ${navLink('contact.html','Contact')}
@@ -48,9 +47,9 @@ function headerHTML(){
      <a href="${window.YCG.trustseal}" target="_blank" rel="noopener" class="mq trust-link" data-mobile-img="assets/brand/indiamart-trustseal.jpg"><img src="assets/brands/indiamart-square.svg" alt="IndiaMART" style="width:22px;height:22px"><small>TrustSeal</small></a>
    </div>
    <div class="mobile-links">
-     <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a>
+     <a href="index.html">Home</a><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="products.html">Products</a>
      <a href="manufacturing.html">Manufacturing</a><a href="customisation.html">Customisation</a>
-     <a href="wholesale.html">Wholesale</a><a href="portfolio.html">Portfolio</a><a href="store.html">Store</a><a href="blog.html">Blog</a><a href="hac.html">HAC</a><a href="contact.html">Contact</a>
+     <a href="wholesale.html">Wholesale</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="hac.html">HAC</a>
    </div>
    <a class="btn btn-primary" href="wholesale.html">Request a Quote</a>
    <div class="mobile-foot">Tiruppur, Tamil Nadu · +91 82200 89690</div>
@@ -78,7 +77,7 @@ function footerHTML(){
      <a href="tel:${window.YCG.phoneSecondary}">${window.YCG.phoneSecondaryDisplay}</a><br>
      <a href="mailto:${email}">${email}</a><br>
      <span style="display:block;padding:4px 0">${addr}</span>
-     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px"><img src="assets/brands/indiamart.svg" alt="IndiaMART" style="height:14px;width:auto"> Business profile ↗</a><br>
+     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px"><img src="assets/brands/indiamart.svg" alt="IndiaMART" style="height:14px;width:auto"> Profile ↗</a><br>
      <a class="trust-link" href="${window.YCG.trustseal}" target="_blank" rel="noopener" data-mobile-img="assets/brand/indiamart-trustseal.jpg">IndiaMART TrustSeal ↗</a><br>
      <a href="${window.YCG.instagram}" target="_blank" rel="noopener">HAC Instagram ↗</a>
    </div>

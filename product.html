@@ -34,15 +34,20 @@
 .enq-submit{width:100%;margin-top:4px}
 .enq-note{font-size:11px;color:var(--muted);text-align:center;margin:10px 0 0;line-height:1.5}
 @media(max-width:560px){
-  .enq{align-items:flex-end;padding:0}
-  .enq-dialog{width:100%;max-height:94vh;border-radius:18px 18px 0 0;padding:24px 20px calc(22px + env(safe-area-inset-bottom));animation-name:enqUp}
-  @keyframes enqUp{from{opacity:.6;transform:translateY(28px)}to{opacity:1;transform:none}}
+  .enq{padding:16px}
+  .enq-dialog{width:100%;max-height:86vh;border-radius:16px;padding:22px 20px 18px;animation-name:enqIn}
+  .enq-sub{margin-bottom:12px}
+  .enq-product{margin-bottom:14px;padding:9px}
+  .enq-field{margin-bottom:11px}
+  .enq-field input{padding:11px 13px}
 }
 @media(prefers-reduced-motion:reduce){.enq-dialog{animation:none}}
+/* Product detail: no hero above, so trim the section's top padding */
+.pd-top{padding-top:clamp(18px,3vw,32px)}
 </style>
 </head><body class="product-detail">
 <div id="site-header"></div>
-<section class="section"><div class="container" id="detail"></div></section>
+<section class="section pd-top"><div class="container" id="detail"></div></section>
 <section class="section section-grey" id="relatedSection" hidden><div class="container"><div class="section-head"><div><p class="eyebrow">More from the range</p><h2>Related products</h2></div><a href="products.html">All products &rarr;</a></div><div class="product-grid" id="relatedGrid"></div></div></section>
 <div class="enq" id="enq" hidden>
   <div class="enq-backdrop" data-enq-close></div>
@@ -105,12 +110,18 @@ document.addEventListener('DOMContentLoaded',()=>{
        <div class="notice">Specifications shown as "Enquire" are not yet confirmed for this product. We do not publish unverified GSM, material, size or MOQ figures.</div>
      </div>
     </div>
-    <!-- IndiaMART TrustSeal at bottom -->
-    <div class="trust-strip" id="productTrustStrip" style="margin-top:32px">
-      <span class="badge">IndiaMART Verified</span>
-      <h4>IndiaMART TrustSeal Verified</h4>
-      <p>Certificate ID 248288 · Valid till January 2027. Business verification credential.</p>
-      <a class="btn btn-ghost btn-sm trust-link" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener" data-desktop-href="https://www.indiamart.com/hacclothings/trustseal/" data-mobile-img="assets/brand/indiamart-trustseal.jpg">Verify</a>
+    <!-- IndiaMART TrustSeal at bottom (matches other pages) -->
+    <div class="im-trust" id="productTrustStrip" style="margin-top:32px">
+      <img class="im-trust-logo" src="assets/brand/indiamart-trustseal.jpg" alt="IndiaMART TrustSeal certificate" loading="lazy">
+      <div class="im-trust-content">
+        <span class="im-trust-badge">IndiaMART TrustSeal Verified</span>
+        <h3>IndiaMART TrustSeal</h3>
+        <p>Certificate ID 248288 · Valid till January 2027. Business verification credential — not a product-quality certification.</p>
+      </div>
+      <div class="im-trust-actions">
+        <a class="btn btn-ghost btn-sm trust-link" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener" data-mobile-img="assets/brand/indiamart-trustseal.jpg">Verify TrustSeal</a>
+        <a class="btn btn-dark btn-sm" href="https://www.indiamart.com/yourchoicegarments/profile.html" target="_blank" rel="noopener">IndiaMART Profile</a>
+      </div>
     </div>`;
   const rel=window.PRODUCTS.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,3);
   if(rel.length){document.getElementById('relatedSection').hidden=false;
