@@ -8,10 +8,62 @@
 <link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png"><meta name="keywords" content="Tiruppur garment manufacturer, wholesale T-shirts Tiruppur, bulk apparel supplier, custom T-shirts, polo T-shirts, oversized T-shirts, hoodies, sweatshirts, private label garments, garment factory Tiruppur">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://your-choice-garments.vercel.app/product.html">
+<style>
+/* ── Product enquiry modal ── */
+.enq{position:fixed;inset:0;z-index:1500;display:flex;align-items:center;justify-content:center;padding:18px}
+.enq[hidden]{display:none}
+.enq-backdrop{position:absolute;inset:0;background:rgba(6,12,30,.66);backdrop-filter:blur(4px)}
+.enq-dialog{position:relative;width:min(440px,100%);max-height:92vh;overflow:auto;overscroll-behavior:contain;background:#fff;border-radius:16px;padding:26px 26px 22px;box-shadow:0 30px 80px rgba(0,0,0,.4);animation:enqIn .22s var(--ease)}
+@keyframes enqIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.enq-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:#fff;color:var(--muted);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,border-color .2s}
+.enq-close:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.enq-close:focus-visible,.enq-submit:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.enq-dialog .eyebrow{margin-bottom:8px}
+.enq-dialog h2{font-size:23px;margin:0 0 6px;letter-spacing:-.02em}
+.enq-sub{font-size:13px;color:var(--muted);margin:0 0 16px;line-height:1.5}
+.enq-product{display:flex;align-items:center;gap:12px;background:var(--grey);border:1px solid var(--border);border-radius:10px;padding:10px;margin-bottom:18px}
+.enq-product img{width:52px;height:52px;flex-shrink:0;object-fit:cover;border-radius:8px;background:#fff}
+.enq-product strong{display:block;font-size:14px;line-height:1.3;color:var(--navy)}
+.enq-product span{font-size:11.5px;color:var(--muted)}
+.enq-field{margin-bottom:14px}
+.enq-field label{display:block;font-size:12px;font-weight:600;letter-spacing:.02em;color:#3A455C;margin-bottom:6px}
+.enq-field input{width:100%;padding:12px 13px;border:1px solid var(--border);border-radius:9px;font:inherit;font-size:14px;color:var(--text);background:#fff;transition:border-color .2s,box-shadow .2s}
+.enq-field input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(16,32,176,.12)}
+.enq-field input:user-invalid{border-color:var(--red)}
+.enq-submit{width:100%;margin-top:4px}
+.enq-note{font-size:11px;color:var(--muted);text-align:center;margin:10px 0 0;line-height:1.5}
+@media(max-width:560px){
+  .enq{align-items:flex-end;padding:0}
+  .enq-dialog{width:100%;max-height:94vh;border-radius:18px 18px 0 0;padding:24px 20px calc(22px + env(safe-area-inset-bottom));animation-name:enqUp}
+  @keyframes enqUp{from{opacity:.6;transform:translateY(28px)}to{opacity:1;transform:none}}
+}
+@media(prefers-reduced-motion:reduce){.enq-dialog{animation:none}}
+</style>
 </head><body class="product-detail">
 <div id="site-header"></div>
 <section class="section"><div class="container" id="detail"></div></section>
 <section class="section section-grey" id="relatedSection" hidden><div class="container"><div class="section-head"><div><p class="eyebrow">More from the range</p><h2>Related products</h2></div><a href="products.html">All products →</a></div><div class="product-grid" id="relatedGrid"></div></div></section>
+<div class="enq" id="enq" hidden>
+  <div class="enq-backdrop" data-enq-close></div>
+  <div class="enq-dialog" role="dialog" aria-modal="true" aria-labelledby="enqTitle">
+    <button class="enq-close" type="button" data-enq-close aria-label="Close enquiry form">&times;</button>
+    <p class="eyebrow">Product enquiry</p>
+    <h2 id="enqTitle">Quick details</h2>
+    <p class="enq-sub">We pre-fill these into your WhatsApp message — no blanks, no back-and-forth.</p>
+    <div class="enq-product">
+      <img id="enqImg" src="" alt="" width="52" height="52">
+      <div><strong id="enqName"></strong><span id="enqCode"></span></div>
+    </div>
+    <form id="enqForm">
+      <div class="enq-field"><label for="enqNameInput">Your name</label><input id="enqNameInput" name="name" type="text" autocomplete="name" maxlength="60" required placeholder="e.g. Arun Kumar"></div>
+      <div class="enq-field"><label for="enqQty">Quantity (pieces)</label><input id="enqQty" name="qty" type="number" inputmode="numeric" min="1" max="1000000" step="1" required placeholder="e.g. 100"></div>
+      <div class="enq-field"><label for="enqPlace">State / city you're enquiring from</label><input id="enqPlace" name="place" type="text" autocomplete="address-level1" maxlength="80" required placeholder="e.g. Tamil Nadu, Coimbatore"></div>
+      <button class="btn btn-wa enq-submit" type="submit">Send on WhatsApp</button>
+      <p class="enq-note">Your details are used only to prepare this WhatsApp message.</p>
+    </form>
+  </div>
+</div>
+
 <div id="site-footer"></div>
 <script>
 function swapImg(el,src){document.getElementById('mainImg').src=src;document.querySelectorAll('.gallery-thumbs img').forEach(i=>i.classList.remove('active'));el.classList.add('active');}
@@ -20,7 +72,8 @@ document.addEventListener('DOMContentLoaded',()=>{
  const p=window.PRODUCTS.find(x=>x.id===id);
  if(!p){document.getElementById('detail').innerHTML='<p>Product not found. <a href="products.html">Back to catalogue</a></p>';return;}
  document.title=p.name+' — Your Choice Garments';
- const msg=`Hello Your Choice Garments,\n\nI am interested in the following product:\n\nProduct: ${p.name}\nProduct Code: ${p.code}\nQuantity required:\nFabric / GSM preference:\nSizes:\nColours:\nCustomisation:\nDelivery location:\n\nPlease share the available options, MOQ and quotation.\n\nName:\nBusiness:`;
+ window.YCG_PRODUCT=p;
+ const fallbackMsg=`Hello Your Choice Garments! I would like a quotation for ${p.name} (${p.code}). Please share the price, MOQ and lead time.`;
  document.getElementById('detail').innerHTML=`
    <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
    <div class="split" style="align-items:start">
@@ -28,7 +81,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
       ${p.gallery&&p.gallery.length>1?`<div class="gallery-thumbs">${p.gallery.map((g,idx)=>`<img src="${g}" alt="${p.name} view ${idx+1}" class="${idx===0?'active':''}" onclick="swapImg(this,'${g}')">`).join('')}</div>`:''}
       <p class="form-note">Photographs show the product style. More views available on request.</p>
-      <div class="p-ctas p-ctas--mobile"><a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+      <div class="p-ctas p-ctas--mobile"><a class="btn btn-wa" href="${waLink(fallbackMsg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
       <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
     </div>
     <div>
@@ -36,7 +89,7 @@ document.addEventListener('DOMContentLoaded',()=>{
        <h1 class="p-title">${p.name}</h1>
       <p class="badge" style="margin-top:6px">Product code ${p.code}</p>
        <p class="p-desc">${p.desc} Available specifications are confirmed against your requirement — share the details below and we will respond with options and a quotation.</p>
-      <div class="p-ctas p-ctas--desktop"><a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+      <div class="p-ctas p-ctas--desktop"><a class="btn btn-wa" href="${waLink(fallbackMsg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
       <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
       <dl class="specs">
         <div><dt>Fabric / composition</dt><dd>Enquire for details</dd></div>
@@ -55,5 +108,78 @@ document.addEventListener('DOMContentLoaded',()=>{
  if(rel.length){document.getElementById('relatedSection').hidden=false;
   document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="product.html?id=${r.id}"><img src="${r.img}" alt="${r.name}" loading="lazy"></a><div class="body"><h3>${r.name}</h3><p>${r.desc}</p><div class="actions"><a class="btn btn-ghost" href="product.html?id=${r.id}">View Details</a></div></div></article>`).join('');}
 });
+</script>
+<script>
+(function(){
+  var modal=document.getElementById('enq');
+  if(!modal) return;
+  var dialog=modal.querySelector('.enq-dialog');
+  var form=document.getElementById('enqForm');
+  var nameInput=document.getElementById('enqNameInput');
+  var qtyInput=document.getElementById('enqQty');
+  var placeInput=document.getElementById('enqPlace');
+  var lastFocus=null;
+
+  function clearValidity(){[nameInput,qtyInput,placeInput].forEach(function(i){i.setCustomValidity('');});}
+  function openModal(p,trigger){
+    lastFocus=trigger||document.activeElement;
+    document.getElementById('enqName').textContent=p.name;
+    document.getElementById('enqCode').textContent='Product code '+p.code;
+    var img=document.getElementById('enqImg');
+    img.src=p.img||'';img.alt=p.name;
+    modal.hidden=false;
+    document.body.style.overflow='hidden';
+    nameInput.focus();
+  }
+  function closeModal(){
+    modal.hidden=true;
+    document.body.style.overflow='';
+    if(lastFocus)lastFocus.focus();
+  }
+
+  document.getElementById('detail').addEventListener('click',function(e){
+    var a=e.target.closest('a.btn-wa');
+    if(!a||!window.YCG_PRODUCT) return;
+    e.preventDefault();
+    openModal(window.YCG_PRODUCT,a);
+  });
+  modal.addEventListener('click',function(e){
+    if(e.target.closest('[data-enq-close]')) closeModal();
+  });
+  document.addEventListener('keydown',function(e){
+    if(modal.hidden) return;
+    if(e.key==='Escape'){closeModal();return;}
+    if(e.key==='Tab'){
+      var f=dialog.querySelectorAll('button,input,a[href]');
+      var first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    }
+  });
+  [nameInput,qtyInput,placeInput].forEach(function(i){i.addEventListener('input',clearValidity);});
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var p=window.YCG_PRODUCT;
+    if(!p) return;
+    var name=nameInput.value.trim();
+    var qty=qtyInput.value.trim();
+    var place=placeInput.value.trim();
+    nameInput.setCustomValidity(name?'':'Please enter your name.');
+    qtyInput.setCustomValidity(qty&&Number(qty)>0?'':'Please enter the quantity you need.');
+    placeInput.setCustomValidity(place?'':'Please enter the state or city you are enquiring from.');
+    if(!form.reportValidity()) return;
+    var text='Hi Your Choice Garments!\n\nI would like a quotation for:\n'+
+      'Product: '+p.name+' ('+p.code+')\n'+
+      'Quantity: '+qty+' pcs\n'+
+      'Name: '+name+'\n'+
+      'Enquiring from: '+place+'\n\n'+
+      'Please share the price, MOQ and lead time.';
+    var url=waLink(text);
+    var win=window.open(url,'_blank');
+    if(!win) window.location.href=url;
+    closeModal();
+  });
+})();
 </script>
 </body></html>
