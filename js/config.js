@@ -3,6 +3,8 @@ window.YCG = {
   whatsapp: "+918220089690", // VERIFY BEFORE PUBLISHING
   phone: "+918220089690", // VERIFY
   phoneDisplay: "+91 82200 89690",
+  phoneSecondary: "+919842230613", // VERIFY
+  phoneSecondaryDisplay: "+91 98422 30613",
   email: "yourchoicegarments@hacclothings.com", // confirmed by owner
   hacEmail: "hacclothingtiruppur@gmail.com", // HAC label enquiries
   address: "2, 1st Street, Balamurugan Nagar, Valayankadu, Tiruppur – 641603, Tamil Nadu", // Your Choice Garments

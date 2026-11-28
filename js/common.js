@@ -5,7 +5,7 @@ function navLink(href,label){
 function headerHTML(){
  return `<div class="topbar"><div class="container">
    <span>Tiruppur, Tamil Nadu · Garment Manufacturing & Wholesale</span>
-   <span><a href="tel:${window.YCG.phone}">${window.YCG.phoneDisplay}</a><span class="dot">·</span><a href="${waLink('Hello Your Choice Garments, I would like to enquire.')}" target="_blank" rel="noopener">WhatsApp</a><span class="dot">·</span><a href="${window.YCG.indiamart}" target="_blank" rel="noopener">IndiaMART</a></span>
+   <span><a href="tel:${window.YCG.phone}">${window.YCG.phoneDisplay}</a><span class="dot">·</span><a href="tel:${window.YCG.phoneSecondary}">${window.YCG.phoneSecondaryDisplay}</a><span class="dot">·</span><a href="${waLink('Hello Your Choice Garments, I would like to enquire.')}" target="_blank" rel="noopener">WhatsApp</a><span class="dot">·</span><a href="${window.YCG.indiamart}" target="_blank" rel="noopener">IndiaMART</a></span>
  </div></div>
  <header class="site"><div class="container nav">
   <a class="logo" href="index.html" aria-label="Your Choice Garments home">
@@ -75,6 +75,7 @@ function footerHTML(){
    </div>
    <div><h4>Contact</h4>
      <a href="tel:${window.YCG.phone}">${window.YCG.phoneDisplay}</a><br>
+     <a href="tel:${window.YCG.phoneSecondary}">${window.YCG.phoneSecondaryDisplay}</a><br>
      <a href="mailto:${email}">${email}</a><br>
      <span style="display:block;padding:4px 0">${addr}</span>
      <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px"><img src="assets/brands/indiamart.svg" alt="IndiaMART" style="height:14px;width:auto"> Business profile ↗</a><br>
