@@ -110,7 +110,7 @@
     <p>Certificate ID 248288 · Valid till January 2027. Business verification credential only.</p>
   </div>
   <div class="im-trust-actions">
-    <a class="btn btn-ghost btn-sm" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener">Verify</a>
+    <a class="btn btn-ghost btn-sm trust-link" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener" data-mobile-img="assets/brand/indiamart-trustseal.jpg">Verify</a>
   </div>
 </div>
 </section>
@@ -123,6 +123,17 @@ document.getElementById('wform').addEventListener('submit',e=>{
  e.preventDefault(); const f=new FormData(e.target);
  const msg=`Hello Your Choice Garments,\n\nWholesale Enquiry\nName: ${f.get('name')}\nBusiness: ${f.get('business')}\nPhone: ${f.get('phone')}\nEmail: ${f.get('email')}\nBuyer type: ${f.get('buyer')}\nRequirement: ${f.get('req')}\nProduct interest: ${f.get('product')}\nQuantity: ${f.get('qty')}\nNotes: ${f.get('notes')}`;
  window.open(waLink(msg),'_blank');
+});
+
+// TrustSeal link: mobile opens image, desktop navigates
+document.querySelectorAll('.trust-link').forEach(function(link){
+  link.addEventListener('click', function(e){
+    if(window.innerWidth <= 768){
+      e.preventDefault();
+      var imgSrc = this.getAttribute('data-mobile-img');
+      if(imgSrc) window.open(imgSrc, '_blank');
+    }
+  });
 });
 </script>
 </body></html>

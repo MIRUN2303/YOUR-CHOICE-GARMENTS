@@ -164,12 +164,12 @@
        <p>Certificate ID 248288 · Issued February 2026 · Valid till January 2027. The TrustSeal is a business verification credential — not a quality or government certification.</p>
      </div>
      <div class="im-trust-actions">
-       <a class="btn btn-ghost btn-sm" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener">View TrustSeal</a>
+       <a class="btn btn-ghost btn-sm trust-link" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener" data-mobile-img="assets/brand/indiamart-trustseal.jpg">View TrustSeal</a>
        <a class="btn btn-dark btn-sm" href="https://www.indiamart.com/yourchoicegarments/profile.html" target="_blank" rel="noopener">IndiaMART Profile</a>
      </div>
    </div>
  </div>
-</section>>
+</section>
 
 <!-- HAC -->
 <section class="hac-section section">
@@ -304,7 +304,17 @@
     var set = buildSet();
     row1.innerHTML = set + set;
     row2.innerHTML = set + set;
-  })();
+  )}();
 
+  // TrustSeal link: mobile opens image, desktop navigates
+  document.querySelectorAll('.trust-link').forEach(function(link){
+    link.addEventListener('click', function(e){
+      if(window.innerWidth <= 768){
+        e.preventDefault();
+        var imgSrc = this.getAttribute('data-mobile-img');
+        if(imgSrc) window.open(imgSrc, '_blank');
+      }
+    });
+  });
 </script>
 </body></html>
