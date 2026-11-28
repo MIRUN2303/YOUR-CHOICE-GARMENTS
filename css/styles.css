@@ -357,6 +357,7 @@ header.site .container{max-width:1360px}
 .product-marquee-item:hover .product-marquee-img{transform:translateY(-6px);box-shadow:0 20px 48px rgba(11,23,64,.18)}
 .product-marquee-item:hover .product-marquee-img img{transform:scale(1.05)}
 .product-marquee-name{font-size:13px;font-weight:600;color:var(--navy);text-align:center;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.products-cta{display:flex;width:100%;margin-top:clamp(20px,3vw,32px)}
 @keyframes marquee-products{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* Responsive */
