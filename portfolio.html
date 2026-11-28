@@ -1,235 +1,1168 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brand Portfolio — Your Choice Garments</title>
-<meta name="description" content="Production portfolio and brand supply showcase layout for Your Choice Garments, Tiruppur.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Client Portfolio — Your Choice Garments</title>
+<meta name="description" content="Client portfolio of Your Choice Garments, Tiruppur — corporate polos, service uniforms, sports academy wear, fashion-label hoodies and Instagram white-label tees.">
+<meta name="keywords" content="garment portfolio Tiruppur, corporate uniform manufacturer, custom polo T-shirts, sports academy jerseys, private label hoodies, white label T-shirts">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://your-choice-garments.vercel.app/portfolio.html">
+<meta property="og:title" content="Client Portfolio — Your Choice Garments">
+<meta property="og:description" content="26 brand programmes — corporate polos, service uniforms, sports wear, fashion labels and white-label tees from our Tiruppur unit.">
+<meta property="og:type" content="website">
 <link rel="stylesheet" href="css/styles.css">
 <script defer src="js/config.js"></script><script defer src="js/common.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://your-choice-garments.vercel.app/portfolio.html">
 <style>
-.brand-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-@media(max-width:960px){.brand-slots{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.brand-slots{grid-template-columns:1fr}}
-.brand-slot{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
-.brand-slot:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
-.brand-slot-media{position:relative;aspect-ratio:4/3;background:var(--grey);overflow:hidden}
-.brand-slot-media img{width:100%;height:100%;object-fit:cover}
-.brand-slot-tag{position:absolute;top:12px;left:12px;background:rgba(11,23,64,.85);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
-.brand-slot-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.brand-slot-logo{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 14px;border:1px dashed #C7D0E2;border-radius:8px;background:var(--warm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;align-self:flex-start;margin-bottom:4px}
-.brand-slot-body h3{font-size:18px;color:var(--navy)}
-.brand-slot-body p{font-size:13.5px;color:var(--muted)}
-.brand-slot-meta{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+/* ── Portfolio hero ── */
+.port-hero{overflow:hidden}
+.port-hero .container{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(34px,5vw,64px);align-items:center}
+.port-hero h1{margin:14px 0 18px}
+.port-hero .lead{font-size:clamp(15px,1.35vw,17px);max-width:56ch}
+.port-hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-size:12.5px;letter-spacing:.03em;color:#B9C4E0}
+.port-hero-meta span{display:inline-flex;align-items:center;gap:7px}
+.port-hero-meta b{color:#fff;font-weight:700}
+.port-collage{position:relative;height:clamp(300px,31vw,420px);isolation:isolate}
+.port-collage figure{position:absolute;margin:0;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,.2);box-shadow:0 30px 70px rgba(0,0,0,.38);background:var(--navy-2)}
+.port-collage img{width:100%;height:100%;object-fit:cover}
+.port-collage figure:nth-child(1){left:0;top:6%;width:58%;height:72%;transform:rotate(-3deg);z-index:2}
+.port-collage figure:nth-child(2){right:0;top:0;width:50%;height:58%;transform:rotate(3deg);z-index:1}
+.port-collage figure:nth-child(3){right:5%;bottom:0;width:48%;height:48%;transform:rotate(-2deg);z-index:3}
+.port-collage-tag{position:absolute;left:4%;bottom:2%;z-index:4;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.95);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;border-radius:999px;box-shadow:0 12px 28px rgba(0,0,0,.28);white-space:nowrap}
+.port-collage-tag i{width:6px;height:6px;border-radius:50%;background:var(--red)}
 
-.port-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
-.port-tab{padding:9px 18px;border-radius:999px;border:1px solid var(--border);background:#fff;color:var(--navy);font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
-.port-tab:hover{border-color:var(--navy)}
-.port-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* ── Client ticker ── */
+.port-marquee .marquee{animation-duration:58s}
 
-.port-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:1024px){.port-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px){.port-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:440px){.port-grid{grid-template-columns:1fr}}
-.port-item{position:relative;border-radius:12px;overflow:hidden;background:var(--navy);aspect-ratio:1/1;border:1px solid var(--border);cursor:pointer}
-.port-item img,.port-item video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
-.port-item:hover img{transform:scale(1.04)}
-.port-item .port-badge{position:absolute;top:10px;right:10px;background:rgba(11,23,64,.82);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+/* ── Toolbar: stats + filters ── */
+.port-toolbar{padding:clamp(38px,5vw,58px) 0 clamp(34px,4vw,48px)}
+.port-filterbar{display:flex;align-items:center;justify-content:space-between;gap:14px 20px;flex-wrap:wrap;margin-top:18px;padding:13px 15px;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 10px 30px rgba(11,23,64,.05)}
+.port-filters{display:flex;flex-wrap:wrap;gap:7px}
+.pf-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:#fff;font:inherit;font-size:12.5px;font-weight:600;color:#4A5568;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pf-btn .n{font-size:10.5px;font-weight:700;color:var(--muted);opacity:.8}
+.pf-btn:hover{border-color:var(--navy);color:var(--navy)}
+.pf-btn[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.pf-btn[aria-pressed="true"] .n{color:#AEBBD8;opacity:1}
+.pf-btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.port-status{font-size:12px;color:var(--muted);margin:0;letter-spacing:.01em}
 
-.lightbox{position:fixed;inset:0;background:rgba(8,16,40,.9);z-index:120;display:none;align-items:center;justify-content:center;padding:24px}
-.lightbox.open{display:flex}
-.lightbox-inner{position:relative;max-width:920px;max-height:88vh;width:100%;display:flex;align-items:center;justify-content:center}
-.lightbox-inner img,.lightbox-inner video{max-width:100%;max-height:86vh;border-radius:12px;background:#000}
-.lightbox-close{position:fixed;top:18px;right:22px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(11,23,64,.75);color:#fff;font-size:20px;cursor:pointer}
+/* ── Category bands ── */
+.port-cat{padding:clamp(38px,5vw,62px) 0;position:relative}
+.port-cat.is-hidden{display:none}
+.port-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:26px}
+.port-head-main{display:flex;align-items:flex-start;gap:18px;min-width:0}
+.port-num{font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(38px,5vw,58px);line-height:.85;color:transparent;-webkit-text-stroke:1px #C9D2E4;letter-spacing:-.05em;flex-shrink:0}
+.port-head h2{font-size:clamp(24px,2.8vw,34px)}
+.port-head .eyebrow{margin-bottom:7px}
+.port-head .desc{font-size:13.5px;color:var(--muted);margin-top:7px;max-width:620px;line-height:1.55}
+.port-count{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding-bottom:5px}
+.port-cat.section-navy .port-head{border-bottom-color:rgba(255,255,255,.16)}
+.port-cat.section-navy .port-num{-webkit-text-stroke-color:rgba(255,255,255,.22)}
+.port-cat.section-navy .port-count{color:#9FADCE}
+.port-cat.section-navy .eyebrow{color:#fff}
+.port-cat.section-navy .port-head .desc{color:#B9C4E0}
+
+/* ── Cards ── */
+.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:24px}
+.brand-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.brand-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.brand-card[hidden]{display:none}
+.brand-media{position:relative;aspect-ratio:4/3;background:var(--grey);overflow:hidden}
+.brand-photo{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in;position:relative}
+.brand-photo img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.brand-card:hover .brand-photo img{transform:scale(1.045)}
+.brand-photo:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.brand-zoom{position:absolute;top:11px;right:11px;z-index:2;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(8,16,40,.55);border:1px solid rgba(255,255,255,.28);color:#fff;backdrop-filter:blur(8px);pointer-events:none;transition:background .2s,border-color .2s}
+.brand-zoom svg{width:15px;height:15px}
+.brand-photo:hover .brand-zoom,.brand-photo:focus-visible .brand-zoom{background:var(--red);border-color:var(--red)}
+.brand-badge{position:absolute;top:10px;left:10px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#fff;background:rgba(8,16,40,.68);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);pointer-events:none}
+.brand-badge i{width:5px;height:5px;border-radius:50%;background:#fff;flex-shrink:0}
+.badge-corporate i{background:#7EA0FF}
+.badge-uniform i{background:#FF8A7A}
+.badge-sports i{background:#6EE7A8}
+.badge-brand i{background:#D8A6FF}
+.badge-institutional i{background:#9DB6FF}
+.badge-instagram i{background:#FFC46B}
+
+/* thumbnail strip sits on the photo, keeps cards compact */
+.brand-thumbs{position:absolute;left:50%;bottom:9px;transform:translateX(-50%);z-index:3;display:flex;gap:6px;padding:6px;width:max-content;max-width:calc(100% - 18px);background:rgba(8,16,40,.55);border:1px solid rgba(255,255,255,.2);border-radius:10px;backdrop-filter:blur(10px);overflow-x:auto;scrollbar-width:none}
+.brand-thumbs::-webkit-scrollbar{display:none}
+.brand-thumb{flex:0 0 auto;width:38px;height:38px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;background:#fff;cursor:pointer;transition:border-color .2s,transform .2s}
+.brand-thumb img{width:100%;height:100%;object-fit:cover}
+.brand-thumb:hover{border-color:rgba(255,255,255,.6)}
+.brand-thumb.is-active{border-color:#fff}
+.brand-thumb:focus-visible{outline:2px solid #fff;outline-offset:1px}
+
+/* logo-only brand panel */
+.brand-media--mark{display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#0B1740 0%,#12245f 55%,#1b2f74 100%);isolation:isolate}
+.brand-media--mark::before{content:attr(data-initial);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(150px,19vw,220px);line-height:1;color:rgba(255,255,255,.055);letter-spacing:-.06em;z-index:0;user-select:none}
+.brand-plate{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:18px 24px;min-width:46%;max-width:78%;box-shadow:0 22px 50px rgba(0,0,0,.32)}
+.brand-plate::after{content:"";position:absolute;left:20px;right:20px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,var(--red),var(--blue))}
+.brand-plate img{height:58px;width:auto;max-width:100%;object-fit:contain}
+.brand-plate--stack{flex-direction:column;gap:8px}
+.brand-plate--stack img{height:44px}
+.brand-plate--stack b{font-family:'Manrope',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);line-height:1}
+.brand-plate--word{display:flex;flex-direction:column;gap:5px;font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(16px,2vw,22px);letter-spacing:.1em;line-height:1.15;color:var(--navy);text-align:center}
+.brand-plate--word small{display:block;font-family:'Inter',sans-serif;font-size:8.5px;font-weight:600;letter-spacing:.22em;color:var(--muted);margin-top:5px}
+.brand-nophoto{position:absolute;right:9px;bottom:9px;z-index:3;background:rgba(255,255,255,.95);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;pointer-events:none}
+
+/* card body */
+.brand-body{display:flex;flex-direction:column;flex:1;gap:9px;padding:17px 17px 18px}
+.brand-id{display:flex;align-items:center;gap:11px}
+.brand-mark{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:4px;border:1px solid var(--border);border-radius:10px;background:#fff;font-family:'Manrope',sans-serif;font-weight:800;font-size:9px;line-height:1.15;text-align:center;letter-spacing:.02em;color:var(--navy)}
+.brand-mark img{max-width:100%;max-height:100%;object-fit:contain}
+.brand-id h3{font-size:17px;line-height:1.25}
+.brand-type{font-size:11px;letter-spacing:.04em;color:var(--muted);margin-top:2px}
+.brand-desc{font-size:12.8px;color:#4A5568;line-height:1.55;flex:1}
+.brand-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:11px;border-top:1px solid var(--border)}
+.brand-photo-count{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:var(--muted);letter-spacing:.03em;white-space:nowrap}
+.brand-photo-count::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.6;flex-shrink:0}
+.brand-wa{display:inline-flex;align-items:center;gap:5px;padding:7px 11px;border-radius:999px;background:#EAF7EF;color:#177A42;font-size:11px;font-weight:700;border:1px solid #CDEBD9;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.brand-wa::after{content:"→";font-size:11px}
+.brand-wa:hover{background:#177A42;color:#fff;border-color:#177A42}
+.brand-wa:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* invitation card in the navy band */
+.brand-card--invite{background:rgba(255,255,255,.045);border:1px dashed rgba(255,255,255,.3)}
+.brand-card--invite:hover{background:rgba(255,255,255,.07);box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.invite-media{position:relative;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 42%,rgba(16,32,176,.55),transparent 68%);overflow:hidden}
+.invite-plus{width:104px;height:104px;border-radius:50%;border:1px dashed rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:54px;font-weight:600;line-height:1;color:#fff}
+.brand-card--invite .brand-id h3,.brand-card--invite .brand-desc{color:#fff}
+.brand-card--invite .brand-type,.brand-card--invite .brand-photo-count{color:#B9C4E0}
+.brand-card--invite .brand-photo-count::before{background:#fff}
+.brand-card--invite .brand-foot{border-top-color:rgba(255,255,255,.16)}
+.brand-card--invite .brand-mark{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;font-size:8px}
+.brand-card--invite .brand-wa{background:#fff;color:var(--navy);border-color:#fff}
+.brand-card--invite .brand-wa:hover{background:var(--red);color:#fff;border-color:var(--red)}
+/* keep normal cards readable on the navy band */
+.port-cat.section-navy .brand-card:not(.brand-card--invite) h3{color:var(--navy)}
+.port-cat.section-navy .brand-card:not(.brand-card--invite) .brand-type,
+.port-cat.section-navy .brand-card:not(.brand-card--invite) .brand-photo-count{color:var(--muted)}
+.port-cat.section-navy .brand-card:not(.brand-card--invite) .brand-desc{color:#4A5568}
+.port-cat.section-navy .brand-card:not(.brand-card--invite) .brand-photo-count::before{background:var(--blue)}
+
+/* ── Lightbox ── */
+.lb{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:28px 20px;background:rgba(5,10,25,.94);backdrop-filter:blur(6px)}
+.lb.is-open{display:flex}
+.lb-figure{position:relative;margin:0;max-width:min(1040px,94vw);max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lb-img{max-width:100%;max-height:74vh;width:auto;height:auto;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5);background:var(--navy)}
+.lb-caption{color:#D5DEF5;font-size:12.5px;text-align:center;margin:0;max-width:72ch;line-height:1.5}
+.lb-controls{display:flex;align-items:center;gap:14px}
+.lb-nav{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.08);color:#fff;font-size:17px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+.lb-nav:hover{background:var(--red);border-color:var(--red)}
+.lb-nav:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.lb-count{font-size:11px;letter-spacing:.12em;color:#AEBBD8;min-width:52px;text-align:center}
+.lb-close{position:absolute;top:-50px;right:0;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(11,23,64,.92);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+.lb-close:hover{background:var(--red);border-color:var(--red)}
+.lb-close:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+@media(max-width:900px){
+  .port-hero .container{grid-template-columns:1fr}
+  .port-collage{height:250px;max-width:560px;margin-top:4px}
+}
+@media(max-width:640px){
+  .port-hero{padding-bottom:clamp(42px,8vw,58px)}
+  .port-collage{height:205px}
+  .port-collage-tag{left:0;bottom:-4px;font-size:9px;padding:6px 10px}
+  .port-head-main{gap:0}
+  .port-num{display:none}
+  .port-filterbar{padding:11px 12px;gap:9px}
+  .pf-btn{padding:8px 12px;font-size:12px}
+  .port-grid{gap:16px}
+  .port-toolbar .stat{padding:20px 16px}
+  .port-toolbar .stat span{font-size:10.5px;letter-spacing:.06em}
+  .brand-body{padding:15px 15px 16px}
+  .brand-thumbs{gap:5px;padding:5px}
+  .brand-thumb{width:34px;height:34px}
+  .brand-foot{gap:8px}
+  .lb{padding:20px 12px}
+  .lb-close{top:-46px}
+  .lb-img{max-height:68vh}
+}
+@media(prefers-reduced-motion:reduce){
+  .port-marquee .marquee{animation:none}
+  .brand-card,.brand-photo img,.brand-zoom{transition:none}
+  .brand-card:hover{transform:none}
+  .brand-card:hover .brand-photo img{transform:none}
+}
 </style>
-</head><body>
+</head>
+<body>
 <div id="site-header"></div>
 
-<section class="page-hero" data-deco="hero-about"><div class="container">
- <p class="eyebrow">Portfolio</p>
- <h1>Brands We’ve Supplied.</h1>
- <p>Layout showcase of custom-branded, private-label and bulk apparel programmes produced at our unit. Brand names and programme details will be updated once confirmed by the client.</p>
-</div></section>
-
-<!-- BRAND PARTNER LAYOUT SLOTS -->
-<section class="section">
- <div class="container">
-  <div class="section-head">
-   <div>
-    <p class="eyebrow">Client programmes</p>
-    <h2>Brand showcase layout.</h2>
-    <p>Structured cards ready for client brand names, logos and garment programme summaries.</p>
-   </div>
+<!-- ── HERO ── -->
+<section class="page-hero port-hero">
+  <div class="container">
+    <div>
+      <p class="eyebrow">Client portfolio</p>
+      <h1>Garments that carry<br>every brand story.</h1>
+      <p class="lead">A working look at the polos, tees, hoodies and uniforms produced for corporate teams, institutions, sports academies and fashion labels — 26 brand programmes across six client categories.</p>
+      <div class="port-hero-meta">
+        <span><b>26</b> brand programmes</span>
+        <span><b>6</b> client categories</span>
+        <span><b>Since 2017</b> · Tiruppur unit</span>
+      </div>
+    </div>
+    <div class="port-collage" aria-hidden="true">
+      <figure><img src="assets/portfolio/aidni-01.jpg" alt="" fetchpriority="high" decoding="async"></figure>
+      <figure><img src="assets/portfolio/danke-dieu-06.jpg" alt="" decoding="async"></figure>
+      <figure><img src="assets/portfolio/sharon-tea-04.jpg" alt="" decoding="async"></figure>
+      <span class="port-collage-tag"><i></i>Recent client work</span>
+    </div>
   </div>
-  <div class="brand-slots">
-   <article class="brand-slot">
-    <div class="brand-slot-media">
-     <img src="assets/portfolio/portfolio-01.jpg" alt="Brand supply sample 01" loading="lazy">
-     <span class="brand-slot-tag">Brand Slot 01</span>
-    </div>
-    <div class="brand-slot-body">
-     <span class="brand-slot-logo">Brand Logo Pending</span>
-     <h3>Brand Name — Pending</h3>
-     <p>Custom apparel / private-label programme layout. Garment specs and client details to be added.</p>
-     <div class="brand-slot-meta"><span>Category: Custom Apparel</span><span>Status: Layout</span></div>
-    </div>
-   </article>
-   <article class="brand-slot">
-    <div class="brand-slot-media">
-     <img src="assets/portfolio/portfolio-06.jpg" alt="Brand supply sample 02" loading="lazy">
-     <span class="brand-slot-tag">Brand Slot 02</span>
-    </div>
-    <div class="brand-slot-body">
-     <span class="brand-slot-logo">Brand Logo Pending</span>
-     <h3>Brand Name — Pending</h3>
-     <p>Polo and uniform supply programme layout. Garment specs and client details to be added.</p>
-     <div class="brand-slot-meta"><span>Category: Polo &amp; Uniform</span><span>Status: Layout</span></div>
-    </div>
-   </article>
-   <article class="brand-slot">
-    <div class="brand-slot-media">
-     <img src="assets/portfolio/portfolio-12.jpg" alt="Brand supply sample 03" loading="lazy">
-     <span class="brand-slot-tag">Brand Slot 03</span>
-    </div>
-    <div class="brand-slot-body">
-     <span class="brand-slot-logo">Brand Logo Pending</span>
-     <h3>Brand Name — Pending</h3>
-     <p>Printed streetwear / retail label programme layout. Garment specs and client details to be added.</p>
-     <div class="brand-slot-meta"><span>Category: Printed Knitwear</span><span>Status: Layout</span></div>
-    </div>
-   </article>
-   <article class="brand-slot">
-    <div class="brand-slot-media">
-     <img src="assets/portfolio/portfolio-18.jpg" alt="Brand supply sample 04" loading="lazy">
-     <span class="brand-slot-tag">Brand Slot 04</span>
-    </div>
-    <div class="brand-slot-body">
-     <span class="brand-slot-logo">Brand Logo Pending</span>
-     <h3>Brand Name — Pending</h3>
-     <p>Corporate &amp; institutional supply programme layout. Garment specs and client details to be added.</p>
-     <div class="brand-slot-meta"><span>Category: Corporate Supply</span><span>Status: Layout</span></div>
-    </div>
-   </article>
-   <article class="brand-slot">
-    <div class="brand-slot-media">
-     <img src="assets/portfolio/portfolio-24.jpg" alt="Brand supply sample 05" loading="lazy">
-     <span class="brand-slot-tag">Brand Slot 05</span>
-    </div>
-    <div class="brand-slot-body">
-     <span class="brand-slot-logo">Brand Logo Pending</span>
-     <h3>Brand Name — Pending</h3>
-     <p>Bulk cut-and-sew production programme layout. Garment specs and client details to be added.</p>
-     <div class="brand-slot-meta"><span>Category: Bulk Production</span><span>Status: Layout</span></div>
-    </div>
-   </article>
-   <article class="brand-slot">
-    <div class="brand-slot-media">
-     <img src="assets/portfolio/portfolio-30.jpg" alt="Brand supply sample 06" loading="lazy">
-     <span class="brand-slot-tag">Brand Slot 06</span>
-    </div>
-    <div class="brand-slot-body">
-     <span class="brand-slot-logo">Brand Logo Pending</span>
-     <h3>Brand Name — Pending</h3>
-     <p>Private-label finishing &amp; branding programme layout. Garment specs and client details to be added.</p>
-     <div class="brand-slot-meta"><span>Category: Private Label</span><span>Status: Layout</span></div>
-    </div>
-   </article>
-  </div>
- </div>
 </section>
 
-<!-- FULL PORTFOLIO MEDIA GRID -->
-<section class="section section-grey">
- <div class="container">
-  <div class="section-head">
-   <div>
-    <p class="eyebrow">Production gallery</p>
-    <h2>Supplied work &amp; floor samples.</h2>
-    <p>Photos and production clips from supplied orders. Click any item to preview.</p>
-   </div>
+<!-- ── CLIENT TICKER ── -->
+<div class="strip port-marquee" aria-hidden="true"><div class="marquee">
+  <span>AIDNI Express Line</span><span>SIGMA</span><span>TVS</span><span>YSL</span><span>Ashok Leyland</span><span>Visteon</span><span>Tata</span><span>Hanon</span><span>Balaji Traders</span><span>Sharon Tea</span><span>Hunts World</span><span>Moon Bowl</span><span>The Wedding Pattarai</span><span>Five Star Solutions</span><span>Thrive Gym</span><span>Feathers Saloon</span><span>Kraftcare Car Wash</span><span>En Garde Fencing</span><span>Spartanz CEG</span><span>K-Circle Strikers</span><span>Danke Dieu</span><span>MK Model Kart</span><span>Emphasis</span><span>Aura Fashion</span><span>ICAT</span><span>QuirkyCrew</span>
+  <span>AIDNI Express Line</span><span>SIGMA</span><span>TVS</span><span>YSL</span><span>Ashok Leyland</span><span>Visteon</span><span>Tata</span><span>Hanon</span><span>Balaji Traders</span><span>Sharon Tea</span><span>Hunts World</span><span>Moon Bowl</span><span>The Wedding Pattarai</span><span>Five Star Solutions</span><span>Thrive Gym</span><span>Feathers Saloon</span><span>Kraftcare Car Wash</span><span>En Garde Fencing</span><span>Spartanz CEG</span><span>K-Circle Strikers</span><span>Danke Dieu</span><span>MK Model Kart</span><span>Emphasis</span><span>Aura Fashion</span><span>ICAT</span><span>QuirkyCrew</span>
+</div></div>
+
+<!-- ── STATS + FILTERS ── -->
+<section class="port-toolbar section-grey">
+  <div class="container">
+    <div class="stats on-light" role="group" aria-label="Portfolio statistics">
+      <div class="stat"><b>26</b><span>Brand programmes</span></div>
+      <div class="stat"><b>5,000+</b><span>Garments delivered</span></div>
+      <div class="stat"><b>6</b><span>Client categories</span></div>
+      <div class="stat"><b>100%</b><span>Custom made</span></div>
+    </div>
+    <div class="port-filterbar">
+      <div class="port-filters" role="group" aria-label="Filter portfolio by category">
+        <button class="pf-btn" type="button" data-filter="all" aria-pressed="true">All brands <span class="n">26</span></button>
+        <button class="pf-btn" type="button" data-filter="corporate" aria-pressed="false">Corporate <span class="n">9</span></button>
+        <button class="pf-btn" type="button" data-filter="uniform" aria-pressed="false">Uniforms <span class="n">8</span></button>
+        <button class="pf-btn" type="button" data-filter="sports" aria-pressed="false">Sports <span class="n">3</span></button>
+        <button class="pf-btn" type="button" data-filter="brand" aria-pressed="false">Fashion <span class="n">4</span></button>
+        <button class="pf-btn" type="button" data-filter="institutional" aria-pressed="false">Institutional <span class="n">1</span></button>
+        <button class="pf-btn" type="button" data-filter="instagram" aria-pressed="false">Instagram <span class="n">1</span></button>
+      </div>
+      <p class="port-status" id="portStatus" role="status" aria-live="polite">Showing all 26 brand programmes.</p>
+    </div>
   </div>
-  <div class="port-tabs" role="tablist" aria-label="Filter portfolio media">
-   <button class="port-tab active" data-filter="all" type="button">All Media</button>
-   <button class="port-tab" data-filter="photo" type="button">Photos (48)</button>
-   <button class="port-tab" data-filter="video" type="button">Videos (5)</button>
-  </div>
-  <div class="port-grid" id="portGrid"></div>
- </div>
 </section>
 
-<section class="cta-band" data-deco="cta-about"><div class="container">
- <div><h2>Planning your brand’s next production run?</h2><p>Share your requirement, artwork and target quantity — we’ll respond with options and a quotation.</p></div>
- <div class="ctas"><a class="btn btn-primary" href="wholesale.html">Request a Quote</a><a class="btn btn-outline" href="contact.html">Contact Us</a></div>
-</div></section>
+<main id="portfolio">
 
-<div class="lightbox" id="lightbox" aria-hidden="true">
- <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">✕</button>
- <div class="lightbox-inner" id="lightboxInner"></div>
+  <!-- ── CORPORATE ── -->
+  <section class="port-cat" aria-labelledby="cat-corporate">
+    <div class="container">
+      <div class="port-head">
+        <div class="port-head-main">
+          <span class="port-num" aria-hidden="true">01</span>
+          <div>
+            <p class="eyebrow">Corporate</p>
+            <h2 id="cat-corporate">Corporate uniforms &amp; clients</h2>
+            <p class="desc">Branded polos and apparel for corporate teams and business supply networks.</p>
+          </div>
+        </div>
+        <span class="port-count">9 brands</span>
+      </div>
+      <div class="port-grid">
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/aidni-01.jpg" data-caption="AIDNI Express Line — navy polo with white-tipped collar and chest embroidery" aria-label="View larger photo of AIDNI Express Line">
+              <img src="assets/portfolio/aidni-01.jpg" alt="AIDNI Express Line navy polo uniform with white-tipped collar and chest embroidery" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <div class="brand-thumbs" role="group" aria-label="AIDNI Express Line photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of AIDNI Express Line" data-src="assets/portfolio/aidni-01.jpg" data-alt="AIDNI Express Line navy polo uniform with white-tipped collar and chest embroidery" data-caption="AIDNI Express Line — navy polo with white-tipped collar and chest embroidery"><img src="assets/portfolio/aidni-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of AIDNI Express Line" data-src="assets/portfolio/aidni-02.jpg" data-alt="AIDNI Express Line polo uniform, additional view 2" data-caption="AIDNI Express Line — uniform photo 2"><img src="assets/portfolio/aidni-02.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of AIDNI Express Line" data-src="assets/portfolio/aidni-03.jpg" data-alt="AIDNI Express Line polo uniform, additional view 3" data-caption="AIDNI Express Line — uniform photo 3"><img src="assets/portfolio/aidni-03.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 4 of AIDNI Express Line" data-src="assets/portfolio/aidni-04.jpg" data-alt="AIDNI Express Line polo uniform, additional view 4" data-caption="AIDNI Express Line — uniform photo 4"><img src="assets/portfolio/aidni-04.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 5 of AIDNI Express Line" data-src="assets/portfolio/aidni-05.jpg" data-alt="AIDNI Express Line polo uniform, additional view 5" data-caption="AIDNI Express Line — uniform photo 5"><img src="assets/portfolio/aidni-05.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true">AIDNI</span>
+              <div><h3>AIDNI Express Line</h3><p class="brand-type">Corporate logistics · polo uniforms</p></div>
+            </div>
+            <p class="brand-desc">Navy polo uniforms with white-tipped collar and cuffs, chest embroidery and individual polybag packing for AIDNI Express Line.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">5 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%27m%20interested%20in%20corporate%20polo%20uniforms%20similar%20to%20AIDNI%20Express%20Line." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/sigma-04.jpg" data-caption="SIGMA — white cotton piqué polo with sky-blue collar and cuffs" aria-label="View larger photo of SIGMA">
+              <img src="assets/portfolio/sigma-04.jpg" alt="SIGMA white cotton piqué polo with sky-blue contrast collar and sleeve cuffs" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <div class="brand-thumbs" role="group" aria-label="SIGMA photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of SIGMA" data-src="assets/portfolio/sigma-04.jpg" data-alt="SIGMA white cotton piqué polo with sky-blue contrast collar and sleeve cuffs" data-caption="SIGMA — white cotton piqué polo with sky-blue collar and cuffs"><img src="assets/portfolio/sigma-04.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of SIGMA" data-src="assets/portfolio/sigma-01.jpg" data-alt="SIGMA polo collar and woven neck label detail" data-caption="SIGMA — collar and woven neck label detail"><img src="assets/portfolio/sigma-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of SIGMA" data-src="assets/portfolio/sigma-02.jpg" data-alt="SIGMA polo uniform, additional view 3" data-caption="SIGMA — uniform photo 3"><img src="assets/portfolio/sigma-02.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 4 of SIGMA" data-src="assets/portfolio/sigma-03.jpg" data-alt="SIGMA polo uniform, additional view 4" data-caption="SIGMA — uniform photo 4"><img src="assets/portfolio/sigma-03.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="color:#1b365d">SIGMA</span>
+              <div><h3>SIGMA</h3><p class="brand-type">Corporate · cotton piqué polos</p></div>
+            </div>
+            <p class="brand-desc">White premium cotton piqué polos with sky-blue contrast collar and cuffs, a woven SIGMA neck label and tricolour-accented chest embroidery.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">4 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%27m%20interested%20in%20custom%20cotton%20polos%20similar%20to%20SIGMA." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media brand-media--mark" data-initial="T">
+            <span class="brand-plate brand-plate--stack" aria-hidden="true"><img src="assets/brands/logos/tvs.png" alt="" loading="lazy"><b>TVS</b></span>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true">TVS</span>
+              <div><h3>TVS Motor Company</h3><p class="brand-type">Automotive · corporate polos</p></div>
+            </div>
+            <p class="brand-desc">Corporate polo uniform supply for TVS Motor Company teams through established business networks. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20corporate%20uniforms%20for%20an%20automotive%20company." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media brand-media--mark" data-initial="Y">
+            <span class="brand-plate brand-plate--stack" aria-hidden="true"><img src="assets/brands/logos/ysl.png" alt="" loading="lazy"><b>YSL</b></span>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true"><img src="assets/brands/logos/ysl.png" alt=""></span>
+              <div><h3>YSL</h3><p class="brand-type">Corporate apparel</p></div>
+            </div>
+            <p class="brand-desc">Corporate apparel supply for YSL through established business networks — customised polos and tees with precision branding. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20corporate%20apparel%20similar%20to%20your%20YSL%20order." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media brand-media--mark" data-initial="A">
+            <span class="brand-plate brand-plate--stack" aria-hidden="true"><img src="assets/brands/logos/ashok-leyland.png" alt="" loading="lazy"><b>Ashok Leyland</b></span>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="font-size:7.5px">ASHOK<br>LEYLAND</span>
+              <div><h3>Ashok Leyland</h3><p class="brand-type">Automotive · uniform polos</p></div>
+            </div>
+            <p class="brand-desc">Corporate-grade uniform polos with logo embroidery for Ashok Leyland teams, supplied through extended business networks. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20corporate%20apparel%20for%20a%20large%20manufacturing%20company." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media brand-media--mark" data-initial="V">
+            <span class="brand-plate brand-plate--stack" aria-hidden="true"><img src="assets/brands/logos/visteon.png" alt="" loading="lazy"><b>Visteon</b></span>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="font-size:7.5px">VISTEON</span>
+              <div><h3>Visteon</h3><p class="brand-type">Automotive electronics · corporate apparel</p></div>
+            </div>
+            <p class="brand-desc">Corporate apparel supply for Visteon, a global automotive electronics corporation, through established business networks. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20bulk%20corporate%20apparel%20for%20a%20technology%20company." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media brand-media--mark" data-initial="T">
+            <span class="brand-plate" aria-hidden="true"><img src="assets/brands/logos/tata.svg" alt="" loading="lazy"></span>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true"><img src="assets/brands/logos/tata.svg" alt=""></span>
+              <div><h3>Tata Group</h3><p class="brand-type">Business group · corporate apparel</p></div>
+            </div>
+            <p class="brand-desc">Apparel supply for Tata group teams through extended corporate business networks. Photos available on enquiry.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20corporate%20apparel%20for%20a%20large%20business%20group." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media brand-media--mark" data-initial="H">
+            <span class="brand-plate brand-plate--word" aria-hidden="true">HANON<small>Automotive components</small></span>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#0B1740;color:#fff;font-size:8px">HANON</span>
+              <div><h3>Hanon Corporate</h3><p class="brand-type">Automotive components · polo uniforms</p></div>
+            </div>
+            <p class="brand-desc">Corporate polo uniform supply for Hanon, an international automotive components supplier. Bulk orders with custom embroidery. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20corporate%20polo%20uniforms." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="corporate">
+          <div class="brand-media brand-media--mark" data-initial="B">
+            <span class="brand-plate brand-plate--word" aria-hidden="true">BALAJI<br>TRADERS<small>Trade &amp; retail</small></span>
+            <span class="brand-badge badge-corporate"><i></i>Corporate</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#3A2E25;color:#F5D08A;font-size:8px">BALAJI<br>TRADERS</span>
+              <div><h3>Balaji Traders</h3><p class="brand-type">Trade &amp; retail · staff polos</p></div>
+            </div>
+            <p class="brand-desc">Durable cotton-blend staff polos with custom logo branding for Balaji Traders. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20staff%20polos%20like%20Balaji%20Traders." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UNIFORMS ── -->
+  <section class="port-cat section-grey" aria-labelledby="cat-uniforms">
+    <div class="container">
+      <div class="port-head">
+        <div class="port-head-main">
+          <span class="port-num" aria-hidden="true">02</span>
+          <div>
+            <p class="eyebrow">Uniforms</p>
+            <h2 id="cat-uniforms">Business &amp; service uniforms</h2>
+            <p class="desc">Staff uniforms for estates, restaurants, studios, gyms and service teams.</p>
+          </div>
+        </div>
+        <span class="port-count">8 brands</span>
+      </div>
+      <div class="port-grid">
+
+        <article class="brand-card" data-category="uniform">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/sharon-tea-04.jpg" data-caption="Sharon Tea — forest-green estate polo with crest and yellow tipping" aria-label="View larger photo of Sharon Tea">
+              <img src="assets/portfolio/sharon-tea-04.jpg" alt="Sharon Tea forest-green estate polo with yellow crest and contrast sleeve tipping" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-uniform"><i></i>Uniform</span>
+            <div class="brand-thumbs" role="group" aria-label="Sharon Tea photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of Sharon Tea" data-src="assets/portfolio/sharon-tea-04.jpg" data-alt="Sharon Tea forest-green estate polo with yellow crest and contrast sleeve tipping" data-caption="Sharon Tea — forest-green estate polo with crest and yellow tipping"><img src="assets/portfolio/sharon-tea-04.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of Sharon Tea" data-src="assets/portfolio/sharon-tea-01.jpg" data-alt="Sharon Tea estate uniform, additional view 2" data-caption="Sharon Tea — estate uniform photo 2"><img src="assets/portfolio/sharon-tea-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of Sharon Tea" data-src="assets/portfolio/sharon-tea-02.jpg" data-alt="Sharon Tea estate uniform, additional view 3" data-caption="Sharon Tea — estate uniform photo 3"><img src="assets/portfolio/sharon-tea-02.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 4 of Sharon Tea" data-src="assets/portfolio/sharon-tea-03.jpg" data-alt="Sharon Tea estate uniform, additional view 4" data-caption="Sharon Tea — estate uniform photo 4"><img src="assets/portfolio/sharon-tea-03.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 5 of Sharon Tea" data-src="assets/portfolio/sharon-tea-05.jpg" data-alt="Sharon Tea estate uniform, additional view 5" data-caption="Sharon Tea — estate uniform photo 5"><img src="assets/portfolio/sharon-tea-05.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#FDC500;color:#1A1A1A">SHARON<br>TEA</span>
+              <div><h3>Sharon Tea</h3><p class="brand-type">Tea estate · field uniforms</p></div>
+            </div>
+            <p class="brand-desc">Forest-green tea estate polos with the Sharon crest, contrast yellow tipping and sleeve branding — supplied in multiple colourways for the estate crew.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">5 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20uniforms%20like%20the%20Sharon%20Tea%20estate%20polos." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="uniform">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/hunts-world-01.jpg" data-caption="Hunts World — navy pocket polo with chest and back print" aria-label="View larger photo of Hunts World">
+              <img src="assets/portfolio/hunts-world-01.jpg" alt="Hunts World navy pocket polo with The Business Expo chest print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-uniform"><i></i>Uniform</span>
+            <div class="brand-thumbs" role="group" aria-label="Hunts World photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of Hunts World" data-src="assets/portfolio/hunts-world-01.jpg" data-alt="Hunts World navy pocket polo with The Business Expo chest print" data-caption="Hunts World — navy pocket polo with chest and back print"><img src="assets/portfolio/hunts-world-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of Hunts World" data-src="assets/portfolio/hunts-world-02.jpg" data-alt="Hunts World staff polo, additional view 2" data-caption="Hunts World — staff polo photo 2"><img src="assets/portfolio/hunts-world-02.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of Hunts World" data-src="assets/portfolio/hunts-world-03.jpg" data-alt="Hunts World staff polo, additional view 3" data-caption="Hunts World — staff polo photo 3"><img src="assets/portfolio/hunts-world-03.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true">HUNTS<br>WORLD</span>
+              <div><h3>Hunts World</h3><p class="brand-type">Business expo · staff polos</p></div>
+            </div>
+            <p class="brand-desc">Navy pocket polos with a chest print and full HuntsWorld back print for The Business Expo staff team.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">3 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20staff%20polos%20like%20Hunts%20World." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="uniform">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/moon-bowl-03.jpg" data-caption="Moon Bowl — maroon staff tee with full-colour back print" aria-label="View larger photo of Moon Bowl Restaurant">
+              <img src="assets/portfolio/moon-bowl-03.jpg" alt="Moon Bowl Restaurant maroon staff tee with full-colour DTF back print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-uniform"><i></i>Restaurant</span>
+            <div class="brand-thumbs" role="group" aria-label="Moon Bowl Restaurant photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of Moon Bowl Restaurant" data-src="assets/portfolio/moon-bowl-03.jpg" data-alt="Moon Bowl Restaurant maroon staff tee with full-colour DTF back print" data-caption="Moon Bowl — maroon staff tee with full-colour back print"><img src="assets/portfolio/moon-bowl-03.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of Moon Bowl Restaurant" data-src="assets/portfolio/moon-bowl-01.jpg" data-alt="Moon Bowl Restaurant uniform, additional view 2" data-caption="Moon Bowl — uniform photo 2"><img src="assets/portfolio/moon-bowl-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of Moon Bowl Restaurant" data-src="assets/portfolio/moon-bowl-02.jpg" data-alt="Moon Bowl Restaurant uniform, additional view 3" data-caption="Moon Bowl — uniform photo 3"><img src="assets/portfolio/moon-bowl-02.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#8B0000;color:#FDC500">MOON<br>BOWL</span>
+              <div><h3>Moon Bowl Restaurant</h3><p class="brand-type">Restaurant · staff uniforms</p></div>
+            </div>
+            <p class="brand-desc">Maroon staff tees with a full-colour DTF back print — brand logo, Tamil typography and contact details — plus a chest pocket badge.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">3 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20want%20custom%20restaurant%20uniforms%20like%20Moon%20Bowl." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="uniform">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/pattarai-pixels-02.jpg" data-caption="The Wedding Pattarai — white crew polo with monogram back print" aria-label="View larger photo of The Wedding Pattarai">
+              <img src="assets/portfolio/pattarai-pixels-02.jpg" alt="The Wedding Pattarai white crew polo with monogram and studio back print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-uniform"><i></i>Studio uniform</span>
+            <div class="brand-thumbs" role="group" aria-label="The Wedding Pattarai photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of The Wedding Pattarai" data-src="assets/portfolio/pattarai-pixels-02.jpg" data-alt="The Wedding Pattarai white crew polo with monogram and studio back print" data-caption="The Wedding Pattarai — white crew polo with monogram back print"><img src="assets/portfolio/pattarai-pixels-02.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of The Wedding Pattarai" data-src="assets/portfolio/pattarai-pixels-01.jpg" data-alt="The Wedding Pattarai crew polo, additional view 2" data-caption="The Wedding Pattarai — crew polo photo 2"><img src="assets/portfolio/pattarai-pixels-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of The Wedding Pattarai" data-src="assets/portfolio/pattarai-pixels-03.jpg" data-alt="The Wedding Pattarai crew polo, additional view 3" data-caption="The Wedding Pattarai — crew polo photo 3"><img src="assets/portfolio/pattarai-pixels-03.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="color:#A07825">TP<br>STUDIO</span>
+              <div><h3>The Wedding Pattarai</h3><p class="brand-type">Photography studio · crew polos</p></div>
+            </div>
+            <p class="brand-desc">Crew polos for The Wedding Pattarai Photography Studio — white and charcoal tees with monogram and studio typography back print.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">3 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20custom%20crew%20polos%20for%20my%20studio." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="uniform">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/five-star-solutions-03.jpg" data-caption="Five Star Solutions — navy pocket polo with five-star chest print" aria-label="View larger photo of Five Star Solutions">
+              <img src="assets/portfolio/five-star-solutions-03.jpg" alt="Five Star Solutions navy pocket polo with five-star chest print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-uniform"><i></i>Uniform</span>
+            <div class="brand-thumbs" role="group" aria-label="Five Star Solutions photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of Five Star Solutions" data-src="assets/portfolio/five-star-solutions-03.jpg" data-alt="Five Star Solutions navy pocket polo with five-star chest print" data-caption="Five Star Solutions — navy pocket polo with five-star chest print"><img src="assets/portfolio/five-star-solutions-03.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of Five Star Solutions" data-src="assets/portfolio/five-star-solutions-02.jpg" data-alt="Five Star Solutions staff polo, additional view 2" data-caption="Five Star Solutions — staff polo photo 2"><img src="assets/portfolio/five-star-solutions-02.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of Five Star Solutions" data-src="assets/portfolio/five-star-solutions-01.jpg" data-alt="Five Star Solutions staff polo, additional view 3" data-caption="Five Star Solutions — staff polo photo 3"><img src="assets/portfolio/five-star-solutions-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 4 of Five Star Solutions" data-src="assets/portfolio/five-star-solutions-04.jpg" data-alt="Five Star Solutions staff polo, additional view 4" data-caption="Five Star Solutions — staff polo photo 4"><img src="assets/portfolio/five-star-solutions-04.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#001F5B;color:#FDC500">FIVE<br>STAR</span>
+              <div><h3>Five Star Solutions</h3><p class="brand-type">Facility services · staff polos</p></div>
+            </div>
+            <p class="brand-desc">Navy pocket polos with the five-star chest print and "Excellence Elevated" back text for Five Star Solutions cleaning teams.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">4 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20uniforms%20similar%20to%20Five%20Star%20Solutions." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="uniform">
+          <div class="brand-media brand-media--mark" data-initial="T">
+            <span class="brand-plate brand-plate--word" aria-hidden="true">THRIVE<br>GYM<small>Fitness</small></span>
+            <span class="brand-badge badge-uniform"><i></i>Gym uniform</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#1B4332;color:#fff">THRIVE<br>GYM</span>
+              <div><h3>Thrive Gym</h3><p class="brand-type">Fitness · trainer uniforms</p></div>
+            </div>
+            <p class="brand-desc">Dry-fit trainer polos and staff tees with Thrive Gym branding for daily gym-floor use. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20custom%20gym%20staff%20uniforms." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="uniform">
+          <div class="brand-media brand-media--mark" data-initial="F">
+            <span class="brand-plate brand-plate--word" aria-hidden="true">FEATHERS<small>Saloon</small></span>
+            <span class="brand-badge badge-uniform"><i></i>Salon uniform</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#3D2645;color:#F4D8CD;font-size:8px">FEATHERS</span>
+              <div><h3>Feathers Saloon</h3><p class="brand-type">Salon · stylist uniforms</p></div>
+            </div>
+            <p class="brand-desc">Tailored black and dark-toned polos and tees with clean logo printing for Feathers Saloon stylists and floor staff. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20custom%20salon%20staff%20uniforms." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="uniform">
+          <div class="brand-media brand-media--mark" data-initial="K">
+            <span class="brand-plate brand-plate--word" aria-hidden="true">KRAFTCARE<small>Car wash</small></span>
+            <span class="brand-badge badge-uniform"><i></i>Service uniform</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#0F4C75;color:#fff;font-size:8px">KRAFT<br>CARE</span>
+              <div><h3>Kraftcare Car Wash</h3><p class="brand-type">Auto care · crew uniforms</p></div>
+            </div>
+            <p class="brand-desc">Quick-dry, stain-resistant crew uniforms with chest and back logo prints for Kraftcare Car Wash detailing teams. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20durable%20crew%20uniforms%20like%20Kraftcare%20Car%20Wash." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPORTS ── -->
+  <section class="port-cat" aria-labelledby="cat-sports">
+    <div class="container">
+      <div class="port-head">
+        <div class="port-head-main">
+          <span class="port-num" aria-hidden="true">03</span>
+          <div>
+            <p class="eyebrow">Sports</p>
+            <h2 id="cat-sports">Sports &amp; academy wear</h2>
+            <p class="desc">Training tees, quarter-zips and sublimation jerseys for clubs and academies.</p>
+          </div>
+        </div>
+        <span class="port-count">3 brands</span>
+      </div>
+      <div class="port-grid">
+
+        <article class="brand-card" data-category="sports">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/engarde-fencing-02.jpg" data-caption="En Garde Fencing Academy — charcoal training tee with fencing print" aria-label="View larger photo of En Garde Fencing Academy">
+              <img src="assets/portfolio/engarde-fencing-02.jpg" alt="En Garde Fencing Academy charcoal melange tee with fencing mask chest print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-sports"><i></i>Sports uniform</span>
+            <div class="brand-thumbs" role="group" aria-label="En Garde Fencing Academy photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of En Garde Fencing Academy" data-src="assets/portfolio/engarde-fencing-02.jpg" data-alt="En Garde Fencing Academy charcoal melange tee with fencing mask chest print" data-caption="En Garde Fencing Academy — charcoal training tee with fencing print"><img src="assets/portfolio/engarde-fencing-02.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of En Garde Fencing Academy" data-src="assets/portfolio/engarde-fencing-01.jpg" data-alt="En Garde Fencing Academy tee, additional view 2" data-caption="En Garde Fencing Academy — tee photo 2"><img src="assets/portfolio/engarde-fencing-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of En Garde Fencing Academy" data-src="assets/portfolio/engarde-fencing-03.jpg" data-alt="En Garde Fencing Academy tee, additional view 3" data-caption="En Garde Fencing Academy — tee photo 3"><img src="assets/portfolio/engarde-fencing-03.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 4 of En Garde Fencing Academy" data-src="assets/portfolio/engarde-fencing-04.jpg" data-alt="En Garde Fencing Academy tee, additional view 4" data-caption="En Garde Fencing Academy — tee photo 4"><img src="assets/portfolio/engarde-fencing-04.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true">EN<br>GARDE</span>
+              <div><h3>En Garde Fencing Academy</h3><p class="brand-type">Sports academy · training tees</p></div>
+            </div>
+            <p class="brand-desc">Charcoal melange academy tees with a fencing-mask chest print, sleeve branding and the "Building Champions On and Off the Piste" back print.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">4 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20custom%20sports%20academy%20tees." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="sports">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/spartanz-01.jpg" data-caption="Spartanz CEG — charcoal and white quarter-zip pullover" aria-label="View larger photo of Spartanz CEG">
+              <img src="assets/portfolio/spartanz-01.jpg" alt="Spartanz CEG Anna University charcoal and white quarter-zip pullover with chest crest" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-sports"><i></i>University uniform</span>
+            <div class="brand-thumbs" role="group" aria-label="Spartanz CEG photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of Spartanz CEG" data-src="assets/portfolio/spartanz-01.jpg" data-alt="Spartanz CEG Anna University charcoal and white quarter-zip pullover with chest crest" data-caption="Spartanz CEG — charcoal and white quarter-zip pullover"><img src="assets/portfolio/spartanz-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of Spartanz CEG" data-src="assets/portfolio/spartanz-02.jpg" data-alt="Spartanz CEG quarter-zip pullover, additional view 2" data-caption="Spartanz CEG — quarter-zip photo 2"><img src="assets/portfolio/spartanz-02.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="color:#444">CEG<br>SPARTANZ</span>
+              <div><h3>Spartanz — Anna University</h3><p class="brand-type">University sports · quarter-zips</p></div>
+            </div>
+            <p class="brand-desc">Spartanz CEG quarter-zip pullovers for Anna University's College of Engineering Guindy sports club — charcoal and white colourblock with sleeve striping and chest crest.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">2 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20custom%20university%20sports%20uniforms." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="sports">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/custom-sports-kcircle-01.jpg" data-caption="K-Circle Strikers — full-sublimation long-sleeve jersey" aria-label="View larger photo of K-Circle Strikers">
+              <img src="assets/portfolio/custom-sports-kcircle-01.jpg" alt="K-Circle Strikers full-sublimation long-sleeve cricket jersey with all-over print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-sports"><i></i>Sports jersey</span>
+            <div class="brand-thumbs" role="group" aria-label="K-Circle Strikers photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of K-Circle Strikers" data-src="assets/portfolio/custom-sports-kcircle-01.jpg" data-alt="K-Circle Strikers full-sublimation long-sleeve cricket jersey with all-over print" data-caption="K-Circle Strikers — full-sublimation long-sleeve jersey"><img src="assets/portfolio/custom-sports-kcircle-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of K-Circle Strikers" data-src="assets/portfolio/custom-sports-kcircle-02.jpg" data-alt="K-Circle Strikers sublimation jersey, additional view 2" data-caption="K-Circle Strikers — jersey photo 2"><img src="assets/portfolio/custom-sports-kcircle-02.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="font-size:8px">K-CIRCLE<br>STRIKERS</span>
+              <div><h3>Custom Sports Jerseys</h3><p class="brand-type">Cricket · sublimation jerseys</p></div>
+            </div>
+            <p class="brand-desc">Full-sublimation long-sleeve jerseys with all-over graphics and custom player names and numbers for K-Circle Strikers.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">2 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20want%20custom%20sublimation%20sports%20jerseys." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FASHION ── -->
+  <section class="port-cat section-grey" aria-labelledby="cat-fashion">
+    <div class="container">
+      <div class="port-head">
+        <div class="port-head-main">
+          <span class="port-num" aria-hidden="true">04</span>
+          <div>
+            <p class="eyebrow">Fashion</p>
+            <h2 id="cat-fashion">Fashion brands &amp; labels</h2>
+            <p class="desc">Private-label and branded apparel for fashion labels and online sellers.</p>
+          </div>
+        </div>
+        <span class="port-count">4 brands</span>
+      </div>
+      <div class="port-grid">
+
+        <article class="brand-card" data-category="brand">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/danke-dieu-06.jpg" data-caption="Danke Dieu — mint polo with contrast black collar and cuffs" aria-label="View larger photo of Danke Dieu">
+              <img src="assets/portfolio/danke-dieu-06.jpg" alt="Danke Dieu mint green polo with contrast black collar, placket and cuffs" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-brand"><i></i>Amazon brand</span>
+            <div class="brand-thumbs" role="group" aria-label="Danke Dieu photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of Danke Dieu" data-src="assets/portfolio/danke-dieu-06.jpg" data-alt="Danke Dieu mint green polo with contrast black collar, placket and cuffs" data-caption="Danke Dieu — mint polo with contrast black collar and cuffs"><img src="assets/portfolio/danke-dieu-06.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of Danke Dieu" data-src="assets/portfolio/danke-dieu-07.jpg" data-alt="Danke Dieu polo, additional view 2" data-caption="Danke Dieu — polo photo 2"><img src="assets/portfolio/danke-dieu-07.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of Danke Dieu" data-src="assets/portfolio/danke-dieu-05.jpg" data-alt="Danke Dieu polo, additional view 3" data-caption="Danke Dieu — polo photo 3"><img src="assets/portfolio/danke-dieu-05.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 4 of Danke Dieu" data-src="assets/portfolio/danke-dieu-04.jpg" data-alt="Danke Dieu polo, additional view 4" data-caption="Danke Dieu — polo photo 4"><img src="assets/portfolio/danke-dieu-04.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 5 of Danke Dieu" data-src="assets/portfolio/danke-dieu-03.jpg" data-alt="Danke Dieu polo, additional view 5" data-caption="Danke Dieu — polo photo 5"><img src="assets/portfolio/danke-dieu-03.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 6 of Danke Dieu" data-src="assets/portfolio/danke-dieu-01.jpg" data-alt="Danke Dieu glow-in-the-dark triangle logo print" data-caption="Danke Dieu — glow-in-the-dark triangle logo print"><img src="assets/portfolio/danke-dieu-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 7 of Danke Dieu" data-src="assets/portfolio/danke-dieu-02.jpg" data-alt="Danke Dieu polo, additional view 7" data-caption="Danke Dieu — polo photo 7"><img src="assets/portfolio/danke-dieu-02.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#000;color:#00FFCC;font-size:8px">danke<br>dieu</span>
+              <div><h3>Danke Dieu</h3><p class="brand-type">Amazon fashion brand · polos</p></div>
+            </div>
+            <p class="brand-desc">Mint cotton polos with contrast black collar and cuffs, a glow-in-the-dark "danke dieu" triangle print and custom woven neck labels.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">7 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%27m%20interested%20in%20custom%20branded%20polos%20with%20glow%20print." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="brand">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/mk-model-kart-01.jpg" data-caption="MK Model Kart — black zip-up hoodie with back print" aria-label="View larger photo of MK Model Kart">
+              <img src="assets/portfolio/mk-model-kart-01.jpg" alt="MK Model Kart black zip-up hoodie with white back logo print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-brand"><i></i>Fashion brand</span>
+            <div class="brand-thumbs" role="group" aria-label="MK Model Kart photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of MK Model Kart" data-src="assets/portfolio/mk-model-kart-01.jpg" data-alt="MK Model Kart black zip-up hoodie with white back logo print" data-caption="MK Model Kart — black zip-up hoodie with back print"><img src="assets/portfolio/mk-model-kart-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of MK Model Kart" data-src="assets/portfolio/mk-model-kart-02.jpg" data-alt="MK Model Kart hoodie, additional view 2" data-caption="MK Model Kart — hoodie photo 2"><img src="assets/portfolio/mk-model-kart-02.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 3 of MK Model Kart" data-src="assets/portfolio/mk-model-kart-03.jpg" data-alt="MK Model Kart hoodie, additional view 3" data-caption="MK Model Kart — hoodie photo 3"><img src="assets/portfolio/mk-model-kart-03.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="color:#1A1A1A">MK<br>MODEL KART</span>
+              <div><h3>MK — Model Kart</h3><p class="brand-type">Fashion brand · hoodies</p></div>
+            </div>
+            <p class="brand-desc">Heavyweight zip-up hoodies with front and back MK Model Kart print — "Elevating Fashion · Empowering Talent".</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">3 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20custom%20hoodies%20for%20my%20fashion%20brand." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="brand">
+          <div class="brand-media brand-media--mark" data-initial="E">
+            <span class="brand-plate brand-plate--word" aria-hidden="true">EMPHASIS<small>Talk tee</small></span>
+            <span class="brand-badge badge-brand"><i></i>Fashion brand</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#232526;color:#fff;font-size:8px">EMPHASIS</span>
+              <div><h3>Emphasis</h3><p class="brand-type">Private label · knitwear</p></div>
+            </div>
+            <p class="brand-desc">Private-label knitwear, neck labels and retail-ready finishing for Emphasis – Talk Tee. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%27m%20interested%20in%20private-label%20manufacturing%20for%20my%20clothing%20brand." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="brand">
+          <div class="brand-media brand-media--mark" data-initial="A">
+            <span class="brand-plate brand-plate--word" aria-hidden="true">AURA<small>Fashion</small></span>
+            <span class="brand-badge badge-brand"><i></i>Fashion label</span>
+            <span class="brand-nophoto">Photos on request</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#6A3093;color:#fff">AURA</span>
+              <div><h3>Aura Fashion</h3><p class="brand-type">Fashion label · custom apparel</p></div>
+            </div>
+            <p class="brand-desc">Custom knitwear and branded garments built to Aura Fashion's seasonal collection specifications. Photos available on request.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Photos on request</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%27m%20interested%20in%20custom%20apparel%20manufacturing%20for%20my%20fashion%20label." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INSTITUTIONAL & INSTAGRAM ── -->
+  <section class="port-cat section-navy" aria-labelledby="cat-institutional">
+    <div class="container">
+      <div class="port-head">
+        <div class="port-head-main">
+          <span class="port-num" aria-hidden="true">05</span>
+          <div>
+            <p class="eyebrow">Institutional &amp; Instagram</p>
+            <h2 id="cat-institutional">Institutions &amp; social-first labels</h2>
+            <p class="desc">Showcase hoodies and white-label tees for colleges and Instagram brands.</p>
+          </div>
+        </div>
+        <span class="port-count">2 brands</span>
+      </div>
+      <div class="port-grid">
+
+        <article class="brand-card" data-category="institutional">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/icat-01.jpg" data-caption="ICAT College — 16th Year Graduate Showcase 2026 hoodie print" aria-label="View larger photo of ICAT College">
+              <img src="assets/portfolio/icat-01.jpg" alt="ICAT College of Design and Media black hoodie with 16th Year Graduate Showcase 2026 print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-institutional"><i></i>Institutional</span>
+            <div class="brand-thumbs" role="group" aria-label="ICAT College photos">
+              <button class="brand-thumb is-active" type="button" aria-pressed="true" aria-label="Show photo 1 of ICAT College" data-src="assets/portfolio/icat-01.jpg" data-alt="ICAT College of Design and Media black hoodie with 16th Year Graduate Showcase 2026 print" data-caption="ICAT College — 16th Year Graduate Showcase 2026 hoodie print"><img src="assets/portfolio/icat-01.jpg" alt="" loading="lazy"></button>
+              <button class="brand-thumb" type="button" aria-pressed="false" aria-label="Show photo 2 of ICAT College" data-src="assets/portfolio/icat-02.jpg" data-alt="ICAT College showcase hoodie, additional view 2" data-caption="ICAT College — showcase hoodie photo 2"><img src="assets/portfolio/icat-02.jpg" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="color:#CC0000">iCAT</span>
+              <div><h3>ICAT College of Design &amp; Media</h3><p class="brand-type">Design college · showcase hoodies</p></div>
+            </div>
+            <p class="brand-desc">16th Year Graduate Showcase 2026 hoodies — heavyweight black hoodies with a high-impact white screen print for ICAT College of Design &amp; Media.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">2 photos</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20need%20custom%20institutional%20hoodies%20with%20print." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card" data-category="instagram">
+          <div class="brand-media">
+            <button class="brand-photo" type="button" data-lightbox="assets/portfolio/quirky-crew-01.jpg" data-caption="QuirkyCrew — white-label tee with hand-drawn red illustration and poetry" aria-label="View larger photo of QuirkyCrew">
+              <img src="assets/portfolio/quirky-crew-01.jpg" alt="QuirkyCrew white-label tee with red hand-drawn illustration and poetry print" loading="lazy" decoding="async">
+              <span class="brand-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/></svg></span>
+            </button>
+            <span class="brand-badge badge-instagram"><i></i>White label</span>
+          </div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true" style="background:#111;color:#fff">QUIRKY<br>CREW</span>
+              <div><h3>QuirkyCrew</h3><p class="brand-type">Instagram label · white-label tees</p></div>
+            </div>
+            <p class="brand-desc">White-label custom-print tees with hand-drawn red illustrations and poetry text — produced, packed and branded for QuirkyCrew.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">1 photo</span>
+              <a class="brand-wa" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%27m%20interested%20in%20white-label%20tees%20for%20my%20Instagram%20brand." target="_blank" rel="noopener">WhatsApp enquiry</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="brand-card brand-card--invite">
+          <div class="invite-media" aria-hidden="true"><span class="invite-plus">+</span></div>
+          <div class="brand-body">
+            <div class="brand-id">
+              <span class="brand-mark" aria-hidden="true">YOU</span>
+              <div><h3>Your brand next</h3><p class="brand-type">New programme · 2026</p></div>
+            </div>
+            <p class="brand-desc">Bring your artwork, quantity and timeline — we will confirm fabric, fit, finishing and dispatch against your requirement.</p>
+            <div class="brand-foot">
+              <span class="brand-photo-count">Open for enquiries</span>
+              <a class="brand-wa" href="wholesale.html">Start a project</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── CTA ── -->
+<section class="cta-band" data-deco="cta-index">
+  <div class="container">
+    <div>
+      <h2>Ready to build your uniform or brand?</h2>
+      <p>From 50 pieces to 5,000 — share your requirement and we will respond with options and a quotation.</p>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-primary" href="wholesale.html">Request a Quote</a>
+      <a class="btn btn-outline" href="https://wa.me/918220089690?text=Hi%20YCG!%20I%20saw%20your%20portfolio%20and%20want%20a%20quote." target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio photo viewer" hidden>
+  <figure class="lb-figure">
+    <button class="lb-close" id="lightboxClose" type="button" aria-label="Close photo viewer">&times;</button>
+    <img class="lb-img" id="lightboxImg" alt="">
+    <figcaption class="lb-caption" id="lightboxCaption"></figcaption>
+    <div class="lb-controls">
+      <button class="lb-nav" id="lightboxPrev" type="button" aria-label="Previous photo">&#8592;</button>
+      <span class="lb-count" id="lightboxCount" aria-hidden="true"></span>
+      <button class="lb-nav" id="lightboxNext" type="button" aria-label="Next photo">&#8594;</button>
+    </div>
+  </figure>
 </div>
 
 <div id="site-footer"></div>
 
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const media = [];
-  for(let i=1;i<=48;i++){
-    const num = String(i).padStart(2,'0');
-    media.push({type:'photo', src:`assets/portfolio/portfolio-${num}.jpg`, label:`Sample ${num}`});
-  }
-  for(let v=1;v<=5;v++){
-    const num = String(v).padStart(2,'0');
-    media.push({type:'video', src:`assets/portfolio/portfolio-video-${num}.mp4`, label:`Video ${num}`});
-  }
+(function(){
+  'use strict';
 
-  const grid = document.getElementById('portGrid');
-  const lb = document.getElementById('lightbox');
-  const lbInner = document.getElementById('lightboxInner');
-  const lbClose = document.getElementById('lightboxClose');
+  /* ── Filters ── */
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.brand-card[data-category]'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.port-cat'));
+  var filters = Array.prototype.slice.call(document.querySelectorAll('.pf-btn'));
+  var status = document.getElementById('portStatus');
+  var total = cards.length;
 
-  function openLightbox(item){
-    lbInner.innerHTML = item.type==='video'
-      ? `<video src="${item.src}" controls autoplay playsinline></video>`
-      : `<img src="${item.src}" alt="${item.label}">`;
-    lb.classList.add('open');
-    lb.setAttribute('aria-hidden','false');
-  }
-  function closeLightbox(){
-    lb.classList.remove('open');
-    lb.setAttribute('aria-hidden','true');
-    lbInner.innerHTML = '';
-  }
-  lbClose.addEventListener('click', closeLightbox);
-  lb.addEventListener('click', e=>{ if(e.target===lb) closeLightbox(); });
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
-
-  function render(filter){
-    const items = filter==='all' ? media : media.filter(m=>m.type===filter);
-    grid.innerHTML = items.map((m, idx)=>`
-      <div class="port-item" data-idx="${idx}" tabindex="0" role="button" aria-label="View ${m.label}">
-        ${m.type==='video'
-          ? `<video src="${m.src}" muted playsinline preload="metadata"></video><span class="port-badge">Video</span>`
-          : `<img src="${m.src}" alt="Supplied brand apparel ${m.label}" loading="lazy">`
-        }
-      </div>
-    `).join('');
-    grid.querySelectorAll('.port-item').forEach((el, idx)=>{
-      const open = ()=>openLightbox(items[idx]);
-      el.addEventListener('click', open);
-      el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' ') { e.preventDefault(); open(); }});
+  function applyFilter(filter){
+    var visible = 0;
+    cards.forEach(function(card){
+      var show = filter === 'all' || card.getAttribute('data-category') === filter;
+      card.hidden = !show;
+      if (show) visible++;
     });
+    sections.forEach(function(section){
+      var any = Array.prototype.some.call(section.querySelectorAll('.brand-card[data-category]'), function(card){
+        return !card.hidden;
+      });
+      section.classList.toggle('is-hidden', !any);
+    });
+    status.textContent = filter === 'all'
+      ? 'Showing all ' + total + ' brand programmes.'
+      : 'Showing ' + visible + ' of ' + total + ' brand programmes.';
   }
 
-  document.querySelectorAll('.port-tab').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      document.querySelectorAll('.port-tab').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      render(btn.dataset.filter);
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(function(other){ other.setAttribute('aria-pressed', String(other === btn)); });
+      applyFilter(btn.getAttribute('data-filter'));
     });
   });
 
-  render('all');
-});
+  /* ── Thumbnail swaps the card hero photo ── */
+  Array.prototype.forEach.call(document.querySelectorAll('.brand-thumb'), function(thumb){
+    thumb.addEventListener('click', function(){
+      var card = thumb.closest('.brand-card');
+      var heroBtn = card.querySelector('.brand-photo');
+      var heroImg = heroBtn.querySelector('img');
+      var strip = thumb.closest('.brand-thumbs');
+
+      heroImg.src = thumb.getAttribute('data-src');
+      heroImg.alt = thumb.getAttribute('data-alt');
+      heroBtn.setAttribute('data-lightbox', thumb.getAttribute('data-src'));
+      heroBtn.setAttribute('data-caption', thumb.getAttribute('data-caption'));
+
+      Array.prototype.forEach.call(strip.querySelectorAll('.brand-thumb'), function(other){
+        var active = other === thumb;
+        other.classList.toggle('is-active', active);
+        other.setAttribute('aria-pressed', String(active));
+      });
+    });
+  });
+
+  /* ── Lightbox gallery ── */
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  var lbCaption = document.getElementById('lightboxCaption');
+  var lbCount = document.getElementById('lightboxCount');
+  var lbClose = document.getElementById('lightboxClose');
+  var lbPrev = document.getElementById('lightboxPrev');
+  var lbNext = document.getElementById('lightboxNext');
+  var gallery = [];
+  var index = 0;
+  var currentCard = null;
+  var lastFocus = null;
+
+  function syncCard(){
+    if (!currentCard) return;
+    var item = gallery[index];
+    var heroBtn = currentCard.querySelector('.brand-photo');
+    if (!heroBtn) return;
+    var heroImg = heroBtn.querySelector('img');
+    heroImg.src = item.src;
+    heroImg.alt = item.alt;
+    heroBtn.setAttribute('data-lightbox', item.src);
+    heroBtn.setAttribute('data-caption', item.caption);
+
+    var thumbs = currentCard.querySelectorAll('.brand-thumb');
+    Array.prototype.forEach.call(thumbs, function(thumb, i){
+      var active = i === index;
+      thumb.classList.toggle('is-active', active);
+      thumb.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  function render(){
+    var item = gallery[index];
+    lbImg.src = item.src;
+    lbImg.alt = item.alt;
+    lbCaption.textContent = item.caption;
+    lbCount.textContent = (index + 1) + ' / ' + gallery.length;
+    var multi = gallery.length > 1;
+    lbPrev.hidden = !multi;
+    lbNext.hidden = !multi;
+    lbCount.hidden = !multi;
+    syncCard();
+  }
+
+  function openLightbox(trigger){
+    var card = trigger.closest('.brand-card');
+    var thumbs = card ? Array.prototype.slice.call(card.querySelectorAll('.brand-thumb')) : [];
+    currentCard = card;
+
+    if (thumbs.length) {
+      gallery = thumbs.map(function(thumb){
+        return {
+          src: thumb.getAttribute('data-src'),
+          alt: thumb.getAttribute('data-alt'),
+          caption: thumb.getAttribute('data-caption')
+        };
+      });
+      index = thumbs.findIndex(function(thumb){ return thumb.classList.contains('is-active'); });
+      if (index < 0) index = 0;
+    } else {
+      gallery = [{
+        src: trigger.getAttribute('data-lightbox'),
+        alt: trigger.querySelector('img').alt,
+        caption: trigger.getAttribute('data-caption')
+      }];
+      index = 0;
+    }
+
+    lastFocus = trigger;
+    lb.hidden = false;
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    render();
+    lbClose.focus();
+  }
+
+  function closeLightbox(){
+    lb.classList.remove('is-open');
+    lb.hidden = true;
+    lbImg.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  function step(dir){
+    if (gallery.length < 2) return;
+    index = (index + dir + gallery.length) % gallery.length;
+    render();
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.brand-photo'), function(btn){
+    btn.addEventListener('click', function(){ openLightbox(btn); });
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', function(){ step(-1); });
+  lbNext.addEventListener('click', function(){ step(1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) closeLightbox(); });
+
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') { closeLightbox(); return; }
+    if (e.key === 'ArrowLeft') { step(-1); return; }
+    if (e.key === 'ArrowRight') { step(1); return; }
+    if (e.key === 'Tab') {
+      var focusables = [lbClose, lbPrev, lbNext].filter(function(el){ return !el.hidden; });
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
+  });
+})();
 </script>
-</body></html>
+</body>
+</html>
