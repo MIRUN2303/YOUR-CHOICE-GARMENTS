@@ -106,12 +106,51 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.addEventListener('load',fillMarquees);
 });
 
-// TrustSeal links: mobile opens the certificate image, desktop follows the link
+// TrustSeal links: mobile opens a certificate popup, desktop follows the link
+let trustLastFocus=null;
+function closeTrustModal(){
+  const m=document.getElementById('trustModal');
+  if(!m||!m.classList.contains('open')) return;
+  m.classList.remove('open');
+  document.body.style.overflow='';
+  if(trustLastFocus) trustLastFocus.focus();
+}
+function openTrustModal(src,trigger){
+  let m=document.getElementById('trustModal');
+  if(!m){
+    m=document.createElement('div');
+    m.id='trustModal';
+    m.className='trust-modal';
+    m.setAttribute('role','dialog');
+    m.setAttribute('aria-modal','true');
+    m.setAttribute('aria-label','IndiaMART TrustSeal certificate');
+    m.innerHTML='<div class="trust-modal-backdrop"></div><div class="trust-modal-card"><button type="button" class="trust-modal-close" aria-label="Close certificate">&times;</button><img alt="IndiaMART TrustSeal certificate"></div>';
+    document.body.appendChild(m);
+    m.addEventListener('click',e=>{
+      if(e.target===m||e.target.classList.contains('trust-modal-backdrop')||e.target.closest('.trust-modal-close')) closeTrustModal();
+    });
+    m.addEventListener('keydown',e=>{
+      if(e.key==='Tab'){e.preventDefault();m.querySelector('.trust-modal-close').focus();}
+    });
+    document.addEventListener('keydown',e=>{if(e.key==='Escape') closeTrustModal();});
+  }
+  trustLastFocus=trigger||document.activeElement;
+  m.querySelector('img').src=src;
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+  m.querySelector('.trust-modal-close').focus();
+}
 document.addEventListener('click',e=>{
   const link=e.target.closest&&e.target.closest('.trust-link');
   if(!link||innerWidth>768) return;
   const img=link.getAttribute('data-mobile-img');
   if(!img) return;
   e.preventDefault();
-  if(!window.open(img,'_blank')) location.href=img;
+  const mm=document.getElementById('mobileMenu');
+  if(mm&&mm.classList.contains('open')){
+    mm.classList.remove('open');
+    const mb=document.getElementById('menuBtn');
+    if(mb) mb.setAttribute('aria-expanded','false');
+  }
+  openTrustModal(img,link);
 });
