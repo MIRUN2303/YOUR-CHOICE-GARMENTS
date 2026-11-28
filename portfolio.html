@@ -166,8 +166,12 @@
 }
 @media(max-width:640px){
   .port-hero{padding-bottom:clamp(42px,8vw,58px)}
-  .port-collage{height:205px}
-  .port-collage-tag{left:0;bottom:-4px;font-size:9px;padding:6px 10px}
+  .port-collage{height:auto;min-height:360px}
+  .port-collage figure{position:static;display:block;width:100%;height:auto;aspect-ratio:4/3;margin:0 0 10px;transform:none!important;z-index:auto!important;border-radius:12px}
+  .port-collage figure:nth-child(1),
+  .port-collage figure:nth-child(2),
+  .port-collage figure:nth-child(3){left:auto;right:auto;top:auto;bottom:auto;width:100%;height:auto}
+  .port-collage-tag{position:static;display:inline-flex;margin-top:8px;font-size:9px;padding:6px 10px}
   .port-head-main{gap:0}
   .port-num{display:none}
   .port-filterbar{padding:11px 12px;gap:9px}

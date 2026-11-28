@@ -48,16 +48,18 @@
  <span>Round Neck T-Shirts</span><span>Oversized T-Shirts</span><span>Polo T-Shirts</span><span>Performance Jerseys</span><span>Full Sleeve Pullovers</span><span>Hoodies & Sweatshirts</span><span>Custom Apparel</span><span>Private Label</span>
 </div></div>
 
-<!-- CATEGORIES -->
-<section class="section">
- <div class="container">
-  <div class="section-head">
-    <div><p class="eyebrow">What we manufacture</p><h2>A complete knitwear range,<br> built for your business.</h2><p>Every image below is a product from our catalogue. Specifications, MOQ and pricing are confirmed against your requirement.</p></div>
-    <a href="products.html" class="btn btn-primary">View full catalogue →</a>
+<!-- PRODUCTS SHOWCASE (auto-scroll marquee) -->
+<section class="section" id="products-showcase">
+  <div class="container">
+   <div class="section-head">
+     <div><p class="eyebrow">What we manufacture</p><h2>A complete knitwear range,<br> built for your business.</h2><p>Every image below is a product from our catalogue. Specifications, MOQ and pricing are confirmed against your requirement.</p></div>
+     <a href="products.html" class="btn btn-primary">View full catalogue →</a>
+   </div>
+   <div class="products-marquee" aria-hidden="true">
+     <div class="products-marquee-track" id="productsMarqueeTrack"></div>
+   </div>
   </div>
-  <div class="cat-grid" id="catGrid"></div>
- </div>
-</section>
+</section>>
 
 <!-- MANUFACTURING -->
 <section class="section section-grey">
@@ -143,47 +145,15 @@
       </a>
     </div>
 
-    <!-- Auto-scrolling logo marquee -->
-    <div class="supply-marquee" aria-hidden="true">
-      <div class="marquee-track" id="marqueeTrack">
-      </div>
-    </div>
-
-    <!-- Additional brands grid -->
-    <div class="supply-grid" aria-label="Additional supply experience">
-      <article class="supply-card wordmark">
-        <div class="supply-card-media"><span class="supply-wordmark">BLANQ</span></div>
-        <div class="supply-card-info"><span class="supply-card-label">Fashion apparel</span><span class="supply-card-type">Connected supply</span></div>
-      </article>
-      <article class="supply-card wordmark">
-        <div class="supply-card-media"><span class="supply-wordmark serif">Emphasis<small>Talk Tee</small></span></div>
-        <div class="supply-card-info"><span class="supply-card-label">T-shirt supply</span><span class="supply-card-type">Extended network</span></div>
-      </article>
-      <a class="supply-card" href="https://www.tvsmotor.com/" target="_blank" rel="noopener" aria-label="TVS Motor Company - corporate polos">
-        <div class="supply-card-media"><img src="assets/brands/logos/tvs.png" alt="TVS" loading="lazy"></div>
-        <div class="supply-card-info"><span class="supply-card-label">Corporate polos</span><span class="supply-card-type">Automotive</span></div>
-      </a>
-      <a class="supply-card" href="#" aria-label="YSL - corporate apparel" style="pointer-events:none">
-        <div class="supply-card-media"><img src="assets/brands/logos/ysl.png" alt="YSL" loading="lazy"></div>
-        <div class="supply-card-info"><span class="supply-card-label">Corporate apparel</span><span class="supply-card-type">Fashion</span></div>
-      </a>
-      <a class="supply-card" href="#" aria-label="Visteon - corporate apparel" style="pointer-events:none">
-        <div class="supply-card-media"><img src="assets/brands/logos/visteon.png" alt="Visteon" loading="lazy"></div>
-        <div class="supply-card-info"><span class="supply-card-label">Corporate apparel</span><span class="supply-card-type">Automotive electronics</span></div>
-      </a>
-      <a class="supply-card" href="#" aria-label="Hanon - polo uniforms" style="pointer-events:none">
-        <div class="supply-card-media"><span class="supply-wordmark">HANON</span></div>
-        <div class="supply-card-info"><span class="supply-card-label">Polo uniforms</span><span class="supply-card-type">Automotive components</span></div>
-      </a>
-      <a class="supply-card" href="#" aria-label="Balaji Traders - staff polos" style="pointer-events:none">
-        <div class="supply-card-media"><span class="supply-wordmark">BALAJI<br>TRADERS</span></div>
-        <div class="supply-card-info"><span class="supply-card-label">Staff polos</span><span class="supply-card-type">Trade & retail</span></div>
-      </a>
+    <!-- Dual-row auto-scrolling logo marquee (alternating directions) -->
+    <div class="supply-marquee-dual" aria-hidden="true">
+      <div class="marquee-row" id="marqueeRow1" data-direction="reverse"></div>
+      <div class="marquee-row" id="marqueeRow2" data-direction="forward"></div>
     </div>
 
     <p class="supply-disclaimer">Brand logos and names identify supply experience through extended business networks. No endorsement, partnership or direct supply relationship is implied. Logos are trademarks of their respective owners. Links without URLs indicate brands supplied through intermediaries.</p>
   </div>
-</section>>
+</section>
 <section class="section section-warm">
  <div class="container">
    <div class="im-trust">
@@ -234,44 +204,74 @@
 
 <div id="site-footer"></div>
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
-  // categories (7 primary, real photos)
-  const order=["Round Neck","Oversized","Polo","Performance","Full Sleeve","Hoodie","Sweatshirt"];
-  document.getElementById('catGrid').innerHTML=order.map(c=>{
-    const p=window.PRODUCTS.find(x=>x.category===c);
-    const label={ "Round Neck":"Men Round Neck T-Shirts","Oversized":"Men Oversized T-Shirts","Polo":"Cotton Polo T-Shirts","Performance":"Performance Jerseys","Full Sleeve":"Full Sleeve Pullovers","Hoodie":"Hoodies & Sweatshirts","Sweatshirt":"Sweatshirts & Crewnecks" }[c];
-    return `<a class="cat-tile" href="products.html?cat=${encodeURIComponent(c)}">
-      <img src="${p?p.img:'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${label}" loading="lazy">
-      <div class="cat-body"><div><small>Product range</small><h3>${label}</h3></div><span class="arrow">↗</span></div>
-    </a>`;
-  }).join('');
+// Run on DOM ready (works whether DOMContentLoaded fired or not)
+  function onReady(fn){
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn);
+    else fn();
+  }
 
-  // offer-card cursor spotlight
-  document.querySelectorAll('.offer-card').forEach(card=>{
-    card.addEventListener('pointermove',e=>{
-      if(e.pointerType!=='mouse') return;
-      const r=card.getBoundingClientRect();
-      card.style.setProperty('--mx',(e.clientX-r.left)+'px');
-      card.style.setProperty('--my',(e.clientY-r.top)+'px');
+  onReady(function(){
+    // catGrid removed - replaced by products marquee
+    // offer-card cursor spotlight
+    document.querySelectorAll('.offer-card').forEach(card=>{
+      card.addEventListener('pointermove',e=>{
+        if(e.pointerType!=='mouse') return;
+        const r=card.getBoundingClientRect();
+        card.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        card.style.setProperty('--my',(e.clientY-r.top)+'px');
+      });
     });
-  });
 
-  // hero slideshow
-  const slides=[...document.querySelectorAll('.hero-slide')];
-  const dots=document.getElementById('heroDots');
-  let i=0,timer;
-  slides.forEach((_,n)=>{const b=document.createElement('button');b.className='hero-dot'+(n===0?' active':'');b.setAttribute('aria-label','Show slide '+(n+1));b.onclick=()=>{show(n);restart();};dots.appendChild(b);});
-  function show(n){slides[i].classList.remove('active');dots.children[i].classList.remove('active');i=n;slides[i].classList.add('active');dots.children[i].classList.add('active');}
-  function next(){show((i+1)%slides.length);}
-  function restart(){clearInterval(timer);timer=setInterval(next,6000);}
-  if(slides.length>1){restart();}
-  // WhatsApp CTA
-  document.getElementById('heroWa').href=waLink('Hello Your Choice Garments, I would like to discuss a wholesale garment requirement.');
-});
-  // Supply marquee - populate and duplicate for seamless loop
+    // hero slideshow
+    const slides=[...document.querySelectorAll('.hero-slide')];
+    const dots=document.getElementById('heroDots');
+    let i=0,timer;
+    slides.forEach((_,n)=>{const b=document.createElement('button');b.className='hero-dot'+(n===0?' active':'');b.setAttribute('aria-label','Show slide '+(n+1));b.onclick=()=>{show(n);restart();};dots.appendChild(b);});
+    function show(n){slides[i].classList.remove('active');dots.children[i].classList.remove('active');i=n;slides[i].classList.add('active');dots.children[i].classList.add('active');}
+    function next(){show((i+1)%slides.length);}
+    function restart(){clearInterval(timer);timer=setInterval(next,6000);}
+    if(slides.length>1){restart();}
+    // WhatsApp CTA
+    document.getElementById('heroWa').href=waLink('Hello Your Choice Garments, I would like to discuss a wholesale garment requirement.');
+    // Products showcase marquee
+    initProductsMarquee();
+  });
+  // Products showcase marquee - populate from PRODUCTS
+  function initProductsMarquee(){
+    var track = document.getElementById('productsMarqueeTrack');
+    if(!track){
+      setTimeout(initProductsMarquee, 100);
+      return;
+    }
+    if(!window.PRODUCTS){
+      var check = setInterval(function(){
+        if(window.PRODUCTS){
+          clearInterval(check);
+          build();
+        }
+      }, 50);
+      return;
+    }
+    build();
+    function build(){
+      var featured = window.PRODUCTS.filter(function(p){ return p.featured; });
+      function buildSet(){
+        return featured.map(function(p){
+          return '<a class="product-marquee-item" href="products.html?cat=' + encodeURIComponent(p.category) + '">' +
+            '<div class="product-marquee-img"><img src="' + p.img + '" alt="' + p.name + '" loading="lazy" decoding="async"></div>' +
+            '<span class="product-marquee-name">' + p.name + '</span>' +
+          '</a>';
+        }).join('');
+      }
+      track.innerHTML = buildSet() + buildSet();
+    }
+  }
+
+  // Supply experience dual-row marquee
   (function(){
-    var track = document.getElementById('marqueeTrack');
-    if(!track) return;
+    var row1 = document.getElementById('marqueeRow1');
+    var row2 = document.getElementById('marqueeRow2');
+    if(!row1 || !row2) return;
     var logos = [
       {src:'assets/brands/tata.svg', alt:'Tata'},
       {src:'assets/brands/ashok-leyland.svg', alt:'Ashok Leyland'},
@@ -280,19 +280,30 @@ document.addEventListener('DOMContentLoaded',()=>{
       {src:'assets/brands/logos/ysl.png', alt:'YSL'},
       {src:'assets/brands/logos/visteon.png', alt:'Visteon'},
       {src:'assets/brands/logos/ashok-leyland.png', alt:'Ashok Leyland'},
+      {src:'assets/brands/logos/danke-dieu.png', alt:'Danke Dieu'},
+      {src:'assets/brands/logos/sharon-tea.png', alt:'Sharon Tea'},
+      {src:'assets/brands/logos/hunts-world.png', alt:'Hunts World'},
+      {src:'assets/brands/logos/moon-bowl.png', alt:'Moon Bowl'},
+      {src:'assets/brands/logos/wedding-pattarai.png', alt:'The Wedding Pattarai'},
+      {src:'assets/brands/logos/five-star.png', alt:'Five Star Solutions'},
+      {src:'assets/brands/logos/thrive-gym.png', alt:'Thrive Gym'},
+      {src:'assets/brands/logos/feathers-saloon.png', alt:'Feathers Saloon'},
+      {src:'assets/brands/logos/kraftcare.png', alt:'Kraftcare Car Wash'},
+      {src:'assets/brands/logos/engarde.png', alt:'En Garde Fencing'},
+      {src:'assets/brands/logos/spartanz.png', alt:'Spartanz CEG'},
+      {src:'assets/brands/logos/k-circle.png', alt:'K-Circle Strikers'},
+      {src:'assets/brands/logos/mk-model.png', alt:'MK Model Kart'},
+      {src:'assets/brands/logos/emphasis.png', alt:'Emphasis'},
     ];
     function buildSet(){
       return logos.map(function(l){
-        var img = document.createElement('img');
-        img.src = l.src;
-        img.alt = l.alt;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        return img.outerHTML;
+        return '<img src="' + l.src + '" alt="' + l.alt + '" loading="lazy" decoding="async">';
       }).join('');
     }
-    // Duplicate for seamless loop
-    track.innerHTML = buildSet() + buildSet();
+    // Each row gets duplicated set for seamless loop
+    var set = buildSet();
+    row1.innerHTML = set + set;
+    row2.innerHTML = set + set;
   })();
 
 </script>
