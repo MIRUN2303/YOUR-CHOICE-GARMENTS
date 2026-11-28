@@ -34,8 +34,7 @@
 <div id="site-footer"></div>
 <script>
 function card(p){
- const msg=`Hello Your Choice Garments,\n\nI am interested in the following product:\n\nProduct: ${p.name}\nProduct Code: ${p.code}\nQuantity required:\nFabric / GSM preference:\nSizes:\nColours:\nCustomisation:\nDelivery location:\n\nPlease share the available options, MOQ and quotation.\n\nName:\nBusiness:`;
- return `<article class="pcard">
+  return `<article class="pcard">
   <a class="thumb" href="product.html?id=${p.id}" aria-label="View ${p.name}">
     <img src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur" loading="lazy">
   </a>
@@ -43,26 +42,24 @@ function card(p){
     <div><h3>${p.name}</h3><p style="font-size:12px;color:var(--muted);font-family:Monospace">${p.code}</p></div>
     <p>${p.desc}</p>
     <div class="meta">MOQ: Enquire · Price: Request a quote</div>
-    <div class="actions">
-      <a class="btn btn-ghost" href="product.html?id=${p.id}">View Details</a>
-    </div>
   </div>
- </article>`;
+  <a class="card-link" href="product.html?id=${p.id}" aria-label="View ${p.name} details"></a>
+  </article>`;
 }
 function render(){
- const q=document.getElementById('search').value.toLowerCase();
- const c=document.getElementById('catFilter').value;
- const list=window.PRODUCTS.filter(p=>(!c||p.category===c)&&(p.name.toLowerCase().includes(q)||p.code.toLowerCase().includes(q)||p.category.toLowerCase().includes(q)));
- document.getElementById('productGrid').innerHTML=list.map(card).join('')||'<p>No products found. Try a different search or category.</p>';
- document.getElementById('count').textContent=list.length+' product'+(list.length===1?'':'s');
+  const q=document.getElementById('search').value.toLowerCase();
+  const c=document.getElementById('catFilter').value;
+  const list=window.PRODUCTS.filter(p=>(!c||p.category===c)&&(p.name.toLowerCase().includes(q)||p.code.toLowerCase().includes(q)||p.category.toLowerCase().includes(q)));
+  document.getElementById('productGrid').innerHTML=list.map(card).join('')||'<p>No products found. Try a different search or category.</p>';
+  document.getElementById('count').textContent=list.length+' product'+(list.length===1?'':'s');
 }
 document.addEventListener('DOMContentLoaded',()=>{
- const sel=document.getElementById('catFilter');
- window.CATEGORIES.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
- const params=new URLSearchParams(location.search); if(params.get('cat')) sel.value=params.get('cat');
- document.getElementById('search').addEventListener('input',render);
- sel.addEventListener('change',render);
- render();
+  const sel=document.getElementById('catFilter');
+  window.CATEGORIES.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
+  const params=new URLSearchParams(location.search); if(params.get('cat')) sel.value=params.get('cat');
+  document.getElementById('search').addEventListener('input',render);
+  sel.addEventListener('change',render);
+  render();
 });
 </script>
 </body></html>

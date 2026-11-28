@@ -43,7 +43,7 @@
 </head><body class="product-detail">
 <div id="site-header"></div>
 <section class="section"><div class="container" id="detail"></div></section>
-<section class="section section-grey" id="relatedSection" hidden><div class="container"><div class="section-head"><div><p class="eyebrow">More from the range</p><h2>Related products</h2></div><a href="products.html">All products →</a></div><div class="product-grid" id="relatedGrid"></div></div></section>
+<section class="section section-grey" id="relatedSection" hidden><div class="container"><div class="section-head"><div><p class="eyebrow">More from the range</p><h2>Related products</h2></div><a href="products.html">All products &rarr;</a></div><div class="product-grid" id="relatedGrid"></div></div></section>
 <div class="enq" id="enq" hidden>
   <div class="enq-backdrop" data-enq-close></div>
   <div class="enq-dialog" role="dialog" aria-modal="true" aria-labelledby="enqTitle">
@@ -69,51 +69,64 @@
 <script>
 function swapImg(el,src){document.getElementById('mainImg').src=src;document.querySelectorAll('.gallery-thumbs img').forEach(i=>i.classList.remove('active'));el.classList.add('active');}
 document.addEventListener('DOMContentLoaded',()=>{
- const id=new URLSearchParams(location.search).get('id');
- const p=window.PRODUCTS.find(x=>x.id===id);
- if(!p){document.getElementById('detail').innerHTML='<p>Product not found. <a href="products.html">Back to catalogue</a></p>';return;}
- document.title=p.name+' — Your Choice Garments';
- window.YCG_PRODUCT=p;
- const fallbackMsg=`Hello Your Choice Garments! I would like a quotation for ${p.name} (${p.code}). Please share the price, MOQ and lead time.`;
- document.getElementById('detail').innerHTML=`
-   <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
-    <div class="trust-strip" style="margin-bottom:18px">
+  const id=new URLSearchParams(location.search).get('id');
+  const p=window.PRODUCTS.find(x=>x.id===id);
+  if(!p){document.getElementById('detail').innerHTML='<p>Product not found. <a href="products.html">Back to catalogue</a></p>';return;}
+  document.title=p.name+' — Your Choice Garments';
+  window.YCG_PRODUCT=p;
+  const fallbackMsg=`Hello Your Choice Garments! I would like a quotation for ${p.name} (${p.code}). Please share the price, MOQ and lead time.`;
+  document.getElementById('detail').innerHTML=`
+    <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / ${p.name}</p>
+    <div class="split" style="align-items:start">
+     <div>
+       <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
+       ${p.gallery&&p.gallery.length>1?`<div class="gallery-thumbs">${p.gallery.map((g,idx)=>`<img src="${g}" alt="${p.name} view ${idx+1}" class="${idx===0?'active':''}" onclick="swapImg(this,'${g}')">`).join('')}</div>`:''}
+       <p class="form-note">Photographs show the product style. More views available on request.</p>
+       <div class="p-ctas p-ctas--mobile"><a class="btn btn-wa" href="${waLink(fallbackMsg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+       <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
+     </div>
+     <div>
+       <p class="eyebrow">${p.category}</p>
+        <h1 class="p-title">${p.name}</h1>
+       <p class="badge" style="margin-top:6px">Product code ${p.code}</p>
+        <p class="p-desc">${p.desc} Available specifications are confirmed against your requirement — share the details below and we will respond with options and a quotation.</p>
+       <div class="p-ctas p-ctas--desktop"><a class="btn btn-wa" href="${waLink(fallbackMsg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+       <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
+       <dl class="specs">
+         <div><dt>Fabric / composition</dt><dd>Enquire for details</dd></div>
+         <div><dt>GSM</dt><dd>Enquire for details</dd></div>
+         <div><dt>Fit</dt><dd>${p.category}</dd></div>
+         <div><dt>Size range</dt><dd>Enquire for details</dd></div>
+         <div><dt>Colour options</dt><dd>Enquire for details</dd></div>
+         <div><dt>Customisation</dt><dd>Enquire for details</dd></div>
+         <div><dt>MOQ</dt><dd>Enquire for details</dd></div>
+         <div><dt>Price</dt><dd>Request a quote</dd></div>
+       </dl>
+       <div class="notice">Specifications shown as "Enquire" are not yet confirmed for this product. We do not publish unverified GSM, material, size or MOQ figures.</div>
+     </div>
+    </div>
+    <!-- IndiaMART TrustSeal at bottom -->
+    <div class="trust-strip" id="productTrustStrip" style="margin-top:32px">
       <span class="badge">IndiaMART Verified</span>
       <h4>IndiaMART TrustSeal Verified</h4>
       <p>Certificate ID 248288 · Valid till January 2027. Business verification credential.</p>
-      <a class="btn btn-ghost btn-sm" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener">Verify</a>
-    </div>
-   <div class="split" style="align-items:start">
-    <div>
-      <img class="gallery-main" id="mainImg" src="${p.img||'assets/products/t-shirts/regular-fit-tee-navy.jpg'}" alt="${p.name} - ${p.category} wholesale garment from Tiruppur">
-      ${p.gallery&&p.gallery.length>1?`<div class="gallery-thumbs">${p.gallery.map((g,idx)=>`<img src="${g}" alt="${p.name} view ${idx+1}" class="${idx===0?'active':''}" onclick="swapImg(this,'${g}')">`).join('')}</div>`:''}
-      <p class="form-note">Photographs show the product style. More views available on request.</p>
-      <div class="p-ctas p-ctas--mobile"><a class="btn btn-wa" href="${waLink(fallbackMsg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-      <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
-    </div>
-    <div>
-      <p class="eyebrow">${p.category}</p>
-       <h1 class="p-title">${p.name}</h1>
-      <p class="badge" style="margin-top:6px">Product code ${p.code}</p>
-       <p class="p-desc">${p.desc} Available specifications are confirmed against your requirement — share the details below and we will respond with options and a quotation.</p>
-      <div class="p-ctas p-ctas--desktop"><a class="btn btn-wa" href="${waLink(fallbackMsg)}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-      <a class="btn btn-ghost" href="wholesale.html">Request a Quote</a></div>
-      <dl class="specs">
-        <div><dt>Fabric / composition</dt><dd>Enquire for details</dd></div>
-        <div><dt>GSM</dt><dd>Enquire for details</dd></div>
-        <div><dt>Fit</dt><dd>${p.category}</dd></div>
-        <div><dt>Size range</dt><dd>Enquire for details</dd></div>
-        <div><dt>Colour options</dt><dd>Enquire for details</dd></div>
-        <div><dt>Customisation</dt><dd>Enquire for details</dd></div>
-        <div><dt>MOQ</dt><dd>Enquire for details</dd></div>
-        <div><dt>Price</dt><dd>Request a quote</dd></div>
-      </dl>
-      <div class="notice">Specifications shown as "Enquire" are not yet confirmed for this product. We do not publish unverified GSM, material, size or MOQ figures.</div>
-    </div>
-   </div>`;
- const rel=window.PRODUCTS.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,3);
- if(rel.length){document.getElementById('relatedSection').hidden=false;
-  document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="product.html?id=${r.id}"><img src="${r.img}" alt="${r.name}" loading="lazy"></a><div class="body"><h3>${r.name}</h3><p>${r.desc}</p><div class="actions"><a class="btn btn-ghost" href="product.html?id=${r.id}">View Details</a></div></div></article>`).join('');}
+      <a class="btn btn-ghost btn-sm trust-link" href="https://www.indiamart.com/hacclothings/trustseal/" target="_blank" rel="noopener" data-desktop-href="https://www.indiamart.com/hacclothings/trustseal/" data-mobile-img="assets/brand/indiamart-trustseal.jpg">Verify</a>
+    </div>`;
+  const rel=window.PRODUCTS.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,3);
+  if(rel.length){document.getElementById('relatedSection').hidden=false;
+   document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="product.html?id=${r.id}"><img src="${r.img}" alt="${r.name}" loading="lazy"></a><div class="body"><h3>${r.name}</h3><p>${r.desc}</p><div class="actions"><a class="btn btn-ghost" href="product.html?id=${r.id}">View Details</a></div></div></article>`).join('');}
+
+  // TrustSeal link: mobile opens image, desktop navigates
+  const trustLink = document.querySelector('#productTrustStrip .trust-link');
+  if(trustLink){
+    trustLink.addEventListener('click', function(e){
+      if(window.innerWidth <= 768){
+        e.preventDefault();
+        const imgSrc = this.getAttribute('data-mobile-img');
+        window.open(imgSrc, '_blank');
+      }
+    });
+  }
 });
 </script>
 <script>

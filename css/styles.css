@@ -235,8 +235,10 @@ header.site .container{max-width:1360px}
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:980px){.product-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.product-grid{grid-template-columns:1fr;gap:14px}}
-.pcard{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .35s var(--ease),transform .35s var(--ease);display:flex;flex-direction:column}
+.pcard{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .35s var(--ease),transform .35s var(--ease);display:flex;flex-direction:column}
 .pcard:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.pcard .card-link{position:absolute;inset:0;z-index:1}
+.pcard .thumb,.pcard .body{position:relative;z-index:0}
 .pcard .thumb{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:var(--grey)}
 .pcard .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
 .pcard:hover .thumb img{transform:scale(1.05)}
