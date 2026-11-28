@@ -25,6 +25,14 @@
 .port-hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-size:12.5px;letter-spacing:.03em;color:#B9C4E0}
 .port-hero-meta span{display:inline-flex;align-items:center;gap:7px}
 .port-hero-meta b{color:#fff;font-weight:700}
+.port-collage{position:relative;height:clamp(300px,31vw,420px);isolation:isolate}
+.port-collage figure{position:absolute;margin:0;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,.2);box-shadow:0 30px 70px rgba(0,0,0,.38);background:var(--navy-2)}
+.port-collage img{width:100%;height:100%;object-fit:cover}
+.port-collage figure:nth-child(1){left:0;top:6%;width:58%;height:72%;transform:rotate(-3deg);z-index:2}
+.port-collage figure:nth-child(2){right:0;top:0;width:50%;height:58%;transform:rotate(3deg);z-index:1}
+.port-collage figure:nth-child(3){right:5%;bottom:0;width:48%;height:48%;transform:rotate(-2deg);z-index:3}
+.port-collage-tag{position:absolute;left:4%;bottom:2%;z-index:4;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.95);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;border-radius:999px;box-shadow:0 12px 28px rgba(0,0,0,.28);white-space:nowrap}
+.port-collage-tag i{width:6px;height:6px;border-radius:50%;background:var(--red)}
 
 /* ── Client ticker ── */
 .port-marquee .marquee{animation-duration:58s}
@@ -154,9 +162,16 @@
 
 @media(max-width:900px){
   .port-hero .container{grid-template-columns:1fr}
+  .port-collage{height:250px;max-width:560px;margin-top:4px}
 }
 @media(max-width:640px){
   .port-hero{padding-bottom:clamp(42px,8vw,58px)}
+  .port-collage{height:auto;min-height:360px}
+  .port-collage figure{position:static;display:block;width:100%;height:auto;aspect-ratio:4/3;margin:0 0 10px;transform:none!important;z-index:auto!important;border-radius:12px}
+  .port-collage figure:nth-child(1),
+  .port-collage figure:nth-child(2),
+  .port-collage figure:nth-child(3){left:auto;right:auto;top:auto;bottom:auto;width:100%;height:auto}
+  .port-collage-tag{position:static;display:inline-flex;margin-top:8px;font-size:9px;padding:6px 10px}
   .port-head-main{gap:0}
   .port-num{display:none}
   .port-filterbar{padding:11px 12px;gap:9px}
@@ -195,6 +210,12 @@
         <span><b>6</b> client categories</span>
         <span><b>Since 2017</b> · Tiruppur unit</span>
       </div>
+    </div>
+    <div class="port-collage" aria-hidden="true">
+      <figure><img src="assets/portfolio/aidni-01.jpg" alt="" fetchpriority="high" decoding="async"></figure>
+      <figure><img src="assets/portfolio/danke-dieu-06.jpg" alt="" decoding="async"></figure>
+      <figure><img src="assets/portfolio/sharon-tea-04.jpg" alt="" decoding="async"></figure>
+      <span class="port-collage-tag"><i></i>Recent client work</span>
     </div>
   </div>
 </section>

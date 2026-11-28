@@ -59,7 +59,7 @@
      <div class="products-marquee-track" id="productsMarqueeTrack"></div>
    </div>
   </div>
-</section>>
+</section>
 
 <!-- MANUFACTURING -->
 <section class="section section-grey">
@@ -304,17 +304,7 @@
     var set = buildSet();
     row1.innerHTML = set + set;
     row2.innerHTML = set + set;
-  )}();
+  })();
 
-  // TrustSeal link: mobile opens image, desktop navigates
-  document.querySelectorAll('.trust-link').forEach(function(link){
-    link.addEventListener('click', function(e){
-      if(window.innerWidth <= 768){
-        e.preventDefault();
-        var imgSrc = this.getAttribute('data-mobile-img');
-        if(imgSrc) window.open(imgSrc, '_blank');
-      }
-    });
-  });
 </script>
 </body></html>

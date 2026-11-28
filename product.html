@@ -116,17 +116,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(rel.length){document.getElementById('relatedSection').hidden=false;
    document.getElementById('relatedGrid').innerHTML=rel.map(r=>`<article class="pcard"><a class="thumb" href="product.html?id=${r.id}"><img src="${r.img}" alt="${r.name}" loading="lazy"></a><div class="body"><h3>${r.name}</h3><p>${r.desc}</p><div class="actions"><a class="btn btn-ghost" href="product.html?id=${r.id}">View Details</a></div></div></article>`).join('');}
 
-  // TrustSeal link: mobile opens image, desktop navigates
-  const trustLink = document.querySelector('#productTrustStrip .trust-link');
-  if(trustLink){
-    trustLink.addEventListener('click', function(e){
-      if(window.innerWidth <= 768){
-        e.preventDefault();
-        const imgSrc = this.getAttribute('data-mobile-img');
-        window.open(imgSrc, '_blank');
-      }
-    });
-  }
 });
 </script>
 <script>

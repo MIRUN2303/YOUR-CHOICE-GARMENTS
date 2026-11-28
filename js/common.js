@@ -45,7 +45,7 @@ function headerHTML(){
      <a href="tel:${window.YCG.phone}" class="mq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><small>Call</small></a>
      <a href="${waLink('Hello Your Choice Garments, I would like to enquire.')}" target="_blank" rel="noopener" class="mq mq-wa"><img src="assets/whatsapp.png" alt=""><small>WhatsApp</small></a>
      <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" class="mq"><img src="assets/brands/indiamart-square.svg" alt="IndiaMART" style="width:22px;height:22px"><small>IndiaMART</small></a>
-     <a href="${window.YCG.trustseal}" target="_blank" rel="noopener" class="mq"><img src="assets/brands/indiamart-square.svg" alt="IndiaMART" style="width:22px;height:22px"><small>TrustSeal</small></a>
+     <a href="${window.YCG.trustseal}" target="_blank" rel="noopener" class="mq trust-link" data-mobile-img="assets/brand/indiamart-trustseal.jpg"><img src="assets/brands/indiamart-square.svg" alt="IndiaMART" style="width:22px;height:22px"><small>TrustSeal</small></a>
    </div>
    <div class="mobile-links">
      <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a>
@@ -79,7 +79,7 @@ function footerHTML(){
      <a href="mailto:${email}">${email}</a><br>
      <span style="display:block;padding:4px 0">${addr}</span>
      <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px"><img src="assets/brands/indiamart.svg" alt="IndiaMART" style="height:14px;width:auto"> Business profile ↗</a><br>
-     <a href="${window.YCG.trustseal}" target="_blank" rel="noopener">IndiaMART TrustSeal ↗</a><br>
+     <a class="trust-link" href="${window.YCG.trustseal}" target="_blank" rel="noopener" data-mobile-img="assets/brand/indiamart-trustseal.jpg">IndiaMART TrustSeal ↗</a><br>
      <a href="${window.YCG.instagram}" target="_blank" rel="noopener">HAC Instagram ↗</a>
    </div>
   </div>
@@ -104,4 +104,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   };
   fillMarquees();
   window.addEventListener('load',fillMarquees);
+});
+
+// TrustSeal links: mobile opens the certificate image, desktop follows the link
+document.addEventListener('click',e=>{
+  const link=e.target.closest&&e.target.closest('.trust-link');
+  if(!link||innerWidth>768) return;
+  const img=link.getAttribute('data-mobile-img');
+  if(!img) return;
+  e.preventDefault();
+  if(!window.open(img,'_blank')) location.href=img;
 });
