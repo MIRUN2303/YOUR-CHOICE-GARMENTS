@@ -5,11 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Quick Connect — Your Choice Garments</title>
 <meta name="description" content="Scan the QR code to instantly open WhatsApp and connect with Your Choice Garments for wholesale, custom and private-label garment enquiries.">
-<meta name="robots" content="noindex,nofollow">
-<link rel="canonical" href="https://your-choice-garments.vercel.app/qrpage.html">
-<meta property="og:title" content="Quick Connect — Your Choice Garments">
-<meta property="og:description" content="Scan to WhatsApp us instantly.">
-<meta property="og:type" content="website">
+<meta name="robots" content="noindex,nofollow,noarchive">
 <link rel="stylesheet" href="css/styles.css">
 <script defer src="js/config.js"></script>
 <script defer src="js/common.js"></script>
@@ -17,45 +13,117 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/brand/favicon.png"><link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
 <style>
-/* ── QR Page ── */
-.qr-page{padding:clamp(32px,5vw,56px) 0 clamp(40px,6vw,72px);min-height:calc(100vh - 220px);display:flex;align-items:center;justify-content:center;background:var(--warm)}
-.qr-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);max-width:400px;width:100%;padding:clamp(28px,4vw,38px);text-align:center}
-.qr-icon{width:64px;height:64px;margin:0 auto 18px;color:var(--navy);opacity:.55}
-.qr-card h1{font-size:clamp(22px,3.5vw,28px);margin:6px 0 10px;letter-spacing:-.02em}
-.qr-card .lead{font-size:15px;color:var(--muted);margin:0 0 24px;line-height:1.55}
-.qr-svg{width:260px;height:260px;margin:0 auto 20px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px;box-shadow:0 8px 24px rgba(11,23,64,.06);display:block}
-.qr-svg svg{width:100%;height:100%;display:block}
-.qr-hint{font-size:12px;color:var(--muted);margin:0 0 22px;line-height:1.5}
-.qr-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:4px}
-.qr-ctas .btn{min-width:160px}
-.footer-note{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted);line-height:1.6}
-@media(max-width:480px){
-  .qr-svg{width:220px;height:220px;padding:10px}
-  .qr-card{padding:24px 18px}
+/* ── Quick connect page ── */
+body.qr-page{padding-bottom:0!important}
+body.qr-page .sticky-bar{display:none!important}
+.qc{background:var(--warm);position:relative;overflow:hidden}
+.qc::before{content:"";position:absolute;right:-180px;top:-140px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(11,23,64,.06);pointer-events:none}
+.qc-hero{padding:clamp(40px,6vw,72px) 0 clamp(40px,6vw,64px)}
+.qc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,410px);gap:clamp(30px,5vw,64px);align-items:center}
+.qc h1{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-.03em;margin:12px 0 16px;color:var(--navy)}
+.qc h1 em{font-style:normal;color:var(--blue)}
+.qc-lead{font-size:clamp(14px,1.3vw,16px);color:var(--muted);max-width:48ch;line-height:1.6}
+.qc-steps{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.qc-steps li{display:flex;align-items:center;gap:12px;font-size:13.5px;color:#3A455C}
+.qc-steps span{width:27px;height:27px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:10.5px;font-weight:800;color:var(--blue);flex-shrink:0}
+.qc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.qc-note{font-size:12px;color:var(--muted);margin-top:14px}
+.qc-note a{color:var(--navy);font-weight:600}
+.qc-note a:hover{color:var(--blue)}
+
+/* gradient-blue QR container */
+.qc-panel{position:relative;background:linear-gradient(150deg,#1020B0 0%,#0B1740 58%,#16265e 100%);border-radius:22px;padding:clamp(20px,2.6vw,28px);color:#fff;box-shadow:0 30px 70px rgba(11,23,64,.28);isolation:isolate;overflow:hidden}
+.qc-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 0%,rgba(255,255,255,.16),transparent 55%);pointer-events:none}
+.qc-panel::after{content:"";position:absolute;right:-60px;bottom:-70px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(255,255,255,.14);pointer-events:none}
+.qc-panel-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px;position:relative;z-index:1}
+.qc-live{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#D5DEF5}
+.qc-live i{width:6px;height:6px;border-radius:50%;background:#5BE49B;box-shadow:0 0 0 4px rgba(91,228,155,.16)}
+.qc-panel-top svg{width:20px;height:20px;color:#fff;opacity:.9;flex-shrink:0}
+.qc-qr{background:#fff;border-radius:14px;padding:14px;box-shadow:0 18px 40px rgba(0,0,0,.28);position:relative;z-index:1}
+.qc-qr svg{display:block;width:100%;height:auto}
+.qc-hint{text-align:center;font-size:11.5px;color:#B9C4E0;margin:14px 0 0;position:relative;z-index:1}
+.qc-num{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.16);position:relative;z-index:1}
+.qc-num small{display:block;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#8FA0C6;margin-bottom:2px}
+.qc-num strong{font-size:13.5px;font-weight:600;color:#fff;letter-spacing:.02em}
+.qc-num a{font-size:11.5px;color:#fff;font-weight:600;display:inline-flex;align-items:center;gap:4px;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:1px;white-space:nowrap}
+.qc-num a:hover{color:#fff;border-color:#fff}
+.qc-num a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* trust strip */
+.qc-strip{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.qc-strip .container{display:grid;grid-template-columns:repeat(3,1fr)}
+.qc-strip div{padding:18px 24px;border-left:1px solid var(--border);display:flex;align-items:baseline;gap:10px;min-width:0}
+.qc-strip div:first-child{border-left:0;padding-left:0}
+.qc-strip b{font-family:'Manrope',sans-serif;font-size:15px;color:var(--navy);white-space:nowrap}
+.qc-strip span{font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+
+@media(max-width:900px){
+  .qc-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .qc-panel{max-width:400px;width:100%;margin:0 auto}
+}
+@media(max-width:640px){
+  .qc-hero .container{padding-left:14px;padding-right:14px}
+  .qc-panel{max-width:none;padding:14px;border-radius:18px}
+  .qc-qr{padding:9px;border-radius:11px}
+  .qc-hint{margin-top:11px}
+  .qc-num{margin-top:13px;padding-top:12px}
+  .qc-strip .container{grid-template-columns:1fr}
+  .qc-strip div{border-left:0;border-top:1px solid var(--border);padding:12px 0}
+  .qc-strip div:first-child{border-top:0;padding-top:0}
+  .qc-strip div:last-child{padding-bottom:0}
+  .qc-actions .btn{flex:1 1 auto;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){
-  .qr-card{transition:none}
+  .qc-panel{transition:none}
 }
 </style>
 </head>
-<body>
+<body class="qr-page">
 <div id="site-header"></div>
 
-<main class="qr-page">
-  <article class="qr-card">
-    <svg class="qr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/><path d="M21 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><rect x="7" y="7" width="4" height="4"/><rect x="17" y="7" width="4" height="4"/><rect x="7" y="17" width="4" height="4"/></svg>
-    <h1>Quick Connect</h1>
-    <p class="lead">Scan the QR code with your phone camera or WhatsApp to open a chat instantly — no need to save our number.</p>
-    <div class="qr-svg" role="img" aria-label="WhatsApp QR code for Your Choice Garments — scan to start a chat">
-      <!-- SVG injected here -->
+<main class="qc">
+  <section class="qc-hero">
+    <div class="container qc-grid">
+      <div class="qc-copy">
+        <p class="eyebrow">Quick connect</p>
+        <h1>One scan.<br><em>Straight to our chat.</em></h1>
+        <p class="qc-lead">No forms, no waiting. Scan the code and WhatsApp opens with your message ready to send — our Tiruppur team replies with fabric, pricing and lead time.</p>
+        <ol class="qc-steps">
+          <li><span>01</span> Scan with your phone camera</li>
+          <li><span>02</span> WhatsApp opens with the message ready</li>
+          <li><span>03</span> Share quantity, artwork and delivery city</li>
+        </ol>
+        <div class="qc-actions">
+          <a class="btn btn-wa" href="https://wa.me/918220089690?text=Hi%20Your%20Choice%20Garments%21%20I%27d%20like%20a%20quick%20connect." target="_blank" rel="noopener">Open WhatsApp</a>
+          <a class="btn btn-ghost" href="wholesale.html">Request a quote</a>
+        </div>
+        <p class="qc-note">Prefer to call? <a href="tel:+918220089690">+91 82200 89690</a></p>
+      </div>
+
+      <aside class="qc-panel" aria-label="Scan to chat on WhatsApp">
+        <div class="qc-panel-top">
+          <span class="qc-live"><i></i>Scan to chat</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="qc-qr" role="img" aria-label="QR code that opens a WhatsApp chat with Your Choice Garments">
+          <!-- QR SVG injected here -->
+        </div>
+        <p class="qc-hint">Point your phone camera at the code</p>
+        <div class="qc-num">
+          <div><small>WhatsApp</small><strong>+91 82200 89690</strong></div>
+          <a href="https://wa.me/918220089690?text=Hi%20Your%20Choice%20Garments%21%20I%27d%20like%20a%20quick%20connect." target="_blank" rel="noopener">Tap to chat →</a>
+        </div>
+      </aside>
     </div>
-    <p class="qr-hint">Opens WhatsApp with a ready-to-send message:<br><strong>"Hi Your Choice Garments! I'd like a quick connect."</strong></p>
-    <div class="qr-ctas">
-      <a class="btn btn-primary" href="https://wa.me/918220089690?text=Hi%20Your%20Choice%20Garments%21%20I%27d%20like%20a%20quick%20connect." target="_blank" rel="noopener">Open in WhatsApp</a>
-      <a class="btn btn-outline" href="wholesale.html">Request a Quote</a>
+  </section>
+
+  <section class="qc-strip" aria-label="At a glance">
+    <div class="container">
+      <div><b>50–5,000 pcs</b><span>Bulk &amp; custom runs</span></div>
+      <div><b>Private label</b><span>Branding &amp; woven labels</span></div>
+      <div><b>Since 2017</b><span>Tiruppur, Tamil Nadu</span></div>
     </div>
-    <p class="footer-note">This page is not indexed by search engines. Share the direct link or print the QR for offline use.</p>
-  </article>
+  </section>
 </main>
 
 <div id="site-footer"></div>
@@ -63,7 +131,7 @@
 <script>
 (function(){
   'use strict';
-  var container = document.querySelector('.qr-svg');
+  var container = document.querySelector('.qc-qr');
   if (!container) return;
   fetch('qrpage/whatsapp-qr.svg')
     .then(function(r){ return r.ok ? r.text() : ''; })
