@@ -77,8 +77,7 @@ function footerHTML(){
      <a href="tel:${window.YCG.phone}">${window.YCG.phoneDisplay}</a><br>
      <a href="mailto:${email}">${email}</a><br>
      <span style="display:block;padding:4px 0">${addr}</span>
-     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px"><img src="assets/brands/indiamart.svg" alt="IndiaMART" style="height:14px;width:auto"> Profile ↗</a><br>
-      <a href="${window.YCG.indiamartStore}" target="_blank" rel="noopener">IndiaMART Store ↗</a><br>
+     <a href="${window.YCG.indiamart}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px"><img src="assets/brands/indiamart.svg" alt="IndiaMART" style="height:14px;width:auto"> Business profile ↗</a><br>
      <a href="${window.YCG.trustseal}" target="_blank" rel="noopener">IndiaMART TrustSeal ↗</a><br>
      <a href="${window.YCG.instagram}" target="_blank" rel="noopener">HAC Instagram ↗</a>
    </div>

@@ -9,7 +9,6 @@ window.YCG = {
   hacAddress: "No. 17, Krishna Nagar, College Road, Tiruppur – 641603", // printed on the HAC visiting card
   trademarkAddress: "No. 13, Balamurugan Nagar 1st Street, Valayankadu, Gandhi Nagar Post, Tiruppur – 641 603", // from HAC trademark report, pending confirmation
   indiamart: "https://www.indiamart.com/yourchoicegarments/profile.html",
-  indiamartStore: "https://www.hacclothings.com/",
   trustseal: "https://www.indiamart.com/hacclothings/trustseal/",
   instagram: "https://www.instagram.com/hac_clothings/",
   maps: "https://www.google.com/maps/dir/?api=1&destination=11.1187068,77.3221267"
