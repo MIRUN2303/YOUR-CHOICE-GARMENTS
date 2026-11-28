@@ -22,34 +22,6 @@
  </div>
 </div></section>
 
-<section class="section">
- <div class="container">
-  <div class="section-head"><div><p class="eyebrow">Who we serve</p><h2>A manufacturing partner for your business.</h2></div></div>
-  <div class="grid grid-4">
-   <div class="card icon-card"><div class="ico">A</div><h3>Brands</h3><p>Emerging and established labels needing production support.</p></div>
-   <div class="card icon-card"><div class="ico">B</div><h3>Retailers</h3><p>Single-brand and multi-brand stores sourcing knitwear.</p></div>
-   <div class="card icon-card"><div class="ico">C</div><h3>Wholesalers</h3><p>Stockists and resellers needing repeat supply.</p></div>
-   <div class="card icon-card"><div class="ico">D</div><h3>Corporate & events</h3><p>Uniform, promotional and merchandise requirements.</p></div>
-  </div>
- </div>
-</section>
-
-<section class="section section-grey">
- <div class="container split">
-  <div class="split-media"><img src="assets/manufacturing/production-floor/production-line.jpg" alt="Production line at the Your Choice Garments unit" loading="lazy"></div>
-  <div>
-    <p class="eyebrow">What we supply</p>
-    <h2>Blank to fully branded.</h2>
-    <div class="grid grid-2" style="margin-top:22px;gap:16px">
-      <div class="card"><h3 style="font-size:15px">Blank garment supply</h3><p style="font-size:13px">Round neck, oversized, polo, polyester, boys and hoodie/sweatshirt ranges.</p></div>
-      <div class="card"><h3 style="font-size:15px">Bulk orders</h3><p style="font-size:13px">Higher-quantity runs with batch checking for consistency.</p></div>
-      <div class="card"><h3 style="font-size:15px">Custom apparel</h3><p style="font-size:13px">Printing, embroidery, labels and branding per order.</p></div>
-      <div class="card"><h3 style="font-size:15px">Private label</h3><p style="font-size:13px">Label, tag and packaging options, discussed per requirement.</p></div>
-    </div>
-  </div>
- </div>
-</section>
-
 <section class="section" id="enquiry">
  <div class="container split" style="align-items:start">
   <div>
@@ -88,6 +60,34 @@
  </div>
 </section>
 
+<section class="section">
+ <div class="container">
+  <div class="section-head"><div><p class="eyebrow">Who we serve</p><h2>A manufacturing partner for your business.</h2></div></div>
+  <div class="grid grid-4">
+   <div class="card icon-card"><div class="ico">A</div><h3>Brands</h3><p>Emerging and established labels needing production support.</p></div>
+   <div class="card icon-card"><div class="ico">B</div><h3>Retailers</h3><p>Single-brand and multi-brand stores sourcing knitwear.</p></div>
+   <div class="card icon-card"><div class="ico">C</div><h3>Wholesalers</h3><p>Stockists and resellers needing repeat supply.</p></div>
+   <div class="card icon-card"><div class="ico">D</div><h3>Corporate & events</h3><p>Uniform, promotional and merchandise requirements.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section section-grey">
+ <div class="container split">
+  <div class="split-media"><img src="assets/manufacturing/production-floor/production-line.jpg" alt="Production line at the Your Choice Garments unit" loading="lazy"></div>
+  <div>
+    <p class="eyebrow">What we supply</p>
+    <h2>Blank to fully branded.</h2>
+    <div class="grid grid-2" style="margin-top:22px;gap:16px">
+      <div class="card"><h3 style="font-size:15px">Blank garment supply</h3><p style="font-size:13px">Round neck, oversized, polo, polyester, boys and hoodie/sweatshirt ranges.</p></div>
+      <div class="card"><h3 style="font-size:15px">Bulk orders</h3><p style="font-size:13px">Higher-quantity runs with batch checking for consistency.</p></div>
+      <div class="card"><h3 style="font-size:15px">Custom apparel</h3><p style="font-size:13px">Printing, embroidery, labels and branding per order.</p></div>
+      <div class="card"><h3 style="font-size:15px">Private label</h3><p style="font-size:13px">Label, tag and packaging options, discussed per requirement.</p></div>
+    </div>
+  </div>
+ </div>
+</section>
+
 <section class="section section-grey">
  <div class="container">
   <div class="section-head"><div><p class="eyebrow">Questions</p><h2>Wholesale FAQs.</h2></div></div>
@@ -117,8 +117,6 @@
 
 <div id="site-footer"></div>
 <script>
-const enq=document.getElementById('enquiry'),hero=document.querySelector('.page-hero'),afterEnq=enq&&enq.nextElementSibling;
-if(enq&&hero&&afterEnq){const mq=matchMedia('(max-width:900px)');const place=()=>{mq.matches?hero.after(enq):afterEnq.before(enq)};place();mq.addEventListener('change',place);}
 document.getElementById('wform').addEventListener('submit',e=>{
  e.preventDefault(); const f=new FormData(e.target);
  const msg=`Hello Your Choice Garments,\n\nWholesale Enquiry\nName: ${f.get('name')}\nBusiness: ${f.get('business')}\nPhone: ${f.get('phone')}\nEmail: ${f.get('email')}\nBuyer type: ${f.get('buyer')}\nRequirement: ${f.get('req')}\nProduct interest: ${f.get('product')}\nQuantity: ${f.get('qty')}\nNotes: ${f.get('notes')}`;

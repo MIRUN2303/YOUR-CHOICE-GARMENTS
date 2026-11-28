@@ -51,6 +51,7 @@ img{max-width:100%;display:block}
 .topbar .dot{opacity:.4;margin:0 8px}
 
 /* ---------- header ---------- */
+#site-header{display:contents}
 header.site{background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:80;backdrop-filter:blur(14px)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0;gap:24px}
 header.site .container{max-width:1360px}
@@ -157,6 +158,8 @@ header.site .container{max-width:1360px}
 
 /* ---------- sections ---------- */
 .section{padding:clamp(64px,8vw,110px) 0}
+.section[id]{scroll-margin-top:76px}
+.page-hero + .section{padding-top:clamp(40px,4.5vw,64px)}
 .section-sm{padding:clamp(44px,6vw,72px) 0}
 .section-grey{background:var(--grey)}
 .section-warm{background:var(--warm)}
@@ -359,10 +362,7 @@ header.site .container{max-width:1360px}
 @keyframes marquee-reverse{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 
 /* Products showcase marquee (home page) */
-.products-marquee{position:relative;overflow:hidden;padding:clamp(16px,2vw,24px) 0}
-.products-marquee::before,.products-marquee::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
-.products-marquee::before{left:0;background:linear-gradient(to right,var(--white),transparent 60%)}
-.products-marquee::after{right:0;background:linear-gradient(to left,var(--white),transparent 60%)}
+.products-marquee{position:relative;overflow:hidden;padding:clamp(16px,2vw,24px) 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .products-marquee-track{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(24px,4vw,48px);animation:marquee-products 50s linear infinite;width:max-content}
 .products-marquee-track:hover{animation-play-state:paused}
 .product-marquee-item{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;min-width:180px;max-width:200px;text-decoration:none;color:inherit}
