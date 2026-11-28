@@ -17,7 +17,7 @@ function headerHTML(){
     ${navLink('about.html','About')}
     <div class="dropdown"><a href="products.html">Products ▾</a>
       <div class="dropdown-menu">
-        <a href="products.html">All products</a>
+        <a class="dd-all" href="products.html">All products</a>
         <a href="products.html?cat=Round%20Neck">Round Neck T-Shirts</a>
         <a href="products.html?cat=Oversized">Oversized T-Shirts</a>
         <a href="products.html?cat=Polo">Cotton Polo T-Shirts</a>
