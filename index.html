@@ -123,38 +123,67 @@
 </section>
 
 <!-- TRUSTED SUPPLY EXPERIENCE -->
-<section class="section section-grey">
- <div class="container">
-  <div class="section-head"><div><p class="eyebrow">Supply experience</p><h2>Trusted Supply Experience</h2><p>Through our extended supply network, we have contributed to apparel supply requirements associated with businesses, institutions and established brands.</p><p style="font-size:13px;color:var(--muted);margin-top:6px">Apparel supply through extended business networks</p></div></div>
-  <div class="supply-logos">
-    <a class="supply-logo" href="https://www.tata.com/" target="_blank" rel="noopener">
-      <span class="supply-logo-media"><img class="logo-tall" src="assets/brands/tata.svg" alt="Tata logo" loading="lazy"></span>
-      <span class="supply-note">Apparel supply · business network</span>
-    </a>
-    <a class="supply-logo" href="https://www.ashokleyland.com/" target="_blank" rel="noopener">
-      <span class="supply-logo-media"><img src="assets/brands/ashok-leyland.svg" alt="Ashok Leyland logo" loading="lazy"></span>
-      <span class="supply-note">Apparel requirements · extended network</span>
-    </a>
-    <a class="supply-logo" href="https://www.icat.ac.in/" target="_blank" rel="noopener">
-      <span class="supply-logo-media"><img class="logo-wide" src="assets/brands/icat-college.svg" alt="ICAT College of Design and Media logo" loading="lazy"></span>
-      <span class="supply-note">Institutional apparel · extended network</span>
-    </a>
-    <div class="supply-logo">
-      <span class="supply-logo-media"><span class="supply-wordmark">BLANQ</span></span>
-      <span class="supply-note">Fashion apparel · connected supply</span>
+<section class="section section-grey" id="supply-experience">
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow">Supply experience</p><h2>Trusted Supply Experience</h2><p>Through our extended supply network, we have contributed to apparel supply requirements associated with businesses, institutions and established brands.</p><p style="font-size:13px;color:var(--muted);margin-top:6px">Apparel supply through extended business networks</p></div></div>
+
+    <!-- Featured brands row -->
+    <div class="supply-featured" aria-label="Featured supply partners">
+      <a class="supply-card featured" href="https://www.tata.com/" target="_blank" rel="noopener" aria-label="Tata Group - apparel supply via business network">
+        <div class="supply-card-media"><img src="assets/brands/tata.svg" alt="Tata" loading="lazy"></div>
+        <div class="supply-card-info"><span class="supply-card-label">Apparel supply</span><span class="supply-card-type">Business network</span></div>
+      </a>
+      <a class="supply-card featured" href="https://www.ashokleyland.com/" target="_blank" rel="noopener" aria-label="Ashok Leyland - apparel requirements via extended network">
+        <div class="supply-card-media"><img src="assets/brands/ashok-leyland.svg" alt="Ashok Leyland" loading="lazy"></div>
+        <div class="supply-card-info"><span class="supply-card-label">Apparel requirements</span><span class="supply-card-type">Extended network</span></div>
+      </a>
+      <a class="supply-card featured" href="https://www.icat.ac.in/" target="_blank" rel="noopener" aria-label="ICAT College - institutional apparel via extended network">
+        <div class="supply-card-media"><img src="assets/brands/icat-college.svg" alt="ICAT College of Design and Media" loading="lazy"></div>
+        <div class="supply-card-info"><span class="supply-card-label">Institutional apparel</span><span class="supply-card-type">Extended network</span></div>
+      </a>
     </div>
-    <div class="supply-logo">
-      <span class="supply-logo-media"><span class="supply-wordmark serif">Emphasis<small>Talk Tee</small></span></span>
-      <span class="supply-note">T-shirt supply · extended network</span>
+
+    <!-- Auto-scrolling logo marquee -->
+    <div class="supply-marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+      </div>
     </div>
-    <div class="supply-logo supply-logo--other">
-      <span class="supply-logo-media">+ Others</span>
-      <span class="supply-note">New requirements · by enquiry</span>
+
+    <!-- Additional brands grid -->
+    <div class="supply-grid" aria-label="Additional supply experience">
+      <article class="supply-card wordmark">
+        <div class="supply-card-media"><span class="supply-wordmark">BLANQ</span></div>
+        <div class="supply-card-info"><span class="supply-card-label">Fashion apparel</span><span class="supply-card-type">Connected supply</span></div>
+      </article>
+      <article class="supply-card wordmark">
+        <div class="supply-card-media"><span class="supply-wordmark serif">Emphasis<small>Talk Tee</small></span></div>
+        <div class="supply-card-info"><span class="supply-card-label">T-shirt supply</span><span class="supply-card-type">Extended network</span></div>
+      </article>
+      <a class="supply-card" href="https://www.tvsmotor.com/" target="_blank" rel="noopener" aria-label="TVS Motor Company - corporate polos">
+        <div class="supply-card-media"><img src="assets/brands/logos/tvs.png" alt="TVS" loading="lazy"></div>
+        <div class="supply-card-info"><span class="supply-card-label">Corporate polos</span><span class="supply-card-type">Automotive</span></div>
+      </a>
+      <a class="supply-card" href="#" aria-label="YSL - corporate apparel" style="pointer-events:none">
+        <div class="supply-card-media"><img src="assets/brands/logos/ysl.png" alt="YSL" loading="lazy"></div>
+        <div class="supply-card-info"><span class="supply-card-label">Corporate apparel</span><span class="supply-card-type">Fashion</span></div>
+      </a>
+      <a class="supply-card" href="#" aria-label="Visteon - corporate apparel" style="pointer-events:none">
+        <div class="supply-card-media"><img src="assets/brands/logos/visteon.png" alt="Visteon" loading="lazy"></div>
+        <div class="supply-card-info"><span class="supply-card-label">Corporate apparel</span><span class="supply-card-type">Automotive electronics</span></div>
+      </a>
+      <a class="supply-card" href="#" aria-label="Hanon - polo uniforms" style="pointer-events:none">
+        <div class="supply-card-media"><span class="supply-wordmark">HANON</span></div>
+        <div class="supply-card-info"><span class="supply-card-label">Polo uniforms</span><span class="supply-card-type">Automotive components</span></div>
+      </a>
+      <a class="supply-card" href="#" aria-label="Balaji Traders - staff polos" style="pointer-events:none">
+        <div class="supply-card-media"><span class="supply-wordmark">BALAJI<br>TRADERS</span></div>
+        <div class="supply-card-info"><span class="supply-card-label">Staff polos</span><span class="supply-card-type">Trade & retail</span></div>
+      </a>
     </div>
+
+    <p class="supply-disclaimer">Brand logos and names identify supply experience through extended business networks. No endorsement, partnership or direct supply relationship is implied. Logos are trademarks of their respective owners. Links without URLs indicate brands supplied through intermediaries.</p>
   </div>
-  <p style="font-size:12px;color:var(--muted);margin-top:18px">Brand logos and names identify supply experience through extended business networks. No endorsement, partnership or direct supply relationship is implied. Logos are trademarks of their respective owners. BLANQ and Emphasis – Talk Tee are shown as text references because no verified logo asset was available. BLANQ's listed website was unavailable when checked, so it is not linked.</p>
- </div>
-</section>
+</section>>
 <section class="section section-warm">
  <div class="container">
    <div class="im-trust">
@@ -239,5 +268,32 @@ document.addEventListener('DOMContentLoaded',()=>{
   // WhatsApp CTA
   document.getElementById('heroWa').href=waLink('Hello Your Choice Garments, I would like to discuss a wholesale garment requirement.');
 });
+  // Supply marquee - populate and duplicate for seamless loop
+  (function(){
+    var track = document.getElementById('marqueeTrack');
+    if(!track) return;
+    var logos = [
+      {src:'assets/brands/tata.svg', alt:'Tata'},
+      {src:'assets/brands/ashok-leyland.svg', alt:'Ashok Leyland'},
+      {src:'assets/brands/icat-college.svg', alt:'ICAT College'},
+      {src:'assets/brands/logos/tvs.png', alt:'TVS Motor'},
+      {src:'assets/brands/logos/ysl.png', alt:'YSL'},
+      {src:'assets/brands/logos/visteon.png', alt:'Visteon'},
+      {src:'assets/brands/logos/ashok-leyland.png', alt:'Ashok Leyland'},
+    ];
+    function buildSet(){
+      return logos.map(function(l){
+        var img = document.createElement('img');
+        img.src = l.src;
+        img.alt = l.alt;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        return img.outerHTML;
+      }).join('');
+    }
+    // Duplicate for seamless loop
+    track.innerHTML = buildSet() + buildSet();
+  })();
+
 </script>
 </body></html>
